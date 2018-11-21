@@ -6,7 +6,7 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        Login
+        Landing
       </div>
     );
 
