@@ -24,7 +24,7 @@ const Footer = (props) => {
   const { classes } = props;
   return (
     <React.Fragment>
-      <AppBar position='fixed' className={classes.footer}>
+      <AppBar position='fixed' color='inherit' className={classes.footer}>
         <Toolbar className={classes.content}>
           <Copyright color='action' className={classes.icon} /> 
           <Typography variant='h6' > Develop By IU </Typography>
