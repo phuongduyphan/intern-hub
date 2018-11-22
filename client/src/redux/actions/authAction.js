@@ -1,6 +1,6 @@
 import { GET_ERRORS, CREATE_ACCOUNT_SUCCESS, SET_CURRENT_USER } from "./type";
 import axios from 'axios';
-import setAuthToken from '../untils/setAuthToken';
+import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 // Register
 export const registerUser = (userData) => (dispach) => {
