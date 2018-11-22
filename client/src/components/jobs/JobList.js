@@ -19,7 +19,8 @@ const JobList = (props) => {
       company: 'Microsoft',
       place: 'District 1',
       salary: '5.000.000 VND',
-      type: 'fulltime'
+      type: 'fulltime',
+      duration: '3 months'
     },
     {
       id: 0,
@@ -28,8 +29,9 @@ const JobList = (props) => {
       description: 'Do things',
       company: 'Microsoft',
       place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime'
+      salary: '3.000.000 VND',
+      type: 'parttime',
+      duration: '1 months'
     },
     {
       id: 0,
