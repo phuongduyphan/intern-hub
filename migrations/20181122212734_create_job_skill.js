@@ -1,12 +1,11 @@
-
 exports.up = async (knex) => {
-  await knex.schema.createTable('student_skill', (table) => {
+  await knex.schema.createTable('job_skill', (table) => {
     table
-      .integer('student_id')
+      .integer('job_id')
       .unsigned()
       .notNullable()
-      .references('student_id')
-      .inTable('students')
+      .references('job_id')
+      .inTable('jobs')
       .onDelete('CASCADE');
 
     table
@@ -17,10 +16,10 @@ exports.up = async (knex) => {
       .inTable('skills')
       .onDelete('CASCADE');
 
-    table.primary(['student_id', 'skill_id']);
+    table.primary(['job_id', 'skill_id']);
   });
 };
 
 exports.down = async (knex) => {
-  await knex.schema.dropTable('student_skill');
+  await knex.schema.dropTable('job_skill');
 };
