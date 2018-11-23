@@ -15,13 +15,13 @@ class JobService {
     }
   }
 
-  static async searchJobWithKeywords(listOfKeywords) {
+  static async searchJobByKeywords(listOfKeywords) {
     try {
-      const [listOfJobWithCategories, listOfJobWithSkills] = await Promise.all([
-        this.searchJobWithCategories(listOfKeywords), this.searchJobWithSkills(listOfKeywords)]);
+      const [listOfJobByCategories, listOfJobBySkills] = await Promise.all([
+        this.searchJobByCategories(listOfKeywords), this.searchJobBySkills(listOfKeywords)]);
 
-      const listOfJobs = listOfJobWithCategories.concat(listOfJobWithSkills.filter((element) => {
-        return !_.find(listOfJobWithCategories, { jobId: element.jobId });
+      const listOfJobs = listOfJobByCategories.concat(listOfJobBySkills.filter((element) => {
+        return !_.find(listOfJobByCategories, { jobId: element.jobId });
       }));
       return listOfJobs;
     } catch (err) {
@@ -29,7 +29,7 @@ class JobService {
     }
   }
 
-  static async searchJobWithCategories(listOfKeywords) {
+  static async searchJobByCategories(listOfKeywords) {
     try {
       const listOfRecvJobs = await JobCategory
         .query()
@@ -57,7 +57,7 @@ class JobService {
     }
   }
 
-  static async searchJobWithSkills(listOfKeywords) {
+  static async searchJobBySkills(listOfKeywords) {
     try {
       const listOfRecvJobs = await JobSkill
         .query()

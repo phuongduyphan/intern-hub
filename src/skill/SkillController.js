@@ -1,4 +1,5 @@
 const { SkillService } = require('./SkillService');
+const { Skill } = require('./Skill');
 
 exports.skills_get = async (req, res) => {
   try {
@@ -12,7 +13,8 @@ exports.skills_get = async (req, res) => {
 exports.skills_post = async (req, res) => {
   try {
     const { skillName } = req.body;
-    const skillObj = { skillName };
+    const skillObj = new Skill();
+    skillObj.skillName = skillName;
 
     const returnObj = await SkillService.createSkill(skillObj);
     res.send(returnObj);

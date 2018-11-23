@@ -1,4 +1,4 @@
-const CategoryService = require('./CategoryService');
+const { CategoryService } = require('./CategoryService')
 
 exports.categories_get = async (req, res) => {
   try {
@@ -25,13 +25,15 @@ exports.categories_post = async (req, res) => {
 exports.categoryId_get = async (req, res) => {
   try {
     const { categoryId } = req.params;
-    const returnObj = await CategoryService.getCategoryById(categoryId);
+    const categoryObj = { categoryId };
+    const returnObj = await CategoryService.getCategory(categoryObj);
     res.send(returnObj);
   } catch (err) {
     throw err;
   }
 };
 
+//TODO
 exports.categoryId_info_get = async (req, res) => {
   try {
     const { categoryId } = req.params;
@@ -42,6 +44,7 @@ exports.categoryId_info_get = async (req, res) => {
   }
 };
 
+//TODO
 exports.categoryId_jobs_get = async (req, res) => {
   try {
     const { categoryId } = req.params;

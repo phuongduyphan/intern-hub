@@ -9,12 +9,10 @@ exports.jobs_get = async (req, res) => {
   }
 };
 
-// TODO
 exports.jobs_search_get = async (req, res) => {
   try {
-    const { listOfCategories, listOfSkills } = req.body;
-    const searchObj = { listOfCategories, listOfSkills };
-    const listOfResults = await JobService.searchForJobsBy(searchObj);
+    const { listOfKeywords } = req.body;
+    const listOfResults = await JobService.searchJobByKeywords(listOfKeywords);
     res.send(listOfResults);
   } catch (err) {
     throw err;

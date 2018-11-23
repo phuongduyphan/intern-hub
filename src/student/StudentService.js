@@ -14,7 +14,7 @@ class StudentService {
     }
   }
 
-  static async searchStudentWithSkills(listOfSkills) {
+  static async searchStudentBySkills(listOfSkills) {
     try {
       const listOfRecvStudents = await StudentSkill
         .query()

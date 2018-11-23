@@ -11,8 +11,8 @@ exports.students_get = async (req, res) => {
 
 exports.students_search = async (req, res) => {
   try {
-    const listOfSkillIds = req.body.listOfSkillIds;
-    const listOfStudents = await StudentService.searchStudentWithSkills(listOfSkillIds);
+    const { listOfSkills } = req.body;
+    const listOfStudents = await StudentService.searchStudentBySkills(listOfSkills);
     res.send(listOfStudents);
   } catch (err) {
     throw err;
