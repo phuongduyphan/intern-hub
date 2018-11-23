@@ -14,7 +14,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema intern-hub
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `intern-hub` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `intern-hub` DEFAULT CHARACTER SET latin1 ;
 USE `intern-hub` ;
 
 -- -----------------------------------------------------
@@ -25,8 +25,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`categories` (
   `category_name` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`category_id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -41,8 +40,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`users` (
   PRIMARY KEY (`user_id`),
   UNIQUE INDEX `users_user_name_unique` (`user_name` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -51,13 +49,13 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `intern-hub`.`recruiters` (
   `recruiter_id` INT(10) UNSIGNED NOT NULL,
   `address` VARCHAR(255) NOT NULL,
-  INDEX `recruiters_recruiter_id_foreign` (`recruiter_id` ASC),
+  UNIQUE INDEX `recruiters_recruiter_id_unique` (`recruiter_id` ASC),
   CONSTRAINT `recruiters_recruiter_id_foreign`
     FOREIGN KEY (`recruiter_id`)
     REFERENCES `intern-hub`.`users` (`user_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -77,8 +75,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`jobs` (
     REFERENCES `intern-hub`.`recruiters` (`recruiter_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -98,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`job_category` (
     REFERENCES `intern-hub`.`jobs` (`job_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -109,8 +106,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`skills` (
   `skill_name` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`skill_id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -130,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`job_skill` (
     REFERENCES `intern-hub`.`skills` (`skill_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -144,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`knex_migrations` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 10
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -156,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`knex_migrations_lock` (
   PRIMARY KEY (`index`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 2
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -167,13 +163,13 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`students` (
   `student_dob` DATE NULL DEFAULT NULL,
   `student_major` VARCHAR(50) NULL DEFAULT NULL,
   `student_college` VARCHAR(255) NULL DEFAULT NULL,
-  INDEX `students_student_id_foreign` (`student_id` ASC),
+  UNIQUE INDEX `students_student_id_unique` (`student_id` ASC),
   CONSTRAINT `students_student_id_foreign`
     FOREIGN KEY (`student_id`)
     REFERENCES `intern-hub`.`users` (`user_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -193,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`student_skill` (
     REFERENCES `intern-hub`.`students` (`student_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
