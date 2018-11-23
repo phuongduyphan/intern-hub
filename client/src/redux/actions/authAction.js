@@ -5,7 +5,7 @@ import jwt_decode from 'jwt-decode';
 // Register
 export const registerUser = (userData) => (dispach) => {
   axios
-    .post('', userData)
+    .post('http://localhost:5000/api/users/register', userData)
     .then(res => {
       dispach({
         type: CREATE_ACCOUNT_SUCCESS,
@@ -15,7 +15,8 @@ export const registerUser = (userData) => (dispach) => {
       });
     })
     .catch(err => {
-      let tempErr = Object.values(err.response.data.errors);    
+      // let tempErr = Object.values(err.response.data.errors);    
+      let tempErr = null;
       dispach({
         type: GET_ERRORS, 
         payload: tempErr,

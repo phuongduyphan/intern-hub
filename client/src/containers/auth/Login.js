@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import LoginComponent from '../../components/auth/Login';
+import store from '../../redux/store';
+import {CREATE_ACCOUNT_SUCCESS} from '../../redux/actions/type';
 
 class LoginContainer extends Component {
   
@@ -12,6 +14,15 @@ class LoginContainer extends Component {
       password: "",
       errors: "",
     };
+  }
+
+  componentDidMount() {
+    store.dispatch({
+      type: CREATE_ACCOUNT_SUCCESS,
+      payload: {
+        isRegisterSuccess: false,
+      }
+    });
   }
 
   onChangeText = (e) => {
