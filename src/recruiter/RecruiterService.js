@@ -1,4 +1,7 @@
+const { transaction } = require('objection');
+
 const { Recruiter } = require('./Recruiter');
+const { Job } = require('../job/Job');
 
 class RecruiterService {
   static async getListOfRecruiters() {
@@ -51,10 +54,15 @@ class RecruiterService {
     }
   }
 
-  static async createRecruiterJob(recruiter, job) {
+  static async createRecruiterJob(job) {
     try {
-      const recruiterInstance = await this.getRecruiter(recruiter);
-      const recvJob = await recruiterInstance.$relatedQuery('jobs').insertAndFetch(job);
+      let recvJob;
+      await transaction(Job.knex(), async (trx) => {
+        recvJob = await Job
+          .query(trx)
+          .insertGraphAndFetch(job);
+      });
+
       return recvJob;
     } catch (err) {
       throw err;

@@ -56,15 +56,24 @@ exports.recruiterId_jobs_get = async (req, res) => {
 
 exports.recruiterId_jobs_post = async (req, res) => {
   try {
-    const { recruiterId } = req.params;
-    const { jobTitle, jobDesc, location } = req.body;
-    const recruiterObj = { recruiterId };
-    const jobObj = {
+    const recruiterId = req.user.userId;
+    const {
       jobTitle,
       jobDesc,
       location,
+      listOfSkillIds,
+      listOfCategoryIds,
+    } = req.body;
+
+    const jobObj = {
+      recruiterId,
+      jobTitle,
+      jobDesc,
+      location,
+      jobSkills: listOfSkillIds,
+      jobCategories: listOfCategoryIds,
     };
-    const returnObj = await RecruiterService.createRecruiterJob(recruiterObj, jobObj);
+    const returnObj = await RecruiterService.createRecruiterJob(jobObj);
     res.send(returnObj);
   } catch (err) {
     throw err;

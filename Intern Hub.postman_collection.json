@@ -1892,6 +1892,128 @@
 					"body": "{\"success\":true,\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImRpc3BsYXluYW1lIjoiVGhhbmggVHVuZyIsInVzZXJuYW1lIjoidGhhbmh0dW5nIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE1NDI5ODM0MTEsImV4cCI6MTU0MzU4ODIxMX0.xoZbuedfAyPjXEoUrgqZD9mp4iVANxNnHEtk7LgUnt4\"}"
 				}
 			]
+		},
+		{
+			"name": "Recruiter Create Job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImRpc3BsYXluYW1lIjoiVGhhbmggVHVuZyIsInVzZXJuYW1lIjoidGhhbmh0dW5nIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE1NDI5ODM5NjUsImV4cCI6MTU0MzU4ODc2NX0.rU_jVZgeFTKerGb34hezkaEL1N0YmNAK51Fa4j38G74"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jobTitle\": \"3 Tester and 1 MySql Engineer\",\n\t\"jobDesc\": \"blablabla\",\n\t\"location\": \"HCMC, VN\",\n\t\"listOfSkillIds\": [{ \"skillId\": 1}, { \"skillId\": 3}, { \"skillId\": 4 }],\n\t\"listOfCategoryIds\": [ {\"categoryId\": 2}, { \"categoryId\": 3}]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/recruiters/jobs",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recruiters",
+						"jobs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Recruiter Create Job",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImRpc3BsYXluYW1lIjoiVGhhbmggVHVuZyIsInVzZXJuYW1lIjoidGhhbmh0dW5nIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE1NDI5ODM5NjUsImV4cCI6MTU0MzU4ODc2NX0.rU_jVZgeFTKerGb34hezkaEL1N0YmNAK51Fa4j38G74",
+								"disabled": false
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"jobTitle\": \"3 Tester and 1 MySql Engineer\",\n\t\"jobDesc\": \"blablabla\",\n\t\"location\": \"HCMC, VN\",\n\t\"listOfSkillIds\": [{ \"skillId\": 1}, { \"skillId\": 3}, { \"skillId\": 4 }],\n\t\"listOfCategoryIds\": [ {\"categoryId\": 2}, { \"categoryId\": 3}]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/recruiters/jobs",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recruiters",
+								"jobs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "288",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 Nov 2018 16:31:15 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"120-BYzsMWkT7dYrlZvCp3LTFWUitAY\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+							"key": "connect.sid"
+						}
+					],
+					"body": "{\"jobId\":4,\"recruiterId\":1,\"jobTitle\":\"3 Tester and 1 MySql Engineer\",\"jobDesc\":\"blablabla\",\"location\":\"HCMC, VN\",\"isValidated\":0,\"jobSkills\":[{\"jobId\":4,\"skillId\":1},{\"jobId\":4,\"skillId\":3},{\"jobId\":4,\"skillId\":4}],\"jobCategories\":[{\"jobId\":4,\"categoryId\":2},{\"jobId\":4,\"categoryId\":3}]}"
+				}
+			]
 		}
 	]
 }
