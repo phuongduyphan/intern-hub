@@ -5,7 +5,7 @@ const StudentController = require('../src/student/StudentController');
 
 router.get('/', StudentController.students_get);
 
-router.get('/search', StudentController.students_search_get);
+router.post('/search', StudentController.students_search);
 
 router.get('/:studentId/', StudentController.studentId_get);
 

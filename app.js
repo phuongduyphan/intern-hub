@@ -10,6 +10,7 @@ var categoriesApiRouter = require('./routes/categories-api');
 var skillsApiRouter = require('./routes/skills-api');
 var jobsApiRouter = require('./routes/jobs-api');
 var recruitersApiRouter = require('./routes/recruiters-api');
+var studentsApiRouter = require('./routes/students-api');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/api/categories', categoriesApiRouter);
 app.use('/api/skills', skillsApiRouter);
 app.use('/api/jobs', jobsApiRouter);
 app.use('/api/recruiters', recruitersApiRouter);
+app.use('/api/students', studentsApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
