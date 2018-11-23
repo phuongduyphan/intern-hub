@@ -16,16 +16,23 @@ class AppBarContainer extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+
+    if(nextProps.auth.isAuthenticated) {
+      this.setState({isAuthenticated: true});
+      this.props.history.push('/stu-profile');
+    }
+
+    if(nextProps.errors) {
+      this.setState({errors: nextProps.errors});
+    }
+  }
+
+
   componentDidMount() {
     // if(!this.props.isAuthenticated) {
     //   this.props.history.push('/login');
     // }
-  }
-
-  handleLogOut = (event) => {
-    event.preventDefault();
-    this.props.logOutUser();
-    this.props.history.push('/');
   }
 
   signButton = (e) => {
@@ -36,6 +43,13 @@ class AppBarContainer extends Component {
   loginButton = (e) => {
     e.preventDefault();
     this.props.history.push('/login');
+  }
+
+  logoutButton = e => {
+    e.preventDefault();
+    this.setState({ isAuthenticated: false });
+    this.props.logOutUser();
+    this.props.history.push('/');
   }
 
   internHubButton = (e) => {
@@ -75,6 +89,7 @@ class AppBarContainer extends Component {
           signButton={this.signButton}
           handleAddChip={this.handleAddChip}
           handleDeleteChip={this.handleDeleteChip}
+          logoutButton={this.logoutButton}
         />
       </div>
     );

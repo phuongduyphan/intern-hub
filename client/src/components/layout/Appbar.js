@@ -53,6 +53,9 @@ const styles = theme => ({
   },
   signButton: {
     marginLeft: theme.spacing.unit * 2,
+  },
+  chipInput: {
+    backgroundColor: '#81D4FA',
   }
 
 })
@@ -61,12 +64,13 @@ const AppBarComponent = (props) => {
   const { 
     classes, 
     data, 
-    handleLogOut, 
+   
     signButton, 
     loginButton, 
     internHubButton, 
     handleAddChip,
-    handleDeleteChip 
+    handleDeleteChip ,
+    logoutButton
   } = props;
 
 
@@ -87,7 +91,7 @@ const AppBarComponent = (props) => {
         <Avatar src={defaultAvatar} className={classes.avatar} />
       </Tooltip>
       <Tooltip title="Log Out">
-        <IconButton onClick={handleLogOut}>
+        <IconButton onClick={logoutButton}>
           <LogOutIcon />
         </IconButton>
       </Tooltip>
@@ -107,6 +111,9 @@ const AppBarComponent = (props) => {
           </Button>
           <SearchIcon className={classes.searchIcon} />
           <ChipInput
+            classes={{
+              chip: classes.chipInput,
+            }}
             value={data.searchInput}
             onAdd={chip => handleAddChip(chip)}
             onDelete={(chip, index) => handleDeleteChip(chip, index)}

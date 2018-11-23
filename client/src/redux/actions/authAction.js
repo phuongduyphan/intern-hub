@@ -21,13 +21,15 @@ export const registerUser = (userData) => (dispach) => {
         type: GET_ERRORS, 
         payload: tempErr,
       });
+      console.log(err);
+      
     });
 }
 
 
 // Login
 export const loginUser = (userData) => (dispach) => {
-  axios.post('', userData) 
+  axios.post('http://localhost:5000/api/users/login', userData) 
   .then(res => {
     // save to local storage
     const { token } = res.data;
