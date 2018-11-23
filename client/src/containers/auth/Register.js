@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import RegisterComponent from '../../components/auth/Register';
+import { registerUser } from '../../redux/actions/authAction';
+
+
 
 class RegisterContainer extends Component {
   
@@ -22,6 +25,19 @@ class RegisterContainer extends Component {
   
   submitButton = (e) => {
     e.preventDefault();
+    const covertRole = this.state.student ? 'student' : 'recruiter'
+    const user = {
+      displayname: `${this.state.firstName} ${this.state.lastName}`,
+      username: this.state.userName,
+      userpass: this.state.password,
+      role: covertRole,
+    };
+
+    console.log(user);
+    
+    this.props.registerUser(user);
+    this.props.history.push('/login');
+
    
   };
 
@@ -67,4 +83,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 })
 
-export default connect(mapStateToProps)(RegisterContainer);
+export default connect(mapStateToProps, {registerUser})(RegisterContainer);

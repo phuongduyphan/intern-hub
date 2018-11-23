@@ -13,7 +13,26 @@ import {Provider} from 'react-redux';
 import store from './redux/store';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import theme from './theme/index';
+import setAuthToken from './redux/utils/setAuthToken';
+import jwt_decode from 'jwt-decode';
+import {setCurrentUser, logOutUser} from './redux/actions/authAction';
 import './App.css';
+
+if(localStorage.jwtToken) {
+  // set token header auth
+  setAuthToken(localStorage.jwtToken);
+  // decode token and get user info and exp
+  const decoded = jwt_decode(localStorage.jwtToken);
+  // set user and isAuth
+  store.dispatch(setCurrentUser(decoded));
+  // check expried token
+  const currentTime = Date.now() / 1000;
+  if(decoded.exp < currentTime) {
+    store.dispatch(logOutUser());
+    window.location.href = '/login';
+  }
+}
+
 
 
 class App extends Component {
@@ -33,8 +52,6 @@ class App extends Component {
               <Route exact path="/students" component={StudentsContainer} />
               <Route exact path="/add-job" component={JobFormContainer} />
             </div>
-            <Footer />
-          </div>
           </MuiThemeProvider>
         </Router>
       </Provider>
