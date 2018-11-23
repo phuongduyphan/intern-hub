@@ -20,7 +20,7 @@ exports.skills_post = async (req, res) => {
   } catch (err) {
     throw err;
   }
-}
+};
 
 exports.skillId_get = async (req, res) => {
   try {
@@ -30,7 +30,7 @@ exports.skillId_get = async (req, res) => {
   } catch (err) {
     throw err;
   }
-}
+};
 
 exports.skillId_info_get = async (req, res) => {
   try {
@@ -40,14 +40,14 @@ exports.skillId_info_get = async (req, res) => {
   } catch (err) {
     throw err;
   }
-}
+};
 
 exports.skillId_students_get = async (req, res) => {
   try {
     const { skillId } = req.params;
-    const returnObj = await SkillService.getStudentsBySkillId(skillId);
-    res.send(returnObj);
+    const listOfStudents = await SkillService.getStudentsBySkillId(skillId);
+    res.send(listOfStudents);
   } catch (err) {
     throw err;
   }
-}
+};

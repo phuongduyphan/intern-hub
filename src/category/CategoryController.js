@@ -20,7 +20,7 @@ exports.categories_post = async (req, res) => {
   } catch (err) {
     throw err;
   }
-}
+};
 
 exports.categoryId_get = async (req, res) => {
   try {
@@ -30,7 +30,7 @@ exports.categoryId_get = async (req, res) => {
   } catch (err) {
     throw err;
   }
-}
+};
 
 exports.categoryId_info_get = async (req, res) => {
   try {
@@ -40,14 +40,14 @@ exports.categoryId_info_get = async (req, res) => {
   } catch (err) {
     throw err;
   }
-}
+};
 
 exports.categoryId_jobs_get = async (req, res) => {
   try {
     const { categoryId } = req.params;
-    const returnObj = await CategoryService.getJobsByCategoryId(categoryId);
-    res.send(returnObj);
+    const listOfJobs = await CategoryService.getJobsByCategoryId(categoryId);
+    res.send(listOfJobs);
   } catch (err) {
     throw err;
   }
-}
+};
