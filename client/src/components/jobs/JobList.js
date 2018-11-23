@@ -63,6 +63,56 @@ const JobList = (props) => {
       salary: '5.000.000 VND',
       type: 'fulltime'
     },
+    {
+      id: 0,
+      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
+      title: 'Software Engineering',
+      description: 'lz duy',
+      company: 'Microsoft',
+      place: 'District 1',
+      salary: '5.000.000 VND',
+      type: 'fulltime'
+    },
+    {
+      id: 0,
+      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
+      title: 'Software Engineering',
+      description: 'Do things',
+      company: 'Microsoft',
+      place: 'District 1',
+      salary: '5.000.000 VND',
+      type: 'fulltime'
+    },
+    {
+      id: 0,
+      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
+      title: 'Software Engineering',
+      description: 'Do things',
+      company: 'Microsoft',
+      place: 'District 1',
+      salary: '5.000.000 VND',
+      type: 'fulltime'
+    },
+    {
+      id: 0,
+      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
+      title: 'Software Engineering',
+      description: 'Do things',
+      company: 'Microsoft',
+      place: 'District 1',
+      salary: '5.000.000 VND',
+      type: 'fulltime'
+    },
+    {
+      id: 0,
+      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
+      title: 'Software Engineering',
+      description: 'Do things',
+      company: 'Microsoft',
+      place: 'District 1',
+      salary: '5.000.000 VND',
+      type: 'fulltime'
+    },
 
   ]
 

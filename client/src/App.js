@@ -5,11 +5,14 @@ import Landing from './components/main/Landing';
 import Register from './containers/auth/Register';
 import Login from './containers/auth/Login';
 import Footer from './components/layout/Footer';
-import Job from './components/jobs/Job';
-import JobList from './components/jobs/JobList';
-import JobForm from './components/addJob/JobForm';
+import JobListContainer from './containers/job/JobList';
+import JobFormContainer from './containers/job/JobForm';
+import StudentProfileContainer from './containers/student/StudentProfile';
+import StudentsContainer from './containers/student/Students';
 import {Provider} from 'react-redux';
 import store from './redux/store';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import theme from './theme/index';
 import './App.css';
 
 
@@ -18,17 +21,21 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
+          <MuiThemeProvider theme={theme}>
           <div className="App">
             <AppBarContainer />
-            <Route exact path="/" component={ Landing } />
+            <Route exact path="/" component={Landing} />
             <div className="container">
-              <Route exact path="/register" component={ Register } />
-              <Route exact path="/login" component={ Login } />
-              <Route exact path="/jobs" component= { JobList } />
-              <Route exact path="/add-jobs" component = { JobForm } />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/jobs" component= {JobListContainer} />
+              <Route exact path="/stu-profile" component={StudentProfileContainer} />
+              <Route exact path="/students" component={StudentsContainer} />
+              <Route exact path="/add-job" component={JobFormContainer} />
             </div>
             <Footer />
           </div>
+          </MuiThemeProvider>
         </Router>
       </Provider>
     );
