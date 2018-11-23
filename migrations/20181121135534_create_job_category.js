@@ -17,7 +17,7 @@ exports.up = async (knex) => {
       .inTable('categories')
       .onDelete('CASCADE');
 
-     table.primary(['job_id', 'category_id']); 
+    table.primary(['job_id', 'category_id']);
   });
 };
 

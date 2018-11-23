@@ -12,6 +12,7 @@ class Job extends Model {
   static get relationMappings() {
     const { Recruiter } = require('../recruiter/Recruiter');
     const { Category } = require('../category/Category');
+    const { Skill } = require('../skill/Skill');
 
     return {
       recruiters: {
@@ -32,6 +33,18 @@ class Job extends Model {
             to: 'jobCategory.categoryId',
           },
           to: 'categories.categoryId',
+        },
+      },
+      skills: {
+        relation: Model.ManyToManyRelation,
+        modelClass: Skill,
+        join: {
+          from: 'jobs.jobId',
+          through: {
+            from: 'jobSkill.jobId',
+            to: 'jobSkill.skillId',
+          },
+          to: 'skills.skillId',
         },
       },
     };
