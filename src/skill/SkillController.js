@@ -14,8 +14,7 @@ exports.skills_post = async (req, res) => {
     const { skillName } = req.body;
     const skillObj = { skillName };
 
-    const skillId = await SkillService.createSkill(skillObj);
-    const returnObj = { skillId };
+    const returnObj = await SkillService.createSkill(skillObj);
     res.send(returnObj);
   } catch (err) {
     throw err;

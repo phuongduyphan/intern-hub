@@ -68,3 +68,30 @@ exports.jobId_categories_get = async (req, res) => {
     throw err;
   }
 };
+
+// TODO
+exports.jobId_categories_post = async (req, res) => {
+  try {
+
+  } catch (err) {
+    throw err;
+  }
+};
+
+// TODO
+exports.jobId_skills_get = async (req, res) => {
+  try {
+
+  } catch (err) {
+    throw err;
+  }
+};
+
+// TODO
+exports.jobId_skills_post = async (req, res) => {
+  try {
+
+  } catch (err) {
+    throw err;
+  }
+};

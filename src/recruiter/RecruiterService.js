@@ -34,7 +34,7 @@ class RecruiterService {
 
   static async createRecruiterInfo(recruiter) {
     try {
-      const recvRecruiter = await Recruiter.query().insertAndFetch(recruiter);
+      const recvRecruiter = await Recruiter.query().insert(recruiter);
       return recvRecruiter;
     } catch (err) {
       throw err;
@@ -43,7 +43,8 @@ class RecruiterService {
 
   static async getRecruiterJob(recruiter) {
     try {
-      const listOfRecruiterJobs = await recruiter.$relatedQuery('jobs');
+      const recruiterInstance = await this.getRecruiter(recruiter);
+      const listOfRecruiterJobs = await recruiterInstance.$relatedQuery('jobs');
       return listOfRecruiterJobs;
     } catch (err) {
       throw err;
@@ -52,7 +53,8 @@ class RecruiterService {
 
   static async createRecruiterJob(recruiter, job) {
     try {
-      const recvJob = await recruiter.$relatedQuery('jobs').insertAndFetch(job);
+      const recruiterInstance = await this.getRecruiter(recruiter);
+      const recvJob = await recruiterInstance.$relatedQuery('jobs').insertAndFetch(job);
       return recvJob;
     } catch (err) {
       throw err;
