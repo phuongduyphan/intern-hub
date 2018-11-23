@@ -1,28 +1,28 @@
 const { Model } = require('../../config/mysql/mysql-config');
 
-class StudentSkill extends Model {
+class JobSkill extends Model {
   static get tableName() {
-    return 'studentSkill';
+    return 'jobSkill';
   }
 
   static get relationMappings() {
-    const { Student } = require('../student/Student');
+    const { Job } = require('../job/Job');
     const { Skill } = require('../skill/Skill');
 
     return {
-      students: {
+      jobs: {
         relation: Model.BelongsToOneRelation,
-        modelClass: Student,
+        modelClass: Job,
         join: {
-          from: 'studentSkill.studentId',
-          to: 'students.studentId',
+          from: 'jobSkill.jobId',
+          to: 'jobs.jobId',
         },
       },
       skills: {
         relation: Model.BelongsToOneRelation,
         modelClass: Skill,
         join: {
-          from: 'studentSkill.skillId',
+          from: 'jobSkill.skillId',
           to: 'skills.skillId',
         },
       },
@@ -31,5 +31,5 @@ class StudentSkill extends Model {
 }
 
 module.exports = {
-  StudentSkill,
+  JobSkill,
 };
