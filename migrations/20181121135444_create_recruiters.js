@@ -4,6 +4,7 @@ exports.up = async (knex) => {
     table
       .integer('recruiter_id')
       .unsigned()
+      .unique()
       .notNullable()
       .references('user_id')
       .inTable('users')

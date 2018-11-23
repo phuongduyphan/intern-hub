@@ -2,7 +2,7 @@ const { StudentService } = require('./StudentService');
 
 exports.students_get = async (req, res) => {
   try {
-    const listOfStudents = await StudentService.getListOfRecruiters();
+    const listOfStudents = await StudentService.getListOfStudents();
     res.send(listOfStudents);
   } catch (err) {
     throw err;
@@ -17,7 +17,7 @@ exports.students_search = async (req, res) => {
   } catch (err) {
     throw err;
   }
-};
+}
 
 exports.studentId_get = async (req, res) => {
   try {
