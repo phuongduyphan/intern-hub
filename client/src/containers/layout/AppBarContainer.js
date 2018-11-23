@@ -12,7 +12,14 @@ class AppBarContainer extends Component {
     this.state = {
       isAuthenticated: false,
       anchorEl: null,
+      searchInput: [],
     };
+  }
+
+  componentDidMount() {
+    // if(!this.props.isAuthenticated) {
+    //   this.props.history.push('/login');
+    // }
   }
 
   handleLogOut = (event) => {
@@ -36,9 +43,28 @@ class AppBarContainer extends Component {
     this.props.history.push('/');
   }
   
+  onSearch = e => {
+    e.preventDefault();
+  }
+
+  handleAddChip = chip => {
+    this.setState({ searchInput: [...this.state.searchInput, chip] });
+  }
+
+
+  immutableDelete (arr, index) {
+    return arr.slice(0,index).concat(arr.slice(index+1))
+  }
+
+  handleDeleteChip = (chip, index) => {
+    this.setState({
+      searchInput: this.immutableDelete(this.state.searchInput, index)
+    });     
+  }
    
   render() {
-
+    console.log(this.state.searchInput);
+    
     return (
       <div>
         <AppBar 
@@ -47,6 +73,8 @@ class AppBarContainer extends Component {
           internHubButton={this.internHubButton}
           loginButton={this.loginButton}
           signButton={this.signButton}
+          handleAddChip={this.handleAddChip}
+          handleDeleteChip={this.handleDeleteChip}
         />
       </div>
     );

@@ -7,15 +7,25 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import LogOutIcon from '@material-ui/icons/PowerSettingsNewSharp';
+
 import defaultAvatar from '../../asset/avatar/default.jpg';
+import { fade } from '@material-ui/core/styles/colorManipulator';
 import Button from '@material-ui/core/Button';
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
+import ChipInput from 'material-ui-chip-input';
+
+
+
 
 const styles = theme => ({
+
   content: {
     display: 'flex',
     justifyContent: 'center'
   },
   appBar: {
+    
     position: 'relative',
   },
   grow: {
@@ -33,20 +43,40 @@ const styles = theme => ({
     width: 60,
     height: 60,
   },
+  searchIcon: {
+    marginLeft: theme.spacing.unit * 2,
+    marginRight: theme.spacing.unit,
+  },
+
   logOutButton: {
 
   },
+  signButton: {
+    marginLeft: theme.spacing.unit * 2,
+  }
+
 })
 
 const AppBarComponent = (props) => {
-  const { classes, data, handleLogOut, signButton, loginButton, internHubButton } = props;
+  const { 
+    classes, 
+    data, 
+    handleLogOut, 
+    signButton, 
+    loginButton, 
+    internHubButton, 
+    handleAddChip,
+    handleDeleteChip 
+  } = props;
+
+
 
 
   const guestRender = (
     <div>
       <Button onClick={loginButton}> Login </Button>
      
-      <Button variant='contained' color='primary' onClick={signButton}> SignUp </Button>
+      <Button className={classes.signButton}  variant='contained' color='primary' onClick={signButton}> SignUp </Button>
     
     </div>
   );
@@ -66,20 +96,23 @@ const AppBarComponent = (props) => {
 
 
   return (
+    
     <React.Fragment>
       <AppBar  className={classes.appBar}>
         <Toolbar>
-         
           <Button 
-            variant='raised' 
-            color='secondary'
             onClick={internHubButton}
           > 
             Intern-Hub 
-            
           </Button>
-         
+          <SearchIcon className={classes.searchIcon} />
+          <ChipInput
+            value={data.searchInput}
+            onAdd={chip => handleAddChip(chip)}
+            onDelete={(chip, index) => handleDeleteChip(chip, index)}
+          />
           <div className={classes.grow}></div>
+          
           {data.isAuthenticated ? authRender : guestRender }
         </Toolbar>
       </AppBar>
@@ -88,7 +121,7 @@ const AppBarComponent = (props) => {
 }
 
 AppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
+ 
 };
 
 
