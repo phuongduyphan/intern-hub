@@ -7,6 +7,7 @@ import Login from './containers/auth/Login';
 import Footer from './components/layout/Footer';
 import Job from './components/jobs/Job';
 import JobList from './components/jobs/JobList';
+import JobForm from './components/addJob/JobForm';
 import {Provider} from 'react-redux';
 import store from './redux/store';
 import './App.css';
@@ -24,6 +25,7 @@ class App extends Component {
               <Route exact path="/register" component={ Register } />
               <Route exact path="/login" component={ Login } />
               <Route exact path="/jobs" component= { JobList } />
+              <Route exact path="/add-jobs" component = { JobForm } />
             </div>
             <Footer />
           </div>
