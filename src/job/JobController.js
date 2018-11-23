@@ -37,7 +37,7 @@ exports.jobId_info_get = async (req, res) => {
   try {
     const { jobId } = req.params;
     const jobObj = { jobId };
-    const returnObj = await JobService.getInfoByJobId(jobObj);
+    const returnObj = await JobService.getInfoByJob(jobObj);
     res.send(returnObj);
   } catch (err) {
     throw err;
@@ -62,7 +62,7 @@ exports.jobId_categories_get = async (req, res) => {
   try {
     const { jobId } = req.params;
     const jobObj = { jobId };
-    const listOfCategories = await JobService.getCategoriesByJobId(jobObj);
+    const listOfCategories = await JobService.getCategoriesByJob(jobObj);
     res.send(listOfCategories);
   } catch (err) {
     throw err;

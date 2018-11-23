@@ -1,4 +1,4 @@
-const SkillService = require('./SkillService');
+const { SkillService } = require('./SkillService');
 
 exports.skills_get = async (req, res) => {
   try {
@@ -14,7 +14,7 @@ exports.skills_post = async (req, res) => {
     const { skillName } = req.body;
     const skillObj = { skillName };
 
-    const skillId = await SkillService.addSkill(skillObj);
+    const skillId = await SkillService.createSkill(skillObj);
     const returnObj = { skillId };
     res.send(returnObj);
   } catch (err) {
@@ -22,30 +22,36 @@ exports.skills_post = async (req, res) => {
   }
 };
 
+// TODO
 exports.skillId_get = async (req, res) => {
   try {
     const { skillId } = req.params;
-    const returnObj = await SkillService.getSkillById(skillId);
+    const skillObj = { skillId };
+    const returnObj = await SkillService.getSkill(skillObj);
     res.send(returnObj);
   } catch (err) {
     throw err;
   }
 };
 
+// TODO
 exports.skillId_info_get = async (req, res) => {
   try {
     const { skillId } = req.params;
-    const returnObj = await SkillService.getInfoBySkillId(skillId);
+    const skillObj = { skillId };
+    const returnObj = await SkillService.getInfoBySkill(skillObj);
     res.send(returnObj);
   } catch (err) {
     throw err;
   }
 };
 
+// TODO
 exports.skillId_students_get = async (req, res) => {
   try {
     const { skillId } = req.params;
-    const listOfStudents = await SkillService.getStudentsBySkillId(skillId);
+    const skillObj = { skillId };
+    const listOfStudents = await SkillService.getStudentsBySkill(skillObj);
     res.send(listOfStudents);
   } catch (err) {
     throw err;
