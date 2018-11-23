@@ -4,22 +4,22 @@ exports.up = async (knex) => {
     table.increments('user_id');
 
     table
-      .string('user_display_name', 50)
+      .string('displayname', 50)
       .notNullable();
 
     table
-      .string('user_name', 50)
+      .string('username', 50)
       .notNullable();
-    table.unique('user_name');
+    table.unique('username');
 
     table
-      .string('user_pass')
+      .string('userpass')
       .notNullable();
 
     table
       .enu('role', ['admin', 'student', 'recruiter'])
       .notNullable();
-  })
+  });
 };
 
 exports.down = async (knex) => {

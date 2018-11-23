@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`categories` (
   `category_name` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`category_id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -34,14 +33,13 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `intern-hub`.`users` (
   `user_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_display_name` VARCHAR(50) NOT NULL,
-  `user_name` VARCHAR(50) NOT NULL,
-  `user_pass` VARCHAR(255) NOT NULL,
+  `displayname` VARCHAR(50) NOT NULL,
+  `username` VARCHAR(50) NOT NULL,
+  `userpass` VARCHAR(255) NOT NULL,
   `role` ENUM('admin', 'student', 'recruiter') NOT NULL,
   PRIMARY KEY (`user_id`),
-  UNIQUE INDEX `users_user_name_unique` (`user_name` ASC))
+  UNIQUE INDEX `users_username_unique` (`username` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -51,7 +49,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `intern-hub`.`recruiters` (
   `recruiter_id` INT(10) UNSIGNED NOT NULL,
   `address` VARCHAR(255) NOT NULL,
-  INDEX `recruiters_recruiter_id_foreign` (`recruiter_id` ASC),
+  UNIQUE INDEX `recruiters_recruiter_id_unique` (`recruiter_id` ASC),
   CONSTRAINT `recruiters_recruiter_id_foreign`
     FOREIGN KEY (`recruiter_id`)
     REFERENCES `intern-hub`.`users` (`user_id`)
@@ -77,7 +75,6 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`jobs` (
     REFERENCES `intern-hub`.`recruiters` (`recruiter_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -109,7 +106,6 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`skills` (
   `skill_name` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`skill_id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -134,32 +130,6 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `intern-hub`.`knex_migrations`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `intern-hub`.`knex_migrations` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(255) NULL DEFAULT NULL,
-  `batch` INT(11) NULL DEFAULT NULL,
-  `migration_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 10
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `intern-hub`.`knex_migrations_lock`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `intern-hub`.`knex_migrations_lock` (
-  `index` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `is_locked` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`index`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 2
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
 -- Table `intern-hub`.`students`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `intern-hub`.`students` (
@@ -167,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`students` (
   `student_dob` DATE NULL DEFAULT NULL,
   `student_major` VARCHAR(50) NULL DEFAULT NULL,
   `student_college` VARCHAR(255) NULL DEFAULT NULL,
-  INDEX `students_student_id_foreign` (`student_id` ASC),
+  UNIQUE INDEX `students_student_id_unique` (`student_id` ASC),
   CONSTRAINT `students_student_id_foreign`
     FOREIGN KEY (`student_id`)
     REFERENCES `intern-hub`.`users` (`user_id`)

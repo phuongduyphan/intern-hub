@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const usersApiRouter = require('./routes/users-api');
 const categoriesApiRouter = require('./routes/categories-api');
 const skillsApiRouter = require('./routes/skills-api');
 const jobsApiRouter = require('./routes/jobs-api');
@@ -31,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/users', usersApiRouter);
 app.use('/api/categories', categoriesApiRouter);
 app.use('/api/skills', skillsApiRouter);
 app.use('/api/jobs', jobsApiRouter);
