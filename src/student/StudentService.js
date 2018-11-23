@@ -1,5 +1,6 @@
 const { Student } = require('./Student');
-const { Job } = require('../job/Job');
+const { StudentSkill } = require('../studentSkill/StudentSkill');
+const { knex } = require('../../config/mysql/mysql-config');
 
 class StudentService {
   static async getListOfStudents() {
@@ -11,9 +12,25 @@ class StudentService {
     }
   }
 
-  static async searchStudentWithSkills(listOfSkills) {
+  static async searchStudentWithSkills(listOfSkillIds) {
     try {
+      const listOfRecvStudents = await StudentSkill
+        .query()
+        .select('studentId')
+        .whereIn('skillId', listOfSkillIds)
+        .groupBy('studentId')
+        .orderBy(knex.raw('count(*)'), 'desc');
 
+      const listOfStudentPromises = [];
+      listOfRecvStudents.forEach((element) => {
+        const student = new Student();
+        student.studentId = element.studentId;
+        listOfStudentPromises.push(this.getStudent(student));
+      });
+
+      const listOfStudents = await Promise.all(listOfStudentPromises);
+
+      return listOfStudents;
     } catch (err) {
       throw err;
     }

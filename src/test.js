@@ -5,6 +5,9 @@ const { Skill } = require('./skill/Skill');
 const { Job } = require('./job/Job');
 const { Category } = require('./category/Category');
 const { Model } = require('../config/mysql/mysql-config');
+const { StudentSkill } = require('./studentSkill/StudentSkill');
+const { knex } = require('../config/mysql/mysql-config');
+const { StudentService } = require('./student/StudentService');
 
 async function runTest() {
   // const students = await Student.query().where({studentId: 1});
@@ -16,12 +19,10 @@ async function runTest() {
   // const recruiters = await Recruiter.query().where({recruiterId: 2});
   // const recruiter = recruiters[0];
   // console.log(recruiter);
-  // console.log(await recruiter.$relatedQuery('jobs'));
+  // console.log(await recruiter.$relatedQuery('jobs'));B
 
-  const job = new Job();
-  job.jobId = 1;
-  const recvJob = await job.$query().patchAndFetch({ isValidated: 1 });
-  console.log(recvJob);
+  const result = await StudentService.searchStudentWithSkills([1, 2, 3]);
+  console.log(result);
 };
 
 runTest().then(() => { });
