@@ -1,4 +1,4 @@
-const JobService = require('./JobService');
+const { JobService } = require('./JobService');
 
 exports.jobs_get = async (req, res) => {
   try {
@@ -9,6 +9,7 @@ exports.jobs_get = async (req, res) => {
   }
 };
 
+// TODO
 exports.jobs_search_get = async (req, res) => {
   try {
     const { listOfCategories, listOfSkills } = req.body;
@@ -23,23 +24,27 @@ exports.jobs_search_get = async (req, res) => {
 exports.jobId_get = async (req, res) => {
   try {
     const { jobId } = req.params;
-    const returnObj = await JobService.getJobById(jobId);
+    const jobObj = { jobId };
+    const returnObj = await JobService.getJob(jobObj);
     res.send(returnObj);
   } catch (err) {
     throw err;
   }
 };
 
+// TODO
 exports.jobId_info_get = async (req, res) => {
   try {
     const { jobId } = req.params;
-    const returnObj = await JobService.getInfoByJobId(jobId);
+    const jobObj = { jobId };
+    const returnObj = await JobService.getInfoByJobId(jobObj);
     res.send(returnObj);
   } catch (err) {
     throw err;
   }
 };
 
+// TODO
 exports.jobId_status_put = async (req, res) => {
   try {
     // TODO
@@ -52,10 +57,12 @@ exports.jobId_status_put = async (req, res) => {
   }
 };
 
+// TODO
 exports.jobId_categories_get = async (req, res) => {
   try {
     const { jobId } = req.params;
-    const listOfCategories = await JobService.getCategoriesByJobId(jobId);
+    const jobObj = { jobId };
+    const listOfCategories = await JobService.getCategoriesByJobId(jobObj);
     res.send(listOfCategories);
   } catch (err) {
     throw err;
