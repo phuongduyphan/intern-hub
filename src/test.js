@@ -18,9 +18,10 @@ async function runTest() {
   // console.log(recruiter);
   // console.log(await recruiter.$relatedQuery('jobs'));
 
-  const jobs = await Job.query().where({jobId: 1});
-  const job = jobs[0];
-  console.log(await job.$relatedQuery('categories'));
+  const job = new Job();
+  job.jobId = 1;
+  const recvJob = await job.$query().patchAndFetch({ isValidated: 1 });
+  console.log(recvJob);
 };
 
-runTest().then(() => {});
+runTest().then(() => { });
