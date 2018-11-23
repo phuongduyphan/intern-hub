@@ -31,10 +31,9 @@ exports.recruiterId_info_get = async (req, res) => {
   }
 };
 
-exports.recruiterId_info_post = async (req, res) => {
+exports.recruiters_post = async (req, res) => {
   try {
-    const { recruiterId } = req.params;
-    const { address } = req.body;
+    const { recruiterId, address } = req.body;
     const recruiterObj = { recruiterId, address };
     const returnObj = await RecruiterService.createRecruiterInfo(recruiterObj);
     res.send(returnObj);
@@ -42,7 +41,6 @@ exports.recruiterId_info_post = async (req, res) => {
     throw err;
   }
 };
-
 
 exports.recruiterId_jobs_get = async (req, res) => {
   try {

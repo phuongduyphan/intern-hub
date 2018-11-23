@@ -40,7 +40,7 @@ exports.studentId_info_get = async (req, res) => {
 };
 
 //TODO
-exports.studentId_info_post = async (req, res) => {
+exports.students_post = async (req, res) => {
   try {
 
   } catch (err) {
