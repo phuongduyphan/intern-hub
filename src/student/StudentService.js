@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const { Student } = require('./Student');
 const { StudentSkill } = require('../studentSkill/StudentSkill');
 const { knex } = require('../../config/mysql/mysql-config');
@@ -12,24 +14,27 @@ class StudentService {
     }
   }
 
-  static async searchStudentWithSkills(listOfSkillIds) {
+  static async searchStudentWithSkills(listOfSkills) {
     try {
       const listOfRecvStudents = await StudentSkill
         .query()
+        .join('skills', (join) => {
+          join.on('studentSkill.skillId', '=', 'skills.skillId');
+        })
         .select('studentId')
-        .whereIn('skillId', listOfSkillIds)
+        .whereIn('skillName', listOfSkills)
         .groupBy('studentId')
         .orderBy(knex.raw('count(*)'), 'desc');
 
-      const listOfStudentPromises = [];
+      const listOfStudentIds = [];
       listOfRecvStudents.forEach((element) => {
-        const student = new Student();
-        student.studentId = element.studentId;
-        listOfStudentPromises.push(this.getStudent(student));
+        listOfStudentIds.push(element.studentId);
       });
 
-      const listOfStudents = await Promise.all(listOfStudentPromises);
-
+      const listOfInorderedStudents = await Student.query().eager('[skills]').whereIn('studentId', listOfStudentIds);
+      const listOfStudents = _.sortBy(listOfInorderedStudents, (item) => {
+        return listOfStudentIds.indexOf(item.studentId);
+      });
       return listOfStudents;
     } catch (err) {
       throw err;
