@@ -5,7 +5,7 @@ const JobController = require('../src/job/JobController');
 
 router.get('/', JobController.jobs_get);
 
-router.get('/search', JobController.jobs_search_get);
+router.post('/search', JobController.jobs_search);
 
 router.get('/:jobId', JobController.jobId_get);
 
