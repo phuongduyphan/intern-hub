@@ -55,7 +55,7 @@ exports.studentId_info_put = async (req, res) => {
         studentSkills: listOfSkillIds,
       },
     };
-    console.log('user', user);
+    // console.log('user', user);
     
     await StudentService.updateStudentInfo(user);
     res.sendStatus(200);

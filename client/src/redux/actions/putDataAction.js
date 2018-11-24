@@ -1,4 +1,4 @@
-import { PUT_STUDENT, GET_ERRORS } from "./type";
+import { GET_ERRORS, ON_PUT_STUDENT_SUCCESS } from "./type";
 import axios from 'axios';
 
 
@@ -8,7 +8,7 @@ export const updateStudentProfile = (userId, studentProfile) => (dispach) => {
     .then(res => {
       console.log(res);
       dispach({
-        type: PUT_STUDENT,
+        type: ON_PUT_STUDENT_SUCCESS,
         payload: {
           putStudentSuccess: true,
         },
@@ -24,4 +24,3 @@ export const updateStudentProfile = (userId, studentProfile) => (dispach) => {
       });
     });
 }
-    
