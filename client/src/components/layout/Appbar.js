@@ -66,13 +66,13 @@ const styles = theme => ({
 })
 
 const AppBarComponent = (props) => {
-  const { 
-    classes, 
-    data, 
+  const {
+    classes,
+    data,
     user,
-    signButton, 
-    loginButton, 
-    internHubButton, 
+    signButton,
+    loginButton,
+    internHubButton,
     handleAddChip,
     handleDeleteChip ,
     logoutButton,
@@ -83,9 +83,9 @@ const AppBarComponent = (props) => {
   const guestRender = (
     <div>
       <Button onClick={loginButton} className="accountButton" variant='contained' color='secondary'> Login </Button>
-     
+
       <Button className={classes.signButton +" accountButton"}  variant='contained' color='primary' onClick={signButton}> SignUp </Button>
-    
+
     </div>
   );
 
@@ -101,11 +101,11 @@ const AppBarComponent = (props) => {
       </Tooltip>
     </div>
   );
-  
+
   const RecruitAppButton =(
     <>
     <AppButton buttonLabel="Students" link="/students" />
-    <AppButton buttonLabel="Post Jobs" link="/" />
+    <AppButton buttonLabel="Post Jobs" link="/jobs" />
     </>
   )
   const StudentAppButton =(
@@ -114,7 +114,7 @@ const AppBarComponent = (props) => {
     </>
   )
 
-  
+
   const RecruitAppButtonReponsive=(
     <>
       <li>
@@ -135,7 +135,7 @@ const AppBarComponent = (props) => {
         All Jobs
       </a>
     </li>
-    
+
   )
   const GuestRes=(
     <>
@@ -154,14 +154,14 @@ const AppBarComponent = (props) => {
   console.log(data.user.role);
 
   return (
-    
+
     <React.Fragment>
       <AppBar  className={classes.appBar +' myNavbar'}>
         <Toolbar>
           <div className ='logo'
             onClick={internHubButton}
-          > 
-            Intern-Hub 
+          >
+            Intern-Hub
           </div>
           <MediaQuery query="(min-device-width: 600px)">
           <div className='appButtonGroup'>
@@ -192,7 +192,7 @@ const AppBarComponent = (props) => {
 }
 
 AppBar.propTypes = {
- 
+
 };
 
 

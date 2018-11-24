@@ -24,12 +24,6 @@ class JobForm extends Component {
   }
 
   componentDidMount() {
-    // const res1 = await JobApi.getSkillList();
-    // const res2 = await JobApi.getCategoryList();
-    //
-    // console.log(res1);
-    // console.log(res2);
-    // this.setState()
 
     JobApi.getSkillList()
       .then(res => {
@@ -65,7 +59,7 @@ class JobForm extends Component {
 
     console.log(job);
     this.props.postJob(job);
-
+    this.props.history.push('/jobs');
   }
 
   onChangeText = (e) => {

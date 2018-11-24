@@ -46,9 +46,10 @@ class StudentProfileContainer extends Component {
     };
 
     console.log('studentP',recruiterProfile);
-    
+
 
     this.props.updateRecruiterProfile(userId, recruiterProfile);
+    this.props.history.push("/add-job");
   };
 
 

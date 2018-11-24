@@ -42,14 +42,6 @@ class AppBarContainer extends Component {
   }
 
 
-  componentDidMount() {
-    if(this.props.auth.user.role === 'student') {
-      this.props.history.push('/stu-profile');
-    }
-    if(this.props.auth.user.role === 'recruiter') {
-      this.props.history.push('/recr-profile');
-    }
-  }
 
   signButton = (e) => {
     e.preventDefault();
@@ -76,7 +68,7 @@ class AppBarContainer extends Component {
     e.preventDefault();
   }
 
- 
+
 
   render() {
     const isAuthenticated = this.props.auth.isAuthenticated;

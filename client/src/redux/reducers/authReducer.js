@@ -1,4 +1,4 @@
-import { CREATE_ACCOUNT_SUCCESS, SET_CURRENT_USER } from "../actions/type";
+import { CREATE_ACCOUNT_SUCCESS, SET_CURRENT_USER, SET_UPDATED_STATUS } from "../actions/type";
 import isEmpty from '../utils/isEmpty';
 
 const initialState = {
@@ -16,6 +16,14 @@ export default function(state = initialState, action) {
           ...state,
           isAuthenticated: !isEmpty(action.payload),
           user: action.payload,
+        }
+      case SET_UPDATED_STATUS:
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            updatedStatus: action.payload.updatedStatus
+          }
         }
       default:
         return state;
