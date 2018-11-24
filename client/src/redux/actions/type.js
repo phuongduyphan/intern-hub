@@ -1,6 +1,6 @@
 // Authenticate
-export const GET_ERRORS = 'GET_ERRORS'; 
-export const CREATE_ACCOUNT_SUCCESS = 'CREATE_ACCOUNT_SUCCESS'; 
+export const GET_ERRORS = 'GET_ERRORS';
+export const CREATE_ACCOUNT_SUCCESS = 'CREATE_ACCOUNT_SUCCESS';
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 
 // GET DATA

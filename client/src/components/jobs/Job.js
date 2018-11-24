@@ -10,11 +10,12 @@ import Work from '@material-ui/icons/Work';
 import Place from '@material-ui/icons/Place';
 import Money from '@material-ui/icons/AttachMoney';
 import Heart from '@material-ui/icons/FavoriteBorder';
+import DateRange from '@material-ui/icons/DateRange';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    maxWidth: 600,
+    maxWidth: 700,
     padding: theme.spacing.unit * 2,
     margin: 5
   },
@@ -76,10 +77,16 @@ const Job = (props) => {
                     <Grid item><Typography variant="body1" color="textSecondary">{job.place}</Typography></Grid>
                   </Grid>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={3}>
                   <Grid container>
                     <Grid item><Money className={classes.icon}/></Grid>
                     <Grid item><Typography variant="body1" color="textSecondary">{job.salary}</Typography></Grid>
+                  </Grid>
+                </Grid>
+                <Grid item xs={3}>
+                  <Grid container>
+                    <Grid item><DateRange className={classes.icon}/></Grid>
+                    <Grid item><Typography variant="body1" color="textSecondary">{job.duration}</Typography></Grid>
                   </Grid>
                 </Grid>
               </Grid>

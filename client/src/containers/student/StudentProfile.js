@@ -5,7 +5,7 @@ import StudentProfile from '../../components/student/StudentProfile';
 import { withRouter } from 'react-router-dom';
 
 class StudentProfileContainer extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +22,7 @@ class StudentProfileContainer extends Component {
 
   componentDidMount() {
     if(!this.props.auth.isAuthenticate) {
-      
+
     }
   }
 
@@ -33,19 +33,16 @@ class StudentProfileContainer extends Component {
 
   saveChangeButton = (e) => {
     e.preventDefault();
-    const student = {
-      
-    }
-    
   }
 
 
   render() {
-    
+
     return (
       <div>
-        <StudentProfile 
-          data={this.state} 
+        <StudentProfile
+          data={this.state}
+          onChangeText = {this.onChangeText}
           saveChangeButton={this.saveChangeButton}
       />
       </div>

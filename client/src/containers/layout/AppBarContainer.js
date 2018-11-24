@@ -61,7 +61,7 @@ class AppBarContainer extends Component {
     e.preventDefault();
     this.props.history.push('/');
   }
-  
+
   onSearch = e => {
     e.preventDefault();
   }
@@ -78,15 +78,17 @@ class AppBarContainer extends Component {
   handleDeleteChip = (chip, index) => {
     this.setState({
       searchInput: this.immutableDelete(this.state.searchInput, index)
-    });     
+    });
   }
-   
+
   render() {
+    console.log(this.state.searchInput);
+
     return (
       <div>
-        <AppBar 
-          data={this.state} 
-          handleLogOut={this.handleLogOut} 
+        <AppBar
+          data={this.state}
+          handleLogOut={this.handleLogOut}
           internHubButton={this.internHubButton}
           loginButton={this.loginButton}
           signButton={this.signButton}
@@ -101,7 +103,7 @@ class AppBarContainer extends Component {
 }
 
 AppBarContainer.propTypes = {
-  auth: PropTypes.object.isRequired,  
+  auth: PropTypes.object.isRequired,
   logOutUser: PropTypes.func.isRequired,
 };
 

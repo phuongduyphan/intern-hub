@@ -4,8 +4,9 @@ import AppBarContainer from './containers/layout/AppBarContainer';
 import Landing from './components/main/Landing';
 import Register from './containers/auth/Register';
 import Login from './containers/auth/Login';
-import Footer from './containers/layout/Footer';
-import JobList from './components/jobs/JobList';
+import Footer from './components/layout/Footer';
+import JobListContainer from './containers/job/JobList';
+import JobFormContainer from './containers/job/JobForm';
 import StudentProfileContainer from './containers/student/StudentProfile';
 import StudentsContainer from './containers/student/Students';
 import {Provider} from 'react-redux';
@@ -34,23 +35,22 @@ if(localStorage.jwtToken) {
 
 
 
-class App extends Component {   
+class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
           <MuiThemeProvider theme={theme}>
-            <div className="App">
-              <AppBarContainer />
-              <Route exact path="/" component={Landing} />
-              <div className="container">
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/jobs" component= {JobList} />
-                <Route exact path="/stu-profile" component={StudentProfileContainer} />
-                <Route exact path="/students" component={StudentsContainer} />
-              </div>
-              <Footer />
+          <div className="App">
+            <AppBarContainer />
+            <Route exact path="/" component={Landing} />
+            <div className="container">
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/jobs" component= {JobListContainer} />
+              <Route exact path="/stu-profile" component={StudentProfileContainer} />
+              <Route exact path="/students" component={StudentsContainer} />
+              <Route exact path="/add-job" component={JobFormContainer} />
             </div>
           </MuiThemeProvider>
         </Router>
