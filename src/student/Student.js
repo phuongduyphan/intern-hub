@@ -5,6 +5,10 @@ class Student extends Model {
     return 'students';
   }
 
+  static get idColumn() {
+    return 'studentId';
+  }
+
   static get relationMappings() {
     const { User } = require('../user/User');
     const { Skill } = require('../skill/Skill');

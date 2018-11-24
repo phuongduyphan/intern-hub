@@ -51,6 +51,15 @@ class StudentService {
       throw err;
     }
   }
+
+  static async createStudentInfo(student) {
+    try {
+      const recvStudent = await Student.query().insertAndFetch(student);
+      return recvStudent;
+    } catch (err) {
+      throw err;
+    }
+  }
 }
 
 module.exports = {

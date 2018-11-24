@@ -15,8 +15,9 @@ exports.up = async (knex) => {
     table.string('student_major', 50);
 
     table.string('student_college');
- 
-  })
+
+    table.text('student_desc');
+  });
 };
 
 exports.down = async (knex) => {

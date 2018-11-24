@@ -5,6 +5,10 @@ class Recruiter extends Model {
     return 'recruiters';
   }
 
+  static get idColumn() {
+    return 'recruiterId';
+  }
+
   static get relationMappings() {
     const { User } = require('../user/User');
     const { Job } = require('../job/Job');

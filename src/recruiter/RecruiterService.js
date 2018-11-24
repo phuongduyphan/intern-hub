@@ -37,7 +37,7 @@ class RecruiterService {
 
   static async createRecruiterInfo(recruiter) {
     try {
-      const recvRecruiter = await Recruiter.query().insert(recruiter);
+      const recvRecruiter = await Recruiter.query().insertAndFetch(recruiter);
       return recvRecruiter;
     } catch (err) {
       throw err;
