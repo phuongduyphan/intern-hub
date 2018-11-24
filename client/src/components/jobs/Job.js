@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import ButtonBase from '@material-ui/core/ButtonBase';
+import Chip from '@material-ui/core/Chip';
 import Work from '@material-ui/icons/Work';
 import Place from '@material-ui/icons/Place';
 import Money from '@material-ui/icons/AttachMoney';
@@ -40,6 +41,9 @@ const styles = theme => ({
   apply: {
     position: 'relative',
     top: '10%',
+  },
+  chip: {
+    marginRight: 5,
   }
 });
 
@@ -58,9 +62,14 @@ const Job = (props) => {
           <Grid item xs container direction="column" spacing={16}>
             <Grid item xs>
               <Typography gutterBottom variant="h6">
-                {job.title}
+                {job.jobTitle}
               </Typography>
-              <Typography gutterBottom variant="body1" color="textSecondary">{job.description}</Typography>
+              <Typography gutterBottom variant="body1" color="textSecondary">{job.jobDesc}</Typography>
+              <div>
+                {
+                  job.skills.map((skill, index) => <Chip key={index} className={classes.chip} label={skill.skillName} color="primary" variant="outlined"/>)
+                }
+              </div>
             </Grid>
 
             <Grid item>
@@ -68,13 +77,13 @@ const Job = (props) => {
                 <Grid item xs={3}>
                   <Grid container>
                     <Grid item><Work className={classes.icon}/></Grid>
-                    <Grid item><Typography variant="body1" color="textSecondary">{job.company}</Typography></Grid>
+                    <Grid item><Typography variant="body1" color="textSecondary">{job.recruiter}</Typography></Grid>
                   </Grid>
                 </Grid>
                 <Grid item xs={3}>
                   <Grid container>
                     <Grid item><Place className={classes.icon}/></Grid>
-                    <Grid item><Typography variant="body1" color="textSecondary">{job.place}</Typography></Grid>
+                    <Grid item><Typography variant="body1" color="textSecondary">{job.location}</Typography></Grid>
                   </Grid>
                 </Grid>
                 <Grid item xs={3}>

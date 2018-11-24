@@ -85,8 +85,7 @@ const JobForm = (props) => {
       <div className={classes.root}>
         <Grid container className={classes.grid} justify='center' alignItems='center'>
           <Paper className={classes.paper}>
-            <Typography className={classes.typo} variant='display1' color='primary'> Update Student Profile </Typography>
-            <Typography className={classes.seconTypo} variant='caption' color='textSecondary' align='right'> * Please update your info to get your future intern ! </Typography>
+            <Typography className={classes.typo} variant='display1' color='primary'> Post Your Job </Typography>
             <div className={classes.textRow}>
               <FormControl className={classes.textField}>
                   <InputLabel>Job Title</InputLabel>

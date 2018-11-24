@@ -1,4 +1,4 @@
-import { GET_STUDENT_LIST, GET_JOB_LIST, GET_JOB_LIST_BY_KEYWORD } from "./type";
+import { GET_STUDENT_LIST, GET_JOB_LIST, GET_ERRORS } from "./type";
 import axios from 'axios';
 
 
@@ -32,28 +32,6 @@ export const getJobList = () => (dispach) => {
       },
     });
   })
-  .catch(err => {
-    let tempErr = Object.values(err.response.data.errors);
-    dispach({
-      type: GET_ERRORS,
-      payload: tempErr,
-    });
-  })
-}
-
-export const getJobListByKeyword = () => (dispach) => {
-  axios
-    .post('localhost:3000/api/jobs/search', {
-      "listOfKeywords": ["frontend", "BA", "java", "MySQL"]
-    })
-    .then(res => {
-      dispach({
-        type: GET_JOB_LIST_BY_KEYWORD,
-        payload: {
-          jobList: res,
-        },
-      });
-    })
   .catch(err => {
     let tempErr = Object.values(err.response.data.errors);
     dispach({

@@ -1,9 +1,9 @@
 import { POST_JOB_SUCCEED, GET_ERRORS } from './type';
 import axios from 'axios';
 
-export const postJob = (jobData) => (dispach) => {
+export const postJob = (jobData) => (dispatch) => {
   axios
-    .post('localhost:5000/api/recruiters/jobs', jobData)
+    .post('http://localhost:5000/api/recruiters/jobs', jobData)
     .then(res => {
       dispatch({
         type: POST_JOB_SUCCEED,
@@ -15,7 +15,7 @@ export const postJob = (jobData) => (dispach) => {
     .catch(err => {
       // let tempErr = Object.values(err.response.data.errors);
       let tempErr = null;
-      dispach({
+      dispatch({
         type: GET_ERRORS,
         payload: tempErr,
       });

@@ -1,9 +1,9 @@
-import {  ON_REGISTER_SUCCESS, ON_PUT_STUDENT_SUCCESS } from "../actions/type";
+import {  ON_REGISTER_SUCCESS, ON_PUT_STUDENT_SUCCESS, POST_JOB_SUCCEED } from "../actions/type";
 
 const initialState = {
    registerSuccess: false,
    putStudentSuccess: false,
-   
+   jobCreated: false,
 };
 
 export default function(state = initialState, action) {
@@ -12,6 +12,11 @@ export default function(state = initialState, action) {
         return {
           ...state,
           putStudentSuccess: action.payload,
+        };
+      case POST_JOB_SUCCEED:
+        return {
+          ...state,
+          jobCreated: action.payload
         };
       default:
         return state;
