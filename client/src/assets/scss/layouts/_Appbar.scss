@@ -1,5 +1,6 @@
 .myNavBar{
     padding: 2px 1rem!important;
+   
     .navbar-brand{
         font-size: 1.25rem;
     }
@@ -36,4 +37,9 @@
         }
       }
       
+}
+.logo{
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
 }

@@ -11,7 +11,7 @@ class UserButton extends Component {
                     <rect className="shape" height={recHeight} width={recWidth} />
                 </svg>
                 <div className="btnText">
-                    <a href="/">
+                    <a href={this.props.link}>
                         <span className="spot" /> {this.props.buttonLabel}
                     </a>
                 </div>

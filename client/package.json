@@ -12,6 +12,7 @@
     "popper.js": "^1.14.5",
     "react": "^16.6.3",
     "react-background-slideshow": "^1.0.4",
+    "material-ui-chip-input": "^1.0.0-beta.8",
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",
     "react-responsive": "^5.0.0",

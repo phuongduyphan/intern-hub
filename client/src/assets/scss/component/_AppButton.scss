@@ -21,30 +21,24 @@
       .shape {
         stroke-width: 6px;
         fill: transparent;
-        stroke: #009FFD;
+        stroke: $primary-color;
         stroke-dasharray: 85 400;
         stroke-dashoffset: -140;
         transition: 1s all ease;
       }
       .btnText {
-        margin-top: -35px;
+        margin-top: -32px;
         text-align: center;
         a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
             font-size: 1rem;
 
           }
       }
       
       &:hover {
-        background-color: white;
-        .btnText {
-            a{
-                color: black;
-            }
-        }
+        
         .shape{
         stroke-dasharray: 50 0;
         stroke-width: 3px;
@@ -53,6 +47,11 @@
       }
     }
   }
+
+  .appButtonGroup{
+    margin-left: 20px;
+  }
+
   
   
   

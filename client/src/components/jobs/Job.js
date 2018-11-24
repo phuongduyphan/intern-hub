@@ -10,13 +10,13 @@ import Work from '@material-ui/icons/Work';
 import Place from '@material-ui/icons/Place';
 import Money from '@material-ui/icons/AttachMoney';
 import Heart from '@material-ui/icons/FavoriteBorder';
+import DateRange from '@material-ui/icons/DateRange';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    maxWidth: 600,
     padding: theme.spacing.unit * 2,
-    margin: 5
+    margin: 5,
   },
   image: {
     width: 80,
@@ -31,7 +31,7 @@ const styles = theme => ({
   icon: {
     color: '#595854',
     marginRight: 2,
-    fontSize: 18,
+    
   },
   type: {
     color: '#202bd6',
@@ -39,6 +39,10 @@ const styles = theme => ({
   apply: {
     position: 'relative',
     top: '10%',
+  },
+  itemList:{
+    textAlign:'center',
+    margin:'auto'
   }
 });
 
@@ -48,12 +52,12 @@ const Job = (props) => {
   return (
     <Paper className={classes.root}>
       <Grid container spacing={16}>
-        <Grid item >
+        <Grid item xs={2} >
           <ButtonBase className={classes.image}>
             <img className={classes.img} alt="complex" src={job.logo} />
           </ButtonBase>
         </Grid>
-        <Grid item xs={10} sm container>
+        <Grid item xs={10}  container>
           <Grid item xs container direction="column" spacing={16}>
             <Grid item xs>
               <Typography gutterBottom variant="h6">
@@ -62,24 +66,38 @@ const Job = (props) => {
               <Typography gutterBottom variant="body1" color="textSecondary">{job.description}</Typography>
             </Grid>
 
-            <Grid item>
+            <Grid item >
               <Grid container>
                 <Grid item xs={3}>
-                  <Grid container>
-                    <Grid item><Work className={classes.icon}/></Grid>
-                    <Grid item><Typography variant="body1" color="textSecondary">{job.company}</Typography></Grid>
+                  <Grid container >
+                    <div className={classes.itemList}>
+                    <Work className={classes.icon}/>
+                    <Typography variant="body1" color="textSecondary" >{job.company}</Typography>
+                    </div>
                   </Grid>
                 </Grid>
                 <Grid item xs={3}>
                   <Grid container>
-                    <Grid item><Place className={classes.icon}/></Grid>
-                    <Grid item><Typography variant="body1" color="textSecondary">{job.place}</Typography></Grid>
+                  <div className={classes.itemList}>
+                    <Place className={classes.icon}/>
+                    <Typography variant="body1" color="textSecondary">{job.place}</Typography>
+                    </div>
                   </Grid>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={3}>
                   <Grid container>
-                    <Grid item><Money className={classes.icon}/></Grid>
-                    <Grid item><Typography variant="body1" color="textSecondary">{job.salary}</Typography></Grid>
+                  <div className={classes.itemList}>
+                    <Money className={classes.icon}/>
+                    <Typography variant="body1" color="textSecondary">{job.salary}</Typography>
+                    </div>
+                  </Grid>
+                </Grid>
+                <Grid item xs={3}>
+                  <Grid container>
+                  <div className={classes.itemList}>
+                    <DateRange className={classes.icon}/>
+                    <Typography variant="body1" color="textSecondary">{job.duration}</Typography>
+                    </div>
                   </Grid>
                 </Grid>
               </Grid>
@@ -87,8 +105,8 @@ const Job = (props) => {
           </Grid>
           <Grid item className={classes.apply}>
             <Grid container>
-              <Grid item><Heart className={classes.icon}/></Grid>
-              <Grid item><Typography className={classes.type} variant="button">{job.type}</Typography></Grid>
+              <Heart className={classes.icon}/>
+              <Typography className={classes.type} variant="button">{job.type}</Typography>
             </Grid>
             <Button size="large" variant="contained" color="secondary" className={classes.button}>
               Apply
