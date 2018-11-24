@@ -9,10 +9,10 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case GET_STUDENT_LIST:
-    return {
-      ...state,
-      listStudent: action.payload,
-    }
+      return {
+        ...state,
+        listStudent: action.payload,
+      }
     case GET_JOB_LIST:
       return {
         ...state,

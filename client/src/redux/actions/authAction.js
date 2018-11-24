@@ -15,21 +15,20 @@ export const registerUser = (userData) => (dispach) => {
       });
     })
     .catch(err => {
-      // let tempErr = Object.values(err.response.data.errors);    
+      // let tempErr = Object.values(err.response.data.errors);
       let tempErr = null;
       dispach({
-        type: GET_ERRORS, 
+        type: GET_ERRORS,
         payload: tempErr,
       });
       console.log(err);
-      
     });
 }
 
 
 // Login
 export const loginUser = (userData) => (dispach) => {
-  axios.post('http://localhost:5000/api/users/login', userData) 
+  axios.post('http://localhost:5000/api/users/login', userData)
   .then(res => {
     // save to local storage
     const { token } = res.data;
@@ -37,13 +36,13 @@ export const loginUser = (userData) => (dispach) => {
     setAuthToken(token);
     const decoded = jwt_decode(token);
     console.log('decode', decoded);
-    
+
     // set current user
     dispach(setCurrentUser(decoded));
   })
   .catch(err => {
     console.log(err);
-    let tempErr = Object.values(err.response.data.errors);    
+    let tempErr = Object.values(err.response.data.errors);
     dispach({
       type: GET_ERRORS,
       payload: tempErr,
