@@ -63,45 +63,27 @@ const StudentProfile = (props) => {
             <Typography className={classes.seconTypo} variant='caption' color='textSecondary' align='right'> * Please update your info to get your future intern ! </Typography>
             <div className={classes.textRow}>
               <FormControl className={classes.textField}>
-                  <InputLabel>First Name</InputLabel>
+                  <InputLabel>Email</InputLabel>
                     <Input
                       autoFocus
-                      name='firstName'
-                      value={data.firstName}
+                      name='email'
+                      value={data.email}
                       onChange={onChangeText}
                     />
               </FormControl>
 
               <FormControl className={classes.textField}>
-                  <InputLabel>Last Name</InputLabel>
+                  <InputLabel>Phone</InputLabel>
                     <Input
                       autoFocus
-                      name='lastName'
-                      value={data.lastName}
+                      name='phone'
+                      value={data.phone}
                       onChange={onChangeText}
                     />
               </FormControl>
             </div>
            
-            <FormControl className={classes.textField}>
-                <InputLabel>Email</InputLabel>
-                  <Input
-                    autoFocus
-                    type='email'
-                    name='email'
-                    value={data.email}
-                    onChange={onChangeText}
-                  />
-            </FormControl>
-            <FormControl className={classes.textField}>
-                <InputLabel>Phone</InputLabel>
-                  <Input
-                    autoFocus
-                    name='phone'
-                    value={data.phone}
-                    onChange={onChangeText}
-                  />
-            </FormControl>
+            
 
             <FormControl className={classes.textField}>
                 <InputLabel>College</InputLabel>
@@ -109,6 +91,16 @@ const StudentProfile = (props) => {
                     autoFocus
                     name='college'
                     value={data.college}
+                    onChange={onChangeText}
+                  />
+            </FormControl>
+
+            <FormControl className={classes.textField}>
+                <InputLabel>Your Description</InputLabel>
+                  <Input
+                    autoFocus
+                    name='studentDesc'
+                    value={data.studentDesc}
                     onChange={onChangeText}
                   />
             </FormControl>
