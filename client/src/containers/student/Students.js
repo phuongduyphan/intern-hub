@@ -4,52 +4,22 @@ import {connect} from 'react-redux';
 import Student from '../../components/student/Students';
 import { withRouter } from 'react-router-dom';
 import defaultAvatar from '../../asset/avatar/default.jpg';
-import SearchInput from '../../components/addJob/SearchInput';
-
+import { getStudentList } from '../../redux/actions/getDataAction';
+import SearchInput from '../../components/addJob/SearchInput'
 
 class StudentsContainer extends Component {
   
   constructor(props) {
     super(props);
-    this.state = {
-      student: [{
-        name: 'Thanh Tung',
-        avatar: defaultAvatar,
-        phone: '01666725437',
-        email: 'tungtoitiu@gmail.com',
-        college: 'International University',
-        major: 'Information Technology',
-        skill: ['NodeJs', 'ReactJs'],
-        errors: {},
-      },
-      {
-        name: 'Thanh Tung XL',
-        avatar: defaultAvatar,
-        phone: '01666725437',
-        email: 'tungtoitiu@gmail.com',
-        college: 'International University',
-        major: 'Information Technology',
-        skill: ['NodeJs', 'ReactJs'],
-        errors: {},
-      },
-      {
-        name: 'Thanh Tung XL',
-        avatar: defaultAvatar,
-        phone: '01666725437',
-        email: 'tungtoitiu@gmail.com',
-        college: 'International University',
-        major: 'Information Technology',
-        skill: ['NodeJs', 'ReactJs'],
-        errors: {},
-      }],
-    };
+   
+    
   }
 
   componentDidMount() {
-    if(!this.props.auth.isAuthenticate) {
-      
-    }
+    this.props.getStudentList();
   }
+
+  
 
   onChangeText = (e) => {
     e.preventDefault();
@@ -63,16 +33,14 @@ class StudentsContainer extends Component {
 
 
   render() {
-    const studentList = this.state.student;
-   console.log(studentList);
-    
+    const studentList =  this.props.data.studentList;
     return (
       <div className="myStudents">
         <h1>All Students</h1>
         <SearchInput />
          {  
           studentList.map((student) => (
-            <Student student={student} />
+            <Student avatar={defaultAvatar} student={student} />
          ))}
       </div>
     );
@@ -86,7 +54,8 @@ StudentsContainer.propTypes = {
 
 
 const mapStateToProps = (state) => ({
-  auth: state.auth,
-})
+  data: state.data, 
+  name: state.auth.user.username,
+});
 
-export default connect(mapStateToProps)(withRouter(StudentsContainer));
+export default connect(mapStateToProps, { getStudentList })(withRouter(StudentsContainer));

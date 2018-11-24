@@ -17,7 +17,7 @@ class StudentProfileContainer extends Component {
       college: '',
       studentDesc: '',
       major: '',
-      skill: [],
+      skills: [],
       errors: {},
     };
   }
@@ -59,6 +59,7 @@ class StudentProfileContainer extends Component {
       studentMajor: this.state.major,
       studentCollege: this.state.college,
       studentDesc: this.state.studentDesc,
+      skills: this.state.skills,
     };
 
     console.log('studentP',studentProfile);

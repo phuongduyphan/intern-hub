@@ -9,8 +9,6 @@ const styles = theme => ({
 
     
     searchIcon: {
-      marginLeft: theme.spacing.unit * 2,
-      marginRight: theme.spacing.unit,
     },
 
     chipInput: {

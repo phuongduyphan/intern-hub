@@ -7,5 +7,6 @@ function url(path){
 
 export default {
   getJobs: () => axios.get(url('/jobs')),
-  postJob: (job) => axios.post(url('/jobs'))
+  postJob: (job) => axios.post(url('/jobs')),
+  getStudents: () => axios.get(url('/students'))
 }
