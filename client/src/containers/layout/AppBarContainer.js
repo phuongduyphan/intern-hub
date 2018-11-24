@@ -64,7 +64,7 @@ class AppBarContainer extends Component {
 
   render() {
     const isAuthenticated = this.props.auth.isAuthenticated;
-    const user=this.props.auth.user;
+    const user = this.state.user;
     console.log (user);
     return (
       <div>
