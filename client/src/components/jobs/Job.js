@@ -32,7 +32,7 @@ const styles = theme => ({
   icon: {
     color: '#595854',
     marginRight: 2,
-    
+
   },
   type: {
     color: '#202bd6',
@@ -81,7 +81,7 @@ const Job = (props) => {
                   <Grid container >
                     <div className={classes.itemList}>
                     <Work className={classes.icon}/>
-                    <Typography variant="body1" color="textSecondary" >{job.company}</Typography>
+                    <Typography variant="body1" color="textSecondary" >{job.recruiters.company}</Typography>
                     </div>
                   </Grid>
                 </Grid>
@@ -89,7 +89,7 @@ const Job = (props) => {
                   <Grid container>
                   <div className={classes.itemList}>
                     <Place className={classes.icon}/>
-                    <Typography variant="body1" color="textSecondary">{job.place}</Typography>
+                    <Typography variant="body1" color="textSecondary">{job.location}</Typography>
                     </div>
                   </Grid>
                 </Grid>
@@ -97,7 +97,7 @@ const Job = (props) => {
                   <Grid container>
                   <div className={classes.itemList}>
                     <Money className={classes.icon}/>
-                    <Typography variant="body1" color="textSecondary">{job.salary}</Typography>
+                    <Typography variant="body1" color="textSecondary">{job.jobSalary}</Typography>
                     </div>
                   </Grid>
                 </Grid>
@@ -105,7 +105,7 @@ const Job = (props) => {
                   <Grid container>
                   <div className={classes.itemList}>
                     <DateRange className={classes.icon}/>
-                    <Typography variant="body1" color="textSecondary">{job.duration}</Typography>
+                    <Typography variant="body1" color="textSecondary">{job.jobDuration}</Typography>
                     </div>
                   </Grid>
                 </Grid>
