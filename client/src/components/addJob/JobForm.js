@@ -71,7 +71,7 @@ const districts = [
 
 ]
 
-const StudentProfile = (props) => {
+const JobForm = (props) => {
   const { classes,
     onChangeText,
     data,
@@ -79,14 +79,13 @@ const StudentProfile = (props) => {
     handleDeleteSkill,
     handleAddCategory,
     handleDeleteCategory,
-    postButton } = props;
+    onSubmitButton } = props;
   return (
     <React.Fragment >
       <div className={classes.root}>
         <Grid container className={classes.grid} justify='center' alignItems='center'>
           <Paper className={classes.paper}>
-            <Typography className={classes.typo} variant='display1' color='primary'> Update Student Profile </Typography>
-            <Typography className={classes.seconTypo} variant='caption' color='textSecondary' align='right'> * Please update your info to get your future intern ! </Typography>
+            <Typography className={classes.typo} variant='display1' color='primary'> Post Your Job </Typography>
             <div className={classes.textRow}>
               <FormControl className={classes.textField}>
                   <InputLabel>Job Title</InputLabel>
@@ -103,7 +102,8 @@ const StudentProfile = (props) => {
                 <InputLabel>Description</InputLabel>
                   <Input
                     type='textarea'
-                    name='Description'
+                    multiline
+                    name='description'
                     value={data.description}
                     onChange={onChangeText}
                   />
@@ -144,7 +144,7 @@ const StudentProfile = (props) => {
                 />
             </FormControl>
 
-            <Button onClick={postButton} className={classes.button} variant='contained' color='primary'> Save Change </Button>
+            <Button onClick={onSubmitButton} className={classes.button} variant='contained' color='primary'> Save Change </Button>
           </Paper>
         </Grid>
       </div>
@@ -152,8 +152,8 @@ const StudentProfile = (props) => {
   );
 }
 
-StudentProfile.propTypes = {
+JobForm.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(StudentProfile);
+export default withStyles(styles)(JobForm);

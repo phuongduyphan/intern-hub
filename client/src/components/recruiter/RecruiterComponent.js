@@ -8,7 +8,6 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button' ;
-import ChipInput from 'material-ui-chip-input'
 
 
 
@@ -22,13 +21,13 @@ const styles = theme => ({
     justifyContent: 'center',
     marginTop: theme.spacing.unit * 4 ,
     marginLeft: theme.spacing.unit * 4 ,
-    marginRight: theme.spacing.unit * 4
+    marginRight: theme.spacing.unit * 4 
   },
   seconTypo: {
     display: 'flex',
     justifyContent: 'flex-end',
     marginRight: theme.spacing.unit * 1 ,
-    marginBottom: theme.spacing.unit * 5
+    marginBottom: theme.spacing.unit * 5 
   },
   textRow: {
     display: 'flex',
@@ -53,15 +52,15 @@ const styles = theme => ({
 
 });
 
-const StudentProfile = (props) => {
-  const { classes, onChangeText, data, signButton, saveChangeButton, handleAddSkill, handleDeleteSkill} = props;
+const RecruiterProfile = (props) => {
+  const { classes, onChangeText, data, saveChangeButton } = props;
   return (
     <React.Fragment >
       <div className={classes.root}>
-        <Grid container className={classes.grid} justify='center' alignItems='center'>
+        <Grid container className={classes.grid} justify='center' alignItems='center'> 
           <Paper className={classes.paper}>
-            <Typography className={classes.typo} variant='display1' color='primary'> Update Student Profile </Typography>
-            <Typography className={classes.seconTypo} variant='caption' color='textSecondary' align='right'> * Please update your info to get your future intern ! </Typography>
+            <Typography className={classes.typo} variant='display1' color='primary'> Update Recruiter Profile </Typography>
+            <Typography className={classes.seconTypo} variant='caption' color='textSecondary' align='right'> * Please update your info to get your future interner ! </Typography>
             <div className={classes.textRow}>
               <FormControl className={classes.textField}>
                   <InputLabel>Email</InputLabel>
@@ -83,14 +82,14 @@ const StudentProfile = (props) => {
                     />
               </FormControl>
             </div>
-
-
+           
+            
 
             <FormControl className={classes.textField}>
-                <InputLabel>College</InputLabel>
+                <InputLabel>Recruiter Address</InputLabel>
                   <Input
                     autoFocus
-                    name='college'
+                    name='address'
                     value={data.college}
                     onChange={onChangeText}
                   />
@@ -100,30 +99,20 @@ const StudentProfile = (props) => {
                 <InputLabel>Your Description</InputLabel>
                   <Input
                     autoFocus
-                    name='studentDesc'
-                    value={data.studentDesc}
+                    name='recruiterDesc'
+                    value={data.recruiterDesc}
                     onChange={onChangeText}
                   />
             </FormControl>
 
             <FormControl className={classes.textField}>
-                <InputLabel>Your Major</InputLabel>
+                <InputLabel>Company</InputLabel>
                   <Input
                     autoFocus
-                    name='major'
+                    name='company'
                     value={data.major}
                     onChange={onChangeText}
                   />
-            </FormControl>
-
-            <FormControl className={classes.textField}>
-              <ChipInput
-                label="Skills"
-                placeholder="Mongo, Jav, ..."
-                value={data.categories}
-                onAdd={(chip) => handleAddSkill(chip)}
-                onDelete={(chip, index) => handleDeleteSkill(chip, index)}
-              />
             </FormControl>
             <Button onClick={saveChangeButton} className={classes.button} variant='contained' color='primary'> Save Change </Button>
           </Paper>
@@ -133,8 +122,9 @@ const StudentProfile = (props) => {
   );
 }
 
-StudentProfile.propTypes = {
+RecruiterProfile.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(StudentProfile);
+export default withStyles(styles)(RecruiterProfile);
+

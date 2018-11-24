@@ -28,12 +28,7 @@ class LoginContainer extends Component {
   }
 
   componentDidMount() {
-    store.dispatch({
-      type: CREATE_ACCOUNT_SUCCESS,
-      payload: {
-        isRegisterSuccess: false,
-      }
-    });
+   
   }
 
   onChangeText = (e) => {
