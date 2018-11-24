@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Job from '../../components/jobs/Job';
+import JobList from '../../components/jobs/JobList';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { getJobList } from '../../redux/actions/getDataAction';
@@ -12,11 +13,11 @@ const root = {
   justifyContent: 'center'
 }
 
-class JobList extends Component {
+class JobListContainer extends Component {
   constructor(props)  {
     super(props);
     this.state = {
-      jobList: [
+      li: [
         {
           jobId: 0,
           logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
@@ -43,35 +44,21 @@ class JobList extends Component {
   }
 
   componentDidMount() {
-    axios.get('localhost:5000/api/jobs')
-    .then(res => {
-      console.log(res);
-      this.setState({jobList: res})
-    })
-  }
-
-  componentWillReceiveProps(props) {
-    if(props.data.listJob) {
-      this.setState({jobList: props.data.listJob});
-    }
+    console.log('didmount');
+    this.props.getJobList()
   }
 
   render() {
-    const { jobList } = this.state;
+    console.log(this.props.jobList);
     return (
       <div className={root}>
-        {jobList.map((job) => (
-          <Job key={job.jobId} job={job} />
-        ))}
+        <JobList jobList={this.props.jobList} />
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  data: state.data,
-})
-
-
-// export default JobList;
-export default connect(mapStateToProps, { getJobList })(withRouter(JobList));
+// export default JobList
+export default connect((state) => ({
+  jobList: state.data.jobList,
+}), { getJobList })(withRouter(JobList));

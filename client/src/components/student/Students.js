@@ -47,17 +47,17 @@ const styles = theme => ({
 });
 
 const Students = (props) => {
-  const { classes, student } = props;
+  const { classes, student, avatar } = props;
 
   const renderSkill = (
     <div>
-      {student.skill.map(skill => {
+      {student.skills.map(skill => {
           let icon = null;
           return (
             <Chip
               color='primary'
               icon={icon}
-              label={skill}
+              label={skill.skillName}
               className={classes.chip}
             />
           );
@@ -70,12 +70,12 @@ const Students = (props) => {
       <Paper className={classes.root}>
         <Grid container spacing={16}>
           <Grid item >
-            <Avatar src={student.avatar} className={classes.image} />
+            <Avatar src={avatar} className={classes.image} />
           </Grid>
           <Grid item xs={10} sm container>
             <Grid item xs container direction="column" spacing={16}>
               <Grid item xs>
-                <Typography variant='headline' color='primary'>tung</Typography>
+                <Typography variant='headline' color='primary'></Typography>
                 {renderSkill}
               </Grid>
 

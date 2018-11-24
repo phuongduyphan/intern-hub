@@ -33,18 +33,12 @@ class StudentsContainer extends Component {
 
 
   render() {
-    const studentList = this.props.data.studentList;
-    
-    console.log(this.props.data);
-    console.log(studentList);
-    
-    
-
+    const studentList =  this.props.data.studentList;
     return (
       <div>
          {  
           studentList.map((student) => (
-            <Student student={student} />
+            <Student avatar={defaultAvatar} student={student} />
          ))}
       </div>
     );

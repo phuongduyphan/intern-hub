@@ -77,7 +77,7 @@ const Job = (props) => {
                 <Grid item xs={3}>
                   <Grid container>
                     <Grid item><Work className={classes.icon}/></Grid>
-                    <Grid item><Typography variant="body1" color="textSecondary">{job.recruiter}</Typography></Grid>
+                    <Grid item><Typography variant="body1" color="textSecondary">{job.recruiters.company}</Typography></Grid>
                   </Grid>
                 </Grid>
                 <Grid item xs={3}>
