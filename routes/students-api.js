@@ -12,7 +12,7 @@ router.post('/search', StudentController.students_search);
 router.get('/:studentId/', StudentController.studentId_get);
 
 // router.get('/:studentId/info', StudentController.studentId_info_get);
-router.post('/:studentId/info', passport.authenticate('jwt', { session: false }), StudentController.studentId_info_post);
+router.put('/:studentId/info', passport.authenticate('jwt', { session: false }), StudentController.studentId_info_put);
 
 // TODO
 router.get('/:studentId/skills', StudentController.studentId_skills_get);

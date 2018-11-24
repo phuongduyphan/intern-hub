@@ -1,5 +1,6 @@
 const { transaction } = require('objection');
 
+const { User } = require('../user/User');
 const { Recruiter } = require('./Recruiter');
 const { Job } = require('../job/Job');
 
@@ -35,10 +36,16 @@ class RecruiterService {
     }
   }
 
-  static async createRecruiterInfo(recruiter) {
+  static async updateRecruiterInfo(user) {
     try {
-      const recvRecruiter = await Recruiter.query().insertAndFetch(recruiter);
-      return recvRecruiter;
+      let recvUser;
+      await transaction(User.knex(), async (trx) => {
+        recvUser = await User
+          .query(trx)
+          .upsertGraphAndFetch(user);
+      });
+      console.log(recvUser);
+      return recvUser;
     } catch (err) {
       throw err;
     }

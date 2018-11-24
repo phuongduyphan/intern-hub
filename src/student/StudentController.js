@@ -30,18 +30,31 @@ exports.studentId_get = async (req, res) => {
   }
 };
 
-exports.studentId_info_post = async (req, res) => {
+exports.studentId_info_put = async (req, res) => {
   try {
-    const studentId = req.user.userId;
-    const { studentMajor, studentCollege, studentDesc } = req.body;
-    const student = {
-      studentId,
+    const { userId } = req.user;
+    const {
+      displayName,
+      email,
+      phoneNumber,
       studentMajor,
       studentCollege,
       studentDesc,
+    } = req.body;
+
+    const user = {
+      userId,
+      displayName,
+      email,
+      phoneNumber,
+      students: {
+        studentMajor,
+        studentCollege,
+        studentDesc,
+      },
     };
 
-    await StudentService.createStudentInfo(student);
+    await StudentService.updateStudentInfo(user);
     res.sendStatus(200);
   } catch (err) {
     throw err;

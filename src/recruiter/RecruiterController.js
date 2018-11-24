@@ -31,18 +31,31 @@ exports.recruiterId_info_get = async (req, res) => {
   }
 };
 
-exports.recruiterId_info_post = async (req, res) => {
+exports.recruiterId_info_put = async (req, res) => {
   try {
-    const recruiterId = req.user.userId;
-    const { recruiterAddress, company, recruiterDesc } = req.body;
-    const recruiter = {
-      recruiterId,
+    const { userId } = req.user;
+    const {
+      displayName,
+      email,
+      phoneNumber,
       recruiterAddress,
       company,
       recruiterDesc,
+    } = req.body;
+
+    const user = {
+      userId,
+      displayName,
+      email,
+      phoneNumber,
+      recruiters: {
+        recruiterAddress,
+        company,
+        recruiterDesc,
+      },
     };
 
-    await RecruiterService.createRecruiterInfo(recruiter);
+    await RecruiterService.updateRecruiterInfo(user);
     res.sendStatus(200);
   } catch (err) {
     throw err;
