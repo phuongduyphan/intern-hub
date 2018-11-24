@@ -13,6 +13,7 @@
     "popper.js": "^1.14.5",
     "react": "^16.6.3",
     "react-background-slideshow": "^1.0.4",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",
     "react-responsive": "^5.0.0",
