@@ -48,7 +48,7 @@ module.exports = {
     client: 'mysql',
     connection: {
       host: 'us-cdbr-iron-east-01.cleardb.net',
-      user: 'b4324ad6d3722a:',
+      user: 'b4324ad6d3722a',
       password: '3a99c577',
       database: 'heroku_25a49024c6ff672',
     },
