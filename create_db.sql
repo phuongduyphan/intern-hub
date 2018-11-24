@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`users` (
   PRIMARY KEY (`user_id`),
   UNIQUE INDEX `users_username_unique` (`username` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -110,6 +111,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`skills` (
   `skill_name` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`skill_id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -130,6 +132,32 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`job_skill` (
     REFERENCES `intern-hub`.`skills` (`skill_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `intern-hub`.`knex_migrations`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `intern-hub`.`knex_migrations` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NULL DEFAULT NULL,
+  `batch` INT(11) NULL DEFAULT NULL,
+  `migration_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 37
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `intern-hub`.`knex_migrations_lock`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `intern-hub`.`knex_migrations_lock` (
+  `index` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `is_locked` INT(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`index`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8;
 
 

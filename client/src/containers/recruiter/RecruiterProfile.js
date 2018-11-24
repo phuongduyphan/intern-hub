@@ -12,12 +12,11 @@ class StudentProfileContainer extends Component {
     this.state = {
       firstName: '',
       lastName: '',
-      email: '',
+      company: '',
       phone: '',
-      college: '',
-      studentDesc: '',
-      major: '',
-      skill: '',
+      email: '',
+      recruiterAddress: '',
+      recruiterDesc: '',
       errors: {},
     };
   }

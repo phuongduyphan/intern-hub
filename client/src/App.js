@@ -11,7 +11,7 @@ import StudentProfileContainer from './containers/student/StudentProfile';
 import StudentsContainer from './containers/student/Students';
 import {Provider} from 'react-redux';
 import store from './redux/store';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import theme from './theme/index';
 import setAuthToken from './redux/utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
