@@ -7,6 +7,7 @@ const initialState = {
   categoryList: [],
   skillList: [],
   isSearching: false,
+  isJobLoading: false,
   // listJob: {
   //   data: [],
   // }
@@ -23,6 +24,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         jobList: action.payload.jobList,
+        isJobLoading: true
       }
     case GET_JOB_LIST_WITH_KEYWORD:
       return {

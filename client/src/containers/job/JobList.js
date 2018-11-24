@@ -11,6 +11,7 @@ import { getJobList, getJobListWithKeyword } from '../../redux/actions/getDataAc
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 
 
@@ -60,15 +61,21 @@ class JobListContainer extends Component {
   render() {
     return (
       <div className={' myJobList'} >
-        <h1>All Jobs</h1>
-        <SearchInput
-          onSearchButton = {this.onSearchButton}
-          searchInput = {this.state.searchInput}
-          handleAddChip = {this.handleAddChip}
-          handleDeleteChip = {this.handleDeleteChip}
-        />
-        <JobList jobList={this.props.jobList} />
+      {
+        !this.props.isJobLoading ?
+          <LinearProgress /> :
+          <div>
+            <h1>All Jobs</h1>
+            <SearchInput
+              onSearchButton = {this.onSearchButton}
+              searchInput = {this.state.searchInput}
+              handleAddChip = {this.handleAddChip}
+              handleDeleteChip = {this.handleDeleteChip}
+            />
+            <JobList jobList={this.props.jobList} />
+          </div>
 
+        }
       </div>
     )
   }
@@ -77,5 +84,6 @@ class JobListContainer extends Component {
 // export default JobList
 export default connect((state) => ({
   jobList: state.data.jobList,
+  isJobLoading: state.data.isJobLoading,
   isSearching: state.data.isSearching
 }), { getJobList, getJobListWithKeyword })(withRouter(JobListContainer));
