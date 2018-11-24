@@ -68,6 +68,7 @@ const Register = (props) => {
                 <InputLabel>Password</InputLabel>
                   <Input
                     name='password'
+                    type='password'
                     value={data.password}
                     onChange={onChangeText}
                   />

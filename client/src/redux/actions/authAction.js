@@ -42,7 +42,7 @@ export const loginUser = (userData) => (dispach) => {
   })
   .catch(err => {
     console.log(err);
-    let tempErr = Object.values(err.response.data.errors);
+    let tempErr = err;
     dispach({
       type: GET_ERRORS,
       payload: tempErr,
