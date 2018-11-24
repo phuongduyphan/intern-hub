@@ -8,7 +8,10 @@ const { knex } = require('../../config/mysql/mysql-config');
 class JobService {
   static async getListOfJobs() {
     try {
-      const listOfJobs = await Job.query().eager('[skills, recruiters,recruiters.users, categories]');
+      const listOfJobs = await Job.query().eager('[skills,recruiters.users, categories]')
+        .modifyEager('recruiters.users', (builder) => {
+          builder.select('displayname', 'email', 'phoneNumber');
+        });
       return listOfJobs;
     } catch (err) {
       throw err;
