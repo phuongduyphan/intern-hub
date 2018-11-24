@@ -7,7 +7,10 @@ const { Job } = require('../job/Job');
 class RecruiterService {
   static async getListOfRecruiters() {
     try {
-      const listOfRecruiters = await Recruiter.query();
+      const listOfRecruiters = await Recruiter.query().eager('users')
+        .modifyEager('users', (builder) => {
+          builder.select('displayname', 'email', 'phoneNumber');
+        });
       return listOfRecruiters;
     } catch (err) {
       throw err;

@@ -10,6 +10,9 @@ module.exports = {
       password: '',
       database: 'intern-hub',
     },
+    seeds: {
+      directory: './seeds/dev',
+    },
   },
 
   testing: {
@@ -29,7 +32,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -42,19 +45,16 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'mysql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      host: 'eu-cdbr-west-02.cleardb.net',
+      user: 'beedadf21ed818',
+      password: 'a0d5ee56',
+      database: 'heroku_73b3bbf6bcf0587',
     },
-    pool: {
-      min: 2,
-      max: 10
+    seeds: {
+      directory: './seeds/dev',
     },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
+  },
 
 };
