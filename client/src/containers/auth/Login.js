@@ -19,7 +19,9 @@ class LoginContainer extends Component {
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.isAuthenticated) {
-      this.props.history.push('/stu-profile');
+      console.log (nextProps.auth.user.role);
+      
+
     }
 
     if(nextProps.errors) {

@@ -3,15 +3,16 @@ import Job from '../../components/jobs/Job';
 import JobList from '../../components/jobs/JobList';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
+import ChipInput from 'material-ui-chip-input';
+import SearchInput from '../../components/addJob/SearchInput'
 import { getJobList, getJobListWithKeyword } from '../../redux/actions/getDataAction';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
 
-const root = {
-  justifyContent: 'center'
-}
 
 class JobListContainer extends Component {
   constructor(props)  {
@@ -56,8 +57,11 @@ class JobListContainer extends Component {
   render() {
     console.log(this.props.jobList);
     return (
-      <div className={root}>
+      <div className={' myJobList'} >
+        <h1>All Jobs</h1>
+        <SearchInput />
         <JobList jobList={this.props.jobList} />
+
       </div>
     )
   }

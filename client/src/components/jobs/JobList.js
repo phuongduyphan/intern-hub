@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, { } from 'react';
 import Job from './Job';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -12,7 +11,7 @@ const JobList = (props) => {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root +' myJobList'}>
       {props.jobList.map((job) => (
         <Job key={job.jobId} job={job} />
       ))}

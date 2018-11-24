@@ -71,28 +71,18 @@ class AppBarContainer extends Component {
     e.preventDefault();
   }
 
-  handleAddChip = chip => {
-    this.setState({ searchInput: [...this.state.searchInput, chip] });
-  }
-
-
-  immutableDelete (arr, index) {
-    return arr.slice(0,index).concat(arr.slice(index+1))
-  }
-
-  handleDeleteChip = (chip, index) => {
-    this.setState({
-      searchInput: this.immutableDelete(this.state.searchInput, index)
-    });
-  }
+ 
 
   render() {
     const isAuthenticated = this.props.auth.isAuthenticated;
+    const user=this.props.auth.user;
+    console.log (user);
     return (
       <div>
         <AppBar
           isAuthenticated={isAuthenticated}
           data={this.state}
+          user={user}
           handleLogOut={this.handleLogOut}
           internHubButton={this.internHubButton}
           loginButton={this.loginButton}
