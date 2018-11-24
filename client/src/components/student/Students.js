@@ -11,7 +11,7 @@ import Email from '@material-ui/icons/Email';
 import Place from '@material-ui/icons/Place';
 import Chip from '@material-ui/core/Chip';
 import MediaQuery from 'react-responsive';
-import { Modal} from 'react-bootstrap';
+import Modal from '@material-ui/core/Modal';
 
 
 const styles = theme => ({
@@ -20,6 +20,13 @@ const styles = theme => ({
     maxWidth: 600,
     padding: theme.spacing.unit * 2,
     margin: 5
+  },
+  paper: {
+    position: 'absolute',
+    width: theme.spacing.unit * 90,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing.unit * 4,
   },
   studentName: {
     cursor: "pointer"
@@ -155,27 +162,35 @@ class Students extends Component {
             <h4 class="card-title">{student.users.displayname}</h4>
             <p class="card-text">{renderSkill}</p>
             <div class="d-flex">
-              <a href="/" class="btn btn-primary">See Profile</a>
-              <a href="/" class="btn btn-success ml-auto">Invite</a>
+              <button class="btn btn-primary " onClick={this.handleShow}>See Profile</button>
+              <button class="btn btn-success ml-auto">Invite</button>
             </div>
 
           </div>
         </div>
       </MediaQuery>
+      <Modal
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          open={this.state.show}
+          onClose={this.handleClose}
+         
+        >
+          <div  className={classes.paper + " myModal"}>
+            <Typography variant="h4" id="modal-title">
+            {student.users.displayname}
+            </Typography>
+            <Typography variant="subtitle1" id="simple-modal-description">
+             {student.studentDesc}
+            </Typography>
+            <div class="d-flex">
+            <button class="btn btn-danger" onClick={this.handleClose}>close</button>
+              <button class="btn btn-success ml-auto" onClick={this.handleClose}>Invite</button>            </div>
+         </div>
+           
+        </Modal>
+      </div>
 
-
-      <Modal show={this.state.show} onHide={this.close}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          Modal body
-         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={this.close}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
   );
 }
 }

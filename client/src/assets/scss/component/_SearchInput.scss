@@ -9,5 +9,13 @@
             }
         }
     }
+    .divBtn{
+        margin-top: 10px;
+        text-align: center;
+        button{
+            background-color: $primary-color;
+            color: white;
+        }
+    }
     margin-bottom: 25px;
 }

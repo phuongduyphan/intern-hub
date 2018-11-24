@@ -45,6 +45,7 @@ class SearchInput extends Component {
       console.log(this.props);
         return (
             <div className="mySearchInput">
+                <div>
                 <SearchIcon className={this.props.classes.searchIcon +' mySearchIcon'} />
                 <ChipInput
                     classes={{
@@ -56,9 +57,12 @@ class SearchInput extends Component {
                     onAdd={chip => this.handleAddChip(chip)}
                     onDelete={(chip, index) => this.handleDeleteChip(chip, index)}
                 />
-                <Button
+                    </div>         
+                <div className='divBtn'>
+                <button className="btn mySearchingButton"
                   onClick={this.props.onSearchButton}
-                >Submit</Button>
+                >Search</button>
+                </div>
             </div>
         );
     }
