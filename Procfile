@@ -1,1 +1,1 @@
-node app.js --env=development
+node app.js
