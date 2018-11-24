@@ -10,12 +10,15 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const usersApiRouter = require('./routes/users-api');
 const categoriesApiRouter = require('./routes/categories-api');
+const cors = require('cors')
 const skillsApiRouter = require('./routes/skills-api');
 const jobsApiRouter = require('./routes/jobs-api');
 const recruitersApiRouter = require('./routes/recruiters-api');
 const studentsApiRouter = require('./routes/students-api');
 
 const app = express();
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -60,8 +63,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const server = app.listen(process.env.PORT || 3000, () => {
-  console.log(`Node.js listening on ${process.env.PORT || 3000} ...`);
+const server = app.listen(process.env.PORT || 5000, () => {
+  console.log(`Node.js listening on ${process.env.PORT || 5000} ...`);
 });
 
 module.exports = app;

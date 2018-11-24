@@ -23,6 +23,8 @@ exports.user_register_post = async (req, res) => {
     await UserService.registerUser(user);
     res.sendStatus(200);
   } catch (err) {
+    console.log(err);
+    
     res.sendStatus(409);
   }
 };
