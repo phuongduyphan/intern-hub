@@ -47,13 +47,9 @@ module.exports = {
   production: {
     client: 'mysql',
     connection: {
-      host: 'us-cdbr-iron-east-01.cleardb.net',
-      user: 'b4324ad6d3722a',
-      password: '3a99c577',
-    },
-    pool: {
-      min: 2,
-      max: 10
+      host: 'eu-cdbr-west-02.cleardb.net',
+      user: 'beedadf21ed818',
+      password: 'a0d5ee56',
     },
   },
 
