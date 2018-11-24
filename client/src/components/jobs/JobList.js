@@ -1,6 +1,7 @@
 import React, { } from 'react';
 import Job from './Job';
 import { withStyles } from '@material-ui/core/styles';
+import SearchInput from '../addJob/SearchInput';
 
 const styles = theme => ({
   root: {
@@ -9,124 +10,12 @@ const styles = theme => ({
 
 const JobList = (props) => {
   const { classes } = props;
-  const list = [
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'Do things',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime',
-      duration: '3 months'
-    },
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'Do things',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '3.000.000 VND',
-      type: 'parttime',
-      duration: '1 months'
-    },
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'Do things',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime'
-    },
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'Do things',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime'
-    },
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'Do things',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime'
-    },
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'lz duy',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime'
-    },
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'Do things',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime'
-    },
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'Do things',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime'
-    },
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'Do things',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime'
-    },
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'Do things',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime'
-    },
-    {
-      id: 0,
-      logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-      title: 'Software Engineering',
-      description: 'Do things',
-      company: 'Microsoft',
-      place: 'District 1',
-      salary: '5.000.000 VND',
-      type: 'fulltime'
-    },
-
-  ]
+  const list = []
 
   return (
     <div className={classes.root +' myJobList'}>
+         <h1>All Jobs</h1>
+        <SearchInput />
       {props.jobList.map((job) => (
         <Job key={job.jobId} job={job} />
       ))}
