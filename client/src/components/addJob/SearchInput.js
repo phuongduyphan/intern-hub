@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import ChipInput from 'material-ui-chip-input';
+import Button from '@material-ui/core/Button';
 
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
 
-    
+
     searchIcon: {
     },
 
     chipInput: {
       backgroundColor: '#606f80',
     }
-  
+
   })
- 
+
 class SearchInput extends Component {
     constructor(props)
     {
@@ -28,20 +29,20 @@ class SearchInput extends Component {
         this.handleDeleteChip=this.handleDeleteChip.bind(this);
     }
     handleAddChip = chip => {
-        this.setState({ searchInput: [...this.state.searchInput, chip] });
-      }
-    
-    
+      this.props.handleAddChip(chip);
+    }
+
+
     immutableDelete (arr, index){
         return arr.slice(0,index).concat(arr.slice(index+1))
       }
-    
-      handleDeleteChip = (chip, index) => {
-        this.setState({
-          searchInput: this.immutableDelete(this.state.searchInput, index)
-        });
-      }
+
+    handleDeleteChip = (chip, index) => {
+      this.props.handleDeleteChip(chip, index);
+    }
+
     render() {
+      console.log(this.props);
         return (
             <div className="mySearchInput">
                 <SearchIcon className={this.props.classes.searchIcon +' mySearchIcon'} />
@@ -51,10 +52,13 @@ class SearchInput extends Component {
                     }}
                     className='myChipInput'
                     placeholder="Job Filter"
-                    value={this.state.searchInput}
+                    value={this.props.searchInput}
                     onAdd={chip => this.handleAddChip(chip)}
                     onDelete={(chip, index) => this.handleDeleteChip(chip, index)}
                 />
+                <Button
+                  onClick={this.props.onSearchButton}
+                >Submit</Button>
             </div>
         );
     }

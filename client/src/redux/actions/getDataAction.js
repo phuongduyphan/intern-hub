@@ -34,7 +34,11 @@ export const getJobList = () => async (dispach) => {
 
 export const getJobListWithKeyword = (keyword) => async (dispatch) => {
   try {
-    const {data} = await JobApi.getJobListWithKeyword(keyword);
+    console.log('get keyword', keyword);
+    const {data} = await axios.post('https://rocky-crag-37789.herokuapp.com/api/jobs/search', {
+      listOfKeywords: keyword,
+    })
+    // const {data} = await JobApi.getJobListWithKeyword(keyword);
     dispatch({
       type: GET_JOB_LIST_WITH_KEYWORD,
       payload: {

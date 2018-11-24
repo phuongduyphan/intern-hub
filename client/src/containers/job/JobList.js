@@ -18,30 +18,10 @@ class JobListContainer extends Component {
   constructor(props)  {
     super(props);
     this.state = {
-      li: [
-        {
-          jobId: 0,
-          logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
-          jobTitle: 'Software Engineering',
-          jobDesc: 'Do things',
-          recruiter: 'Microsoft',
-          location: 'District 1',
-          salary: '5.000.000 VND',
-          skills: [
-            {
-              "skillId": 2,
-              "skillName": "NodeJs"
-            },
-            {
-              "skillId": 3,
-              "skillName": "Design"
-            }
-          ],
-          type: 'fulltime',
-          duration: '3 months'
-        },
-      ],
+      searchInput: [],
     }
+    this.onSearchButton = this.onSearchButton.bind(this);
+    this.handleAddChip = this.handleAddChip.bind(this);
   }
 
   componentDidMount() {
@@ -49,17 +29,44 @@ class JobListContainer extends Component {
     this.props.getJobList();
   }
 
+  handleAddChip = chip => {
+    console.log('add');
+    console.log(chip);
+    this.setState({ searchInput: [...this.state.searchInput, chip] });
+    console.log(this.state);
+  }
+
+
+  immutableDelete (arr, index){
+      return arr.slice(0,index).concat(arr.slice(index+1))
+  }
+
+  handleDeleteChip = (chip, index) => {
+    this.setState({
+      searchInput: this.immutableDelete(this.state.searchInput, index)
+    });
+  }
+
   onSearchButton() {
-    const keyword={};
-    this.props.getJobListWithKeyword(keyword);
+    const keyword = this.state.searchInput;
+    if(keyword.length>0) {
+      console.log(keyword);
+      this.props.getJobListWithKeyword(keyword);
+    } else {
+      this.props.getJobList();
+    }
   }
 
   render() {
-    console.log(this.props.jobList);
     return (
       <div className={' myJobList'} >
         <h1>All Jobs</h1>
-        <SearchInput />
+        <SearchInput
+          onSearchButton = {this.onSearchButton}
+          searchInput = {this.state.searchInput}
+          handleAddChip = {this.handleAddChip}
+          handleDeleteChip = {this.handleDeleteChip}
+        />
         <JobList jobList={this.props.jobList} />
 
       </div>
