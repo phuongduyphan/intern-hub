@@ -5,12 +5,12 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const usersApiRouter = require('./routes/users-api');
 const categoriesApiRouter = require('./routes/categories-api');
-const cors = require('cors')
 const skillsApiRouter = require('./routes/skills-api');
 const jobsApiRouter = require('./routes/jobs-api');
 const recruitersApiRouter = require('./routes/recruiters-api');
