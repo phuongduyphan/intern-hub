@@ -75,7 +75,7 @@ const Students = (props) => {
           <Grid item xs={10} sm container>
             <Grid item xs container direction="column" spacing={16}>
               <Grid item xs>
-                <Typography variant='headline' color='primary'>{student.name}</Typography>
+                <Typography variant='headline' color='primary'>tung</Typography>
                 {renderSkill}
               </Grid>
 
@@ -84,13 +84,13 @@ const Students = (props) => {
                   <Grid item xs={4}>
                     <Grid container>
                       <Grid item><Work className={classes.icon}/></Grid>
-                      <Grid item><Typography variant="body1" color="textSecondary">{student.college}</Typography></Grid>
+                      <Grid item><Typography variant="body1" color="textSecondary">{student.studentCollege}</Typography></Grid>
                     </Grid>
                   </Grid>
                   <Grid item xs={4}>
                     <Grid container>
                       <Grid item><Place className={classes.icon}/></Grid>
-                      <Grid item><Typography variant="body1" color="textSecondary">{student.major}</Typography></Grid>
+                      <Grid item><Typography variant="body1" color="textSecondary">{student.studentMajor}</Typography></Grid>
                     </Grid>
                   </Grid>
                   <Grid item xs={4}>

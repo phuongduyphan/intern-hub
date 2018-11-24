@@ -2,19 +2,23 @@ import { GET_STUDENT_LIST, GET_JOB_LIST, GET_ERRORS } from "./type";
 import axios from 'axios';
 
 
-export const getStudentList = () => (dispach) => {
+export const getStudentList = () => async (dispach) => {
   axios
-    .get('')
+    .get(`http://localhost:5000/api/students/`)
     .then(res => {
+      console.log(res.data);
+      
       dispach({
         type: GET_STUDENT_LIST,
         payload: {
-          studentList: res.studentList,
+          studentList: res.data,
         },
       });
     })
     .catch(err => {
-      let tempErr = Object.values(err.response.data.errors);
+      console.log(err);
+      
+      let tempErr = null;
       dispach({
         type: GET_ERRORS,
         payload: tempErr,

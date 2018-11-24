@@ -54,7 +54,7 @@ const styles = theme => ({
 });
 
 const StudentProfile = (props) => {
-  const { classes, onChangeText, data, signButton, saveChangeButton, handleAddSkill, handleDeleteSkill} = props;
+  const { classes, onChangeText, data, saveChangeButton, handleAddSkill, handleDeleteSkill} = props;
   return (
     <React.Fragment >
       <div className={classes.root}>
@@ -120,7 +120,7 @@ const StudentProfile = (props) => {
               <ChipInput
                 label="Skills"
                 placeholder="Mongo, Jav, ..."
-                value={data.categories}
+                value={data.skills}
                 onAdd={(chip) => handleAddSkill(chip)}
                 onDelete={(chip, index) => handleDeleteSkill(chip, index)}
               />
