@@ -3,9 +3,9 @@ import Job from '../../components/jobs/Job';
 import JobList from '../../components/jobs/JobList';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { getJobList } from '../../redux/actions/getDataAction';
+import { getJobList, getJobListWithKeyword } from '../../redux/actions/getDataAction';
 import { withRouter } from 'react-router-dom';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 
@@ -44,8 +44,13 @@ class JobListContainer extends Component {
   }
 
   componentDidMount() {
-    console.log('didmount');
-    this.props.getJobList()
+    console.log('mount');
+    this.props.getJobList();
+  }
+
+  onSearchButton() {
+    const keyword={};
+    this.props.getJobListWithKeyword(keyword);
   }
 
   render() {
@@ -61,4 +66,5 @@ class JobListContainer extends Component {
 // export default JobList
 export default connect((state) => ({
   jobList: state.data.jobList,
-}), { getJobList })(withRouter(JobList));
+  isSearching: state.data.isSearching
+}), { getJobList, getJobListWithKeyword })(withRouter(JobListContainer));
