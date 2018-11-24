@@ -6,7 +6,9 @@ function url(path){
 }
 
 export default {
-  getJobs: () => axios.get(url('/jobs')),
-  postJob: (job) => axios.post(url('/jobs')),
-  getStudents: () => axios.get(url('/students'))
+  getJobList: () => axios.get(url('/jobs')),
+  getJobListWithKeyword: (keyword) => axios.post((url('/jobs/search'), {listOfKeywords: keyword})),
+  getSkillList: () => axios.get(url('/skills')),
+  getCategoryList: () => axios.get(url('/categories')),
+  postJob: (job) => axios.post(url('/recruiters/jobs'))
 }

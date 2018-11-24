@@ -62,6 +62,26 @@ class UserService {
       throw err;
     }
   }
+
+  static async getUpdatedStatus(user) {
+    try {
+      const listOfUsers = await User.query().where(user);
+      const recvUser = listOfUsers[0];
+      return recvUser;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  static async updateUpdatedStatus(user) {
+    try {
+      console.log(user);
+      const recvUser = await User.query().patchAndFetchById(user.userId, user);
+      return recvUser;
+    } catch (err) {
+      throw err;
+    }
+  }
 }
 
 module.exports = {

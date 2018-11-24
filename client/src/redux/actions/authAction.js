@@ -15,14 +15,8 @@ export const registerUser = (userData) => (dispach) => {
       });
     })
     .catch(err => {
-      // let tempErr = Object.values(err.response.data.errors);
-      let tempErr = null;
-      dispach({
-        type: GET_ERRORS,
-        payload: tempErr,
-      });
       console.log(err);
-    });
+    })
 }
 
 
@@ -42,11 +36,6 @@ export const loginUser = (userData) => (dispach) => {
   })
   .catch(err => {
     console.log(err);
-    let tempErr = err;
-    dispach({
-      type: GET_ERRORS,
-      payload: tempErr,
-    })
   })
 }
 
