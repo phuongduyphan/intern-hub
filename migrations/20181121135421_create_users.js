@@ -16,6 +16,10 @@ exports.up = async (knex) => {
       .string('userpass')
       .notNullable();
 
+    table.string('email');
+
+    table.string('phone_number');
+
     table
       .enu('role', ['admin', 'student', 'recruiter'])
       .notNullable();

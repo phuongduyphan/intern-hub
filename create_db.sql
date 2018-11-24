@@ -36,6 +36,8 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`users` (
   `displayname` VARCHAR(50) NOT NULL,
   `username` VARCHAR(50) NOT NULL,
   `userpass` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NULL DEFAULT NULL,
+  `phone_number` VARCHAR(255) NULL DEFAULT NULL,
   `role` ENUM('admin', 'student', 'recruiter') NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE INDEX `users_username_unique` (`username` ASC))
@@ -48,7 +50,9 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `intern-hub`.`recruiters` (
   `recruiter_id` INT(10) UNSIGNED NOT NULL,
-  `address` VARCHAR(255) NOT NULL,
+  `recruiter_address` VARCHAR(255) NOT NULL,
+  `company` VARCHAR(255) NULL DEFAULT NULL,
+  `recruiter_desc` TEXT NULL DEFAULT NULL,
   UNIQUE INDEX `recruiters_recruiter_id_unique` (`recruiter_id` ASC),
   CONSTRAINT `recruiters_recruiter_id_foreign`
     FOREIGN KEY (`recruiter_id`)
@@ -137,6 +141,7 @@ CREATE TABLE IF NOT EXISTS `intern-hub`.`students` (
   `student_dob` DATE NULL DEFAULT NULL,
   `student_major` VARCHAR(50) NULL DEFAULT NULL,
   `student_college` VARCHAR(255) NULL DEFAULT NULL,
+  `student_desc` TEXT NULL DEFAULT NULL,
   UNIQUE INDEX `students_student_id_unique` (`student_id` ASC),
   CONSTRAINT `students_student_id_foreign`
     FOREIGN KEY (`student_id`)
