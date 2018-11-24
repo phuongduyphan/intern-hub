@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
-import StudentProfile from '../../components/student/StudentProfile';
+import RecruiterComponent from '../../components/recruiter/RecruiterComponent';
 import { withRouter } from 'react-router-dom';
-import {updateStudentProfile} from '../../redux/actions/putDataAction';
+import {updateRecruiterProfile} from '../../redux/actions/putDataAction';
 
 class StudentProfileContainer extends Component {
 
@@ -37,18 +37,18 @@ class StudentProfileContainer extends Component {
 
     const userId = this.props.auth.user.userId;
 
-    const studentProfile = {
+    const recruiterProfile = {
       email: this.state.email,
       phoneNumber: this.state.phone,
-      studentMajor: this.state.major,
-      studentCollege: this.state.college,
-      studentDesc: this.state.studentDesc,
+      recruiterAddress: this.state.recruiterAddress,
+      company: this.state.company,
+      recruiterDesc: this.state.recruiterDesc,
     };
 
-    console.log('studentP',studentProfile);
+    console.log('studentP',recruiterProfile);
     
 
-    this.props.updateStudentProfile(userId, studentProfile);
+    this.props.updateRecruiterProfile(userId, recruiterProfile);
   };
 
 
@@ -56,7 +56,7 @@ class StudentProfileContainer extends Component {
 
     return (
       <div>
-        <StudentProfile
+        <RecruiterComponent
           data={this.state}
           onChangeText = {this.onChangeText}
           saveChangeButton={this.saveChangeButton}
@@ -76,4 +76,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 })
 
-export default connect(mapStateToProps, {updateStudentProfile})(withRouter(StudentProfileContainer));
+export default connect(mapStateToProps, {updateRecruiterProfile})(withRouter(StudentProfileContainer));
