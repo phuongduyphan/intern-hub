@@ -54,10 +54,10 @@ const styles = theme => ({
 });
 
 const StudentProfile = (props) => {
-  const { classes, onChangeText, data, signButton, saveChangeButton, handleAddSkill, handleDeleteSkill} = props;
+  const { classes, onChangeText, data, saveChangeButton, handleAddSkill, handleDeleteSkill} = props;
   return (
     <React.Fragment >
-      <div className={classes.root}>
+      <div className={classes.root+ ' myStudentProfile'}>
         <Grid container className={classes.grid} justify='center' alignItems='center'>
           <Paper className={classes.paper}>
             <Typography className={classes.typo} variant='display1' color='primary'> Update Student Profile </Typography>
@@ -120,7 +120,7 @@ const StudentProfile = (props) => {
               <ChipInput
                 label="Skills"
                 placeholder="Mongo, Jav, ..."
-                value={data.categories}
+                value={data.skills}
                 onAdd={(chip) => handleAddSkill(chip)}
                 onDelete={(chip, index) => handleDeleteSkill(chip, index)}
               />

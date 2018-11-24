@@ -15,6 +15,7 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     height: '90',
+
   },
   typo: {
     display: 'flex',
@@ -38,7 +39,7 @@ const styles = theme => ({
     margin: theme.spacing.unit * 3,
   },
   grid: {
-    height: '80vh',
+    height: '100vh',
   },
   ticker: {
     display: 'flex',
@@ -57,7 +58,7 @@ const Register = (props) => {
 
   return (
     <React.Fragment >
-      <div className={classes.root}>
+      <div className={classes.root + ' myRegister'}>
         <Grid container direction='row' justify='center' alignItems='center' className={classes.grid}> 
           <Grid item>
             <Paper className={classes.paper} > 
@@ -91,6 +92,7 @@ const Register = (props) => {
                 <InputLabel>Password</InputLabel>
                   <Input
                     name='password'
+                    type='password'
                     value={props.data.password}
                     onChange={onChangeText}
                   />
@@ -99,6 +101,7 @@ const Register = (props) => {
                 <InputLabel>Confirm Password</InputLabel>
                   <Input
                     name='password2'
+                    type='password'
                     value={props.data.password2}
                     onChange={onChangeText}
                   />

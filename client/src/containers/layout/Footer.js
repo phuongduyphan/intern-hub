@@ -3,7 +3,7 @@ import FooterComponent from '../../components/layout/Footer';
 import {connect} from 'react-redux';
 class Footer extends React.Component {
   state = {
-    open: false,
+    open: true,
 
   };
 

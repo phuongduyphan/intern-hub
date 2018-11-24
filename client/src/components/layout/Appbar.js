@@ -14,6 +14,11 @@ import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import ChipInput from 'material-ui-chip-input';
+import MediaQuery from 'react-responsive';
+
+
+import MenuToggle from './MenuToggle';
+import AppButton from './AppButton';
 
 
 
@@ -25,8 +30,8 @@ const styles = theme => ({
     justifyContent: 'center'
   },
   appBar: {
-    
-    position: 'relative',
+
+    position: 'fixed',
   },
   grow: {
     flexGrow: 1,
@@ -55,7 +60,7 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit * 2,
   },
   chipInput: {
-    backgroundColor: '#81D4FA',
+    backgroundColor: '#606f80',
   }
 
 })
@@ -64,6 +69,7 @@ const AppBarComponent = (props) => {
   const { 
     classes, 
     data, 
+    user,
     signButton, 
     loginButton, 
     internHubButton, 
@@ -76,9 +82,9 @@ const AppBarComponent = (props) => {
 
   const guestRender = (
     <div>
-      <Button onClick={loginButton}> Login </Button>
+      <Button onClick={loginButton} className="accountButton" variant='contained' color='secondary'> Login </Button>
      
-      <Button className={classes.signButton}  variant='contained' color='primary' onClick={signButton}> SignUp </Button>
+      <Button className={classes.signButton +" accountButton"}  variant='contained' color='primary' onClick={signButton}> SignUp </Button>
     
     </div>
   );
@@ -95,30 +101,90 @@ const AppBarComponent = (props) => {
       </Tooltip>
     </div>
   );
+  
+  const RecruitAppButton =(
+    <>
+    <AppButton buttonLabel="Students" link="/students" />
+    <AppButton buttonLabel="Post Jobs" link="/" />
+    </>
+  )
+  const StudentAppButton =(
+    <>
+      <AppButton buttonLabel="All Jobs" link="/jobs" />
+    </>
+  )
 
+  
+  const RecruitAppButtonReponsive=(
+    <>
+      <li>
+      <button className="appButtonRes" href="/students" >Student</button>
+
+      </li>
+      <li>
+        <a href="/" >
+          Post jobs
+      </a>
+      </li>
+    </>
+  )
+
+  const StudentAppButtonResponsive =(
+    <li>
+      <a href="/jobs" >
+        All Jobs
+      </a>
+    </li>
+    
+  )
+  const GuestRes=(
+    <>
+    <li>
+      <a href="/login" >
+        Log In
+      </a>
+    </li>
+    <li>
+      <a href="/register" >
+        Register
+      </a>
+    </li>
+    </>
+  )
+  console.log(data.user.role);
 
   return (
     
     <React.Fragment>
-      <AppBar  className={classes.appBar}>
+      <AppBar  className={classes.appBar +' myNavbar'}>
         <Toolbar>
-          <Button 
+          <div className ='logo'
             onClick={internHubButton}
           > 
             Intern-Hub 
-          </Button>
-          <SearchIcon className={classes.searchIcon} />
-          <ChipInput
-            classes={{
-              chip: classes.chipInput,
-            }}
-            value={data.searchInput}
-            onAdd={chip => handleAddChip(chip)}
-            onDelete={(chip, index) => handleDeleteChip(chip, index)}
-          />
+          </div>
+          <MediaQuery query="(min-device-width: 600px)">
+          <div className='appButtonGroup'>
+            {(user.role==="recruiter")?  RecruitAppButton :StudentAppButton  }
+          </div>
+
           <div className={classes.grow}></div>
-          
           {isAuthenticated ? authRender : guestRender }
+          </MediaQuery>
+          <MediaQuery query="(max-device-width: 600px)">
+            <div className={classes.grow}></div>
+            <div className="menuToggle">
+                    <input type="checkbox" />
+                    <span />
+                    <span />
+                    <span />
+                    <ul className="menu">
+                    {(user.role==="recruiter")?  RecruitAppButtonReponsive :StudentAppButtonResponsive  }
+                    {!isAuthenticated ? GuestRes : "" }
+                    </ul>
+                </div>
+          </MediaQuery>
+
         </Toolbar>
       </AppBar>
     </React.Fragment>
@@ -128,6 +194,7 @@ const AppBarComponent = (props) => {
 AppBar.propTypes = {
  
 };
+
 
 
 export default withStyles(styles)(AppBarComponent);

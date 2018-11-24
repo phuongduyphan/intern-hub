@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AppBarContainer from './containers/layout/AppBarContainer';
 import Landing from './components/main/Landing';
@@ -54,8 +55,8 @@ class App extends Component {
               <Route exact path="/add-job" component={JobFormContainer} />
               <Route exact path="/recr-profile" component={RecruiterContainer} />
             </div>
-
-          </div>
+            <Footer />
+            </div>
           </MuiThemeProvider>
         </Router>
       </Provider>

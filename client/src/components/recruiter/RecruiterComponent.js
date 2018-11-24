@@ -56,7 +56,7 @@ const RecruiterProfile = (props) => {
   const { classes, onChangeText, data, saveChangeButton } = props;
   return (
     <React.Fragment >
-      <div className={classes.root}>
+      <div className={classes.root+ " myRecruitProfile"}>
         <Grid container className={classes.grid} justify='center' alignItems='center'> 
           <Paper className={classes.paper}>
             <Typography className={classes.typo} variant='display1' color='primary'> Update Recruiter Profile </Typography>

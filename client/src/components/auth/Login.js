@@ -49,7 +49,7 @@ const Register = (props) => {
   const { classes, onChangeText, data, signButton, loginButton } = props;
   return (
     <React.Fragment >
-      <div className={classes.root}>
+      <div className={classes.root +" myLogIn"}>
         <Grid container direction='row' justify='center' alignItems='center' className={classes.grid}> 
           <Grid item>
             <Paper className={classes.paper} > 
@@ -68,13 +68,14 @@ const Register = (props) => {
                 <InputLabel>Password</InputLabel>
                   <Input
                     name='password'
+                    type='password'
                     value={data.password}
                     onChange={onChangeText}
                   />
               </FormControl>
              
               <div className={classes.button}>
-                <Button color='primary' onClick={signButton}>sign in</Button>
+                <Button color='primary' onClick={signButton}>sign up</Button>
                 <Button variant='contained' color='primary' onClick={loginButton}>Login</Button>
               </div>
               
