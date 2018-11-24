@@ -78,7 +78,7 @@ class StudentProfileContainer extends Component {
           saveChangeButton={this.saveChangeButton}
           handleAddSkill = {this.handleAddSkill}
           handleDeleteSkill = {this.handleDeleteSkill}
-      />
+        />
       </div>
     );
 
