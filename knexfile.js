@@ -10,6 +10,9 @@ module.exports = {
       password: '',
       database: 'intern-hub',
     },
+    seeds: {
+      directory: './seeds/dev',
+    },
   },
 
   testing: {

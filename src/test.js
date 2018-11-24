@@ -30,28 +30,45 @@
 
 // runTest().then(() => { });
 
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 
-const transporter =nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'severussnape0x@gmail.com',
-    pass: 'Duy78183',
-  },
-});
+// const transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'severussnape0x@gmail.com',
+//     pass: 'Duy78183',
+//   },
+// });
 
-const mailOptions = {
-  from: 'severussnape0x@gmail.com',
-  to: 'phuongduyphan@gmail.com',
-  subject: 'Test Intern Hub',
-  text: 'Test Intern Hubbbb',
-  html: '<p style="color:red">Test Intern Hubbb</p>',
+// const mailOptions = {
+//   from: 'severussnape0x@gmail.com',
+//   to: 'phuongduyphan@gmail.com',
+//   subject: 'Test Intern Hub',
+//   text: 'Test Intern Hubbbb',
+//   html: '<p style="color:red">Test Intern Hubbb</p>',
+// };
+
+// transporter.sendMail(mailOptions, (err, info) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(info);
+//   }
+// });
+
+const bcrypt = require('bcryptjs');
+
+function hashing(userpass) {
+  return new Promise((resolve, reject) => {
+    bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.hash(userpass, salt, (errHash, hash) => {
+        if (errHash) return reject(errHash);
+        return resolve(hash);
+      });
+    });
+  });
 };
 
-transporter.sendMail(mailOptions, (err, info) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(info);
-  }
+hashing('123').then((hash) => {
+  console.log(hash);
 });
