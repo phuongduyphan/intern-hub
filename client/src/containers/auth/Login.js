@@ -18,19 +18,24 @@ class LoginContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.isAuthenticated) {
-      console.log (nextProps.auth.user.role);
-      
-
+    if(this.props.auth.user.role === 'student') {
+      this.props.history.push('/stu-profile');
+    } 
+    if(this.props.auth.user.role === 'recruiter') {
+      this.props.history.push('/recr-profile');
     }
-
     if(nextProps.errors) {
       this.setState({errors: nextProps.errors});
     }
   }
 
   componentDidMount() {
-   
+    if(this.props.auth.user.role === 'student') {
+      this.props.history.push('/stu-profile');
+    }
+    if(this.props.auth.user.role === 'recruiter') {
+      this.props.history.push('/recr-profile');
+    }
   }
 
   onChangeText = (e) => {
@@ -51,12 +56,26 @@ class LoginContainer extends Component {
       userpass: this.state.password,
     };
     console.log(userLogin);
+    if(this.props.auth.user.role === 'student') {
+      this.props.history.push('/stu-profile');
+    }
+    if(this.props.auth.user.role === 'recruiter') {
+      this.props.history.push('/recr-profile');
+    }
     
     this.props.loginUser(userLogin);
   };
 
 
   render() {
+      
+    if(this.props.auth.user.role === 'student') {
+      this.props.history.push('/stu-profile');
+    } 
+    if(this.props.auth.user.role === 'recruiter') {
+      this.props.history.push('/recr-profile');
+    }
+    
     console.log(this.state);
     return (
       <div>

@@ -11,7 +11,6 @@ import Button from '@material-ui/core/Button' ;
 import ChipInput from 'material-ui-chip-input'
 
 
-
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -55,6 +54,12 @@ const styles = theme => ({
 
 const StudentProfile = (props) => {
   const { classes, onChangeText, data, saveChangeButton, handleAddSkill, handleDeleteSkill} = props;
+
+  let content;
+  
+ 
+
+
   return (
     <React.Fragment >
       <div className={classes.root+ ' myStudentProfile'}>
