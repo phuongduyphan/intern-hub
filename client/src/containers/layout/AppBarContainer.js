@@ -24,7 +24,7 @@ class AppBarContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.auth.user.role);
+
     if(nextProps.auth.user.role === 'student') {
       this.props.history.push('/stu-profile');
     }
@@ -43,7 +43,12 @@ class AppBarContainer extends Component {
 
 
   componentDidMount() {
-
+    if(this.props.auth.user.role === 'student') {
+      this.props.history.push('/stu-profile');
+    }
+    if(this.props.auth.user.role === 'recruiter') {
+      this.props.history.push('/recr-profile');
+    }
   }
 
   signButton = (e) => {

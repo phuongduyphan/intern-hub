@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const updateStudentProfile = (userId, studentProfile) => (dispach) => {
   axios
-    .put(`http://localhost:5000/api/students/${userId}/info`, studentProfile)
+    .put(`https://rocky-crag-37789.herokuapp.com/api/students/${userId}/info`, studentProfile)
     .then(res => {
       console.log(res);
       dispach({
@@ -27,7 +27,7 @@ export const updateStudentProfile = (userId, studentProfile) => (dispach) => {
 
 export const updateRecruiterProfile = (userId, recruiterProfile) => (dispach) => {
   axios
-    .put(`http://localhost:5000/api/recruiters/${userId}/info`, recruiterProfile)
+    .put(`https://rocky-crag-37789.herokuapp.com/api/recruiters/${userId}/info`, recruiterProfile)
     .then(res => {
       console.log(res);
       dispach({
@@ -49,7 +49,7 @@ export const updateRecruiterProfile = (userId, recruiterProfile) => (dispach) =>
   }
 export const postJob = (jobData) => (dispatch) => {
   axios
-    .post('localhost:5000/api/recruiters/jobs', jobData)
+    .post('https://rocky-crag-37789.herokuapp.com/api/jobs', jobData)
     .then(res => {
       dispatch({
         type: POST_JOB_SUCCEED,

@@ -5,7 +5,7 @@ import jwt_decode from 'jwt-decode';
 // Register
 export const registerUser = (userData) => (dispach) => {
   axios
-    .post('http://localhost:5000/api/users/register', userData)
+    .post('https://rocky-crag-37789.herokuapp.com/api/users/register', userData)
     .then(res => {
       dispach({
         type: CREATE_ACCOUNT_SUCCESS,
@@ -28,7 +28,7 @@ export const registerUser = (userData) => (dispach) => {
 
 // Login
 export const loginUser = (userData) => (dispach) => {
-  axios.post('http://localhost:5000/api/users/login', userData)
+  axios.post('https://rocky-crag-37789.herokuapp.com/api/users/login', userData)
   .then(res => {
     // save to local storage
     const { token } = res.data;

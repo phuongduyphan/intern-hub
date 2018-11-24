@@ -50,7 +50,7 @@ class JobListContainer extends Component {
   }
 
   render() {
-    console.log(this.props.jobList);
+    console.log('test',this.props.jobList);
     return (
       <div className={' myJobList'} >
         <h1>All Jobs</h1>
