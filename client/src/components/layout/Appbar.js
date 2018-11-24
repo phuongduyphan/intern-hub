@@ -14,7 +14,10 @@ import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import ChipInput from 'material-ui-chip-input';
+import MediaQuery from 'react-responsive';
 
+
+import MenuToggle from './MenuToggle';
 import AppButton from './AppButton';
 
 
@@ -66,10 +69,14 @@ const AppBarComponent = (props) => {
   const { 
     classes, 
     data, 
+    user,
     signButton, 
     loginButton, 
     internHubButton, 
-    logoutButton
+    handleAddChip,
+    handleDeleteChip ,
+    logoutButton,
+    isAuthenticated
   } = props;
 
 
@@ -94,7 +101,20 @@ const AppBarComponent = (props) => {
       </Tooltip>
     </div>
   );
+  
+  const RecruitAppButton =(
+    <>
+    <AppButton buttonLabel="Students" link="/students" />
+    <AppButton buttonLabel="Post Jobs" link="/" />
+    </>
+  )
+  const StudentAppButton =(
+    <>
+      <AppButton buttonLabel="All Jobs" link="/jobs" />
+    </>
+  )
 
+  console.log(data.user.role);
 
   return (
     
@@ -106,14 +126,38 @@ const AppBarComponent = (props) => {
           > 
             Intern-Hub 
           </div>
+          <MediaQuery query="(min-device-width: 600px)">
           <div className='appButtonGroup'>
-            <AppButton buttonLabel="All Jobs" link="/jobs" />
-
+            {(user.role==="recruiter")?  RecruitAppButton :StudentAppButton  }
           </div>
 
           <div className={classes.grow}></div>
-          
-          {data.isAuthenticated ? authRender : guestRender }
+          {isAuthenticated ? authRender : guestRender }
+          </MediaQuery>
+          <MediaQuery query="(max-device-width: 600px)">
+            <div className={classes.grow}></div>
+            <div className="menuToggle">
+                    <input type="checkbox" />
+                    <span />
+                    <span />
+                    <span />
+                    <ul className="menu">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/">About</a>
+                        </li>
+                        <li>
+                            <a href="/">Info</a>
+                        </li>
+                        <li>
+                            <a href="/">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+          </MediaQuery>
+
         </Toolbar>
       </AppBar>
     </React.Fragment>

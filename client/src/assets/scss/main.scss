@@ -14,13 +14,16 @@
 @import 'component/_curtain.scss';
 @import 'component/_AccountButton.scss';
 @import 'component/_SearchInput.scss';
+@import 'component/_ToggleMenu.scss';
 
 @import 'Layouts/_Appbar.scss';
 @import 'layouts/_StudentProfile.scss';
+@import 'layouts/_RecruitProfile.scss';
 
 
 @import 'pages/_landing.scss';
 @import 'pages/_register.scss';
 @import 'pages/_jobList.scss';
-@import 'pages/_students.scss'
+@import 'pages/_students.scss';
+@import 'pages/_logIn.scss';
 

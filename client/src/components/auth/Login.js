@@ -49,7 +49,7 @@ const Register = (props) => {
   const { classes, onChangeText, data, signButton, loginButton } = props;
   return (
     <React.Fragment >
-      <div className={classes.root}>
+      <div className={classes.root +" myLogIn"}>
         <Grid container direction='row' justify='center' alignItems='center' className={classes.grid}> 
           <Grid item>
             <Paper className={classes.paper} > 
