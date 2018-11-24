@@ -8,6 +8,7 @@ import Login from './containers/auth/Login';
 import Footer from './components/layout/Footer';
 import JobListContainer from './containers/job/JobList';
 import JobFormContainer from './containers/job/JobForm';
+import RecruiterContainer from './containers/recruiter/RecruiterProfile';
 import StudentProfileContainer from './containers/student/StudentProfile';
 import StudentsContainer from './containers/student/Students';
 import {Provider} from 'react-redux';
@@ -52,6 +53,7 @@ class App extends Component {
               <Route exact path="/stu-profile" component={StudentProfileContainer} />
               <Route exact path="/students" component={StudentsContainer} />
               <Route exact path="/add-job" component={JobFormContainer} />
+              <Route exact path="/recr-profile" component={RecruiterContainer} />
             </div>
             <Footer />
             </div>

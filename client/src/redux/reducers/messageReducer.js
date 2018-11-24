@@ -1,4 +1,4 @@
-import {  ON_REGISTER_SUCCESS, ON_PUT_STUDENT_SUCCESS } from "../actions/type";
+import {  ON_REGISTER_SUCCESS, ON_PUT_STUDENT_SUCCESS, ON_PUT_RECRUITER_SUCCESS } from "../actions/type";
 
 const initialState = {
    registerSuccess: false,
@@ -9,6 +9,12 @@ const initialState = {
 export default function(state = initialState, action) {
     switch(action.type) {
       case ON_PUT_STUDENT_SUCCESS:
+        return {
+          ...state,
+          putStudentSuccess: action.payload,
+        };
+
+      case ON_PUT_RECRUITER_SUCCESS:
         return {
           ...state,
           putStudentSuccess: action.payload,
