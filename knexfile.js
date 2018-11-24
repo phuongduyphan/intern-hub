@@ -50,6 +50,10 @@ module.exports = {
       host: 'eu-cdbr-west-02.cleardb.net',
       user: 'beedadf21ed818',
       password: 'a0d5ee56',
+      database: 'heroku_73b3bbf6bcf0587',
+    },
+    seeds: {
+      directory: './seeds/dev',
     },
   },
 
