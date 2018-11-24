@@ -1,4 +1,8 @@
-import { GET_STUDENT_LIST, GET_JOB_LIST, GET_JOB_LIST_WITH_KEYWORD, GET_ERRORS } from "./type";
+import { GET_STUDENT_LIST,
+          GET_JOB_LIST,
+          GET_JOB_LIST_WITH_KEYWORD,
+          GET_ERRORS,
+          GET_STUDENT_LIST_WITH_KEYWORD} from "./type";
 import JobApi from '../../api/JobApi'
 import axios from 'axios'
 
@@ -16,6 +20,25 @@ export const getStudentList = () => async (dispach) => {
     console.log(e)
   }
 }
+
+export const getStudentListWithKeyword = (keyword) => async (dispatch) => {
+  try {
+    console.log('get keyword', keyword);
+    const {data} = await axios.post('https://rocky-crag-37789.herokuapp.com/api/students/search', {
+      listOfSkills: keyword,
+    })
+    console.log(data);
+    dispatch({
+      type: GET_STUDENT_LIST_WITH_KEYWORD,
+      payload: {
+        studentList: data,
+      },
+    });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 
 export const getJobList = () => async (dispach) => {
   try {
