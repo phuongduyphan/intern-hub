@@ -1,7 +1,9 @@
 const _ = require('lodash');
+const { transaction } = require('objection');
 
 const { Student } = require('./Student');
 const { StudentSkill } = require('../studentSkill/StudentSkill');
+const { User } = require('../user/User');
 const { knex } = require('../../config/mysql/mysql-config');
 
 class StudentService {
@@ -47,6 +49,20 @@ class StudentService {
       const recvStudent = listOfStudents[0];
 
       return recvStudent;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  static async updateStudentInfo(user) {
+    try {
+      let recvUser;
+      await transaction(User.knex(), async (trx) => {
+        recvUser = await User
+          .query(trx)
+          .upsertGraphAndFetch(user);
+      });
+      return recvUser;
     } catch (err) {
       throw err;
     }

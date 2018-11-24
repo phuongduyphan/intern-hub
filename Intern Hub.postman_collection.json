@@ -6,1705 +6,16 @@
 	},
 	"item": [
 		{
-			"name": "Get List Of Students",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:3000/api/students/",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"students",
-						""
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get List Of Students",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/students/",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"students",
-								""
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "436",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:27:00 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1b4-EgV5FYj6fqO/ka34GHUDMnIYQno\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "[{\"studentId\":1,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]},{\"studentId\":3,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]},{\"studentId\":4,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[]}]"
-				}
-			]
-		},
-		{
-			"name": "Get List Of Students By Skills",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"listOfSkills\": [\"nodejs\", \"java\"]\n}"
-				},
-				"url": {
-					"raw": "localhost:3000/api/students/search",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"students",
-						"search"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get List Of Students By Skills",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"disabled": false
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"listOfSkills\": [\"nodejs\", \"java\"]\n}"
-						},
-						"url": {
-							"raw": "localhost:3000/api/students/search",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"students",
-								"search"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "348",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:22:22 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"15c-uKmtSshYkTcLLSYxNc8eJAFbbTA\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "[{\"studentId\":1,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]},{\"studentId\":3,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]}]"
-				}
-			]
-		},
-		{
-			"name": "Get Student",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:3000/api/students/1",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"students",
-						"1"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Student",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/students/1",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"students",
-								"1"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "189",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:27:10 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"bd-F8oSD03zSB9t4akCjDElJFj1pfU\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "{\"studentId\":1,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]}"
-				}
-			]
-		},
-		{
-			"name": "Get List Of Skills",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:3000/api/skills",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"skills"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get List Of Skills",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/skills",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"skills"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "239",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:06:09 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"ef-85aaOff2aJyW6WGTdCWrrd/87Eg\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"},{\"skillId\":4,\"skillName\":\"nodejs\"},{\"skillId\":5,\"skillName\":\"mysql\"},{\"skillId\":6,\"skillName\":\".NET\"},{\"skillId\":7,\"skillName\":\"J2EE\"}]"
-				}
-			]
-		},
-		{
-			"name": "Create Skill",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"skillName\": \"J2EE\"\n}"
-				},
-				"url": {
-					"raw": "localhost:3000/api/skills/",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"skills",
-						""
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Create Skill",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"skillName\": \"J2EE\"\n}"
-						},
-						"url": {
-							"raw": "localhost:3000/api/skills/",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"skills",
-								""
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "32",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:22:11 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"20-SrU5TD1Kf+UKqhwp27z4YYeFaP0\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "{\"skillName\":\"J2EE\",\"skillId\":8}"
-				},
-				{
-					"name": "Create Skill",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"disabled": false
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"skillName\": \"J2EE\"\n}"
-						},
-						"url": {
-							"raw": "localhost:3000/api/skills/",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"skills",
-								""
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "32",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:22:11 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"20-SrU5TD1Kf+UKqhwp27z4YYeFaP0\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "{\"skillName\":\"J2EE\",\"skillId\":8}"
-				}
-			]
-		},
-		{
-			"name": "Get List Of Recruiters",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:3000/api/recruiters",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"recruiters"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get List Of Recruiters",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/recruiters",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"recruiters"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "44",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:06:23 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"2c-KzPQgDM6HJaE+l5tXx0mBsUO5KE\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "[{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"}]"
-				}
-			]
-		},
-		{
-			"name": "Get Recruiter",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": [
-				{
-					"name": "Get Recruiter",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/recruiters/2",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"recruiters",
-								"2"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "509",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:06:33 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1fd-G+4J9i5c742B59BQ/OJ+LXBIq0s\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\",\"jobs\":[{\"jobId\":1,\"recruiterId\":2,\"jobTitle\":\"3 fullstack developer, 1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":1},{\"jobId\":2,\"recruiterId\":2,\"jobTitle\":\"1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":0},{\"jobId\":3,\"recruiterId\":2,\"jobTitle\":\"test\",\"jobDesc\":\"blablabla\",\"location\":\"VN\",\"isValidated\":0},{\"jobId\":4,\"recruiterId\":2,\"jobTitle\":\"3 frontend dev\",\"jobDesc\":\"blablabla\",\"location\":\"Hanoi, VN\",\"isValidated\":0}]}"
-				}
-			]
-		},
-		{
-			"name": "Get Recruiter Info",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:3000/api/recruiters/2/info",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"recruiters",
-						"2",
-						"info"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Recruiter Info",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/recruiters/2/info",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"recruiters",
-								"2",
-								"info"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "42",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:06:52 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"2a-fHvMA+GfHJq1U4EXT9i85MnbXLk\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"}"
-				}
-			]
-		},
-		{
-			"name": "Get Recruiter Jobs",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:3000/api/recruiters/2/jobs",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"recruiters",
-						"2",
-						"jobs"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Recruiter Jobs",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/recruiters/2/jobs",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"recruiters",
-								"2",
-								"jobs"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "459",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:07:00 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1cb-PbXyzmtHcwJz2IwO9hBRjpEce9E\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "[{\"jobId\":1,\"recruiterId\":2,\"jobTitle\":\"3 fullstack developer, 1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":1},{\"jobId\":2,\"recruiterId\":2,\"jobTitle\":\"1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":0},{\"jobId\":3,\"recruiterId\":2,\"jobTitle\":\"test\",\"jobDesc\":\"blablabla\",\"location\":\"VN\",\"isValidated\":0},{\"jobId\":4,\"recruiterId\":2,\"jobTitle\":\"3 frontend dev\",\"jobDesc\":\"blablabla\",\"location\":\"Hanoi, VN\",\"isValidated\":0}]"
-				}
-			]
-		},
-		{
-			"name": "Create Job",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\n}"
-				},
-				"url": {
-					"raw": "localhost:3000/api/recruiters/2/info",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"recruiters",
-						"2",
-						"info"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get List Of Jobs",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:3000/api/jobs",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"jobs"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get List Of Jobs",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/jobs",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"jobs"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "1288",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:07:54 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"508-lZXoEjdC3EsEBm3JQ5r144m52BI\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "[{\"jobId\":1,\"recruiterId\":2,\"jobTitle\":\"3 fullstack developer, 1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":1,\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}],\"recruiters\":{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"},\"categories\":[{\"categoryId\":1,\"categoryName\":\"fullstack developer\"},{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":3,\"categoryName\":\"backend\"}]},{\"jobId\":2,\"recruiterId\":2,\"jobTitle\":\"1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":0,\"skills\":[{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}],\"recruiters\":{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"},\"categories\":[{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":4,\"categoryName\":\"frontend\"},{\"categoryId\":5,\"categoryName\":\"BA\"}]},{\"jobId\":3,\"recruiterId\":2,\"jobTitle\":\"test\",\"jobDesc\":\"blablabla\",\"location\":\"VN\",\"isValidated\":0,\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":5,\"skillName\":\"mysql\"}],\"recruiters\":{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"},\"categories\":[]},{\"jobId\":4,\"recruiterId\":2,\"jobTitle\":\"3 frontend dev\",\"jobDesc\":\"blablabla\",\"location\":\"Hanoi, VN\",\"isValidated\":0,\"skills\":[],\"recruiters\":{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"},\"categories\":[]}]"
-				}
-			]
-		},
-		{
-			"name": "Get List Of Jobs By Keywords",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"listOfKeywords\": [\"frontend\", \"BA\", \"java\", \"MySQL\"]\n}"
-				},
-				"url": {
-					"raw": "localhost:3000/api/jobs/search",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"jobs",
-						"search"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get List Of Jobs By Keywords",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"disabled": false
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"listOfKeywords\": [\"frontend\", \"BA\", \"java\", \"MySQL\"]\n}"
-						},
-						"url": {
-							"raw": "localhost:3000/api/jobs/search",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"jobs",
-								"search"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "919",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:03:49 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"397-F3FvBWPVv21wWe6fQhJecsnXlcc\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "[{\"jobId\":2,\"recruiterId\":2,\"jobTitle\":\"1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":0,\"categories\":[{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":4,\"categoryName\":\"frontend\"},{\"categoryId\":5,\"categoryName\":\"BA\"}],\"skills\":[{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]},{\"jobId\":3,\"recruiterId\":2,\"jobTitle\":\"test\",\"jobDesc\":\"blablabla\",\"location\":\"VN\",\"isValidated\":0,\"categories\":[],\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":5,\"skillName\":\"mysql\"}]},{\"jobId\":1,\"recruiterId\":2,\"jobTitle\":\"3 fullstack developer, 1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":1,\"categories\":[{\"categoryId\":1,\"categoryName\":\"fullstack developer\"},{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":3,\"categoryName\":\"backend\"}],\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]}]"
-				}
-			]
-		},
-		{
-			"name": "Get Job",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:3000/api/jobs/1",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"jobs",
-						"1"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Job",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/jobs/1",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"jobs",
-								"1"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "453",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:05:18 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1c5-FDdjm/CRLhLURw+eNVf5XtVY1po\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "{\"jobId\":1,\"recruiterId\":2,\"jobTitle\":\"3 fullstack developer, 1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":1,\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}],\"recruiters\":{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"},\"categories\":[{\"categoryId\":1,\"categoryName\":\"fullstack developer\"},{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":3,\"categoryName\":\"backend\"}]}"
-				}
-			]
-		},
-		{
-			"name": "Get List Of Categories",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:3000/api/categories",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"categories"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get List Of Categories",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/categories",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"categories"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "218",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:16:13 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"da-9l54MZUarljMlEjv0FvV79ZnhPw\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "[{\"categoryId\":1,\"categoryName\":\"fullstack developer\"},{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":3,\"categoryName\":\"backend\"},{\"categoryId\":4,\"categoryName\":\"frontend\"},{\"categoryId\":5,\"categoryName\":\"BA\"}]"
-				}
-			]
-		},
-		{
-			"name": "Create Category",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"categoryName\": \"QA\"\n}"
-				},
-				"url": {
-					"raw": "localhost:3000/api/categories",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"categories"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Create Category",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"disabled": false
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"categoryName\": \"QA\"\n}"
-						},
-						"url": {
-							"raw": "localhost:3000/api/categories",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"categories"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "51",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:21:37 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"33-fkCahdgXpViyOt5U9NQO4RJZ3CQ\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "{\"categoryId\":{\"categoryName\":\"QA\",\"categoryId\":6}}"
-				},
-				{
-					"name": "Create Category",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"categoryName\": \"QA\"\n}"
-						},
-						"url": {
-							"raw": "localhost:3000/api/categories",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"categories"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "51",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:21:37 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"33-fkCahdgXpViyOt5U9NQO4RJZ3CQ\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "{\"categoryId\":{\"categoryName\":\"QA\",\"categoryId\":6}}"
-				}
-			]
-		},
-		{
-			"name": "Get Category",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": [
-				{
-					"name": "Get Category",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "localhost:3000/api/categories/3",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"categories",
-								"3"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "43",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 08:25:52 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"2b-ejIuKzL0tZRXNeW4EhHMYMjRaQg\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "[{\"categoryId\":3,\"categoryName\":\"backend\"}]"
-				}
-			]
-		},
-		{
-			"name": "Register User",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"displayname\": \"Thanh Tung\",\n\t\"username\": \"thanhtung\",\n\t\"userpass\": \"123\",\n\t\"role\": \"student\"\n}"
-				},
-				"url": {
-					"raw": "localhost:3000/api/users/register",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"users",
-						"register"
-					]
-				}
-			},
-			"response": [
+			"name": "User API",
+			"item": [
 				{
 					"name": "Register User",
-					"originalRequest": {
+					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"disabled": false
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -1724,100 +35,100 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "plain",
-					"header": [
+					"response": [
 						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "2",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "text/plain; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 09:29:46 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+							"name": "Register User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"displayname\": \"Thanh Tung\",\n\t\"username\": \"thanhtung\",\n\t\"userpass\": \"123\",\n\t\"role\": \"student\"\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/api/users/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 09:29:46 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "OK"
 						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
-						}
-					],
-					"body": "OK"
-				}
-			]
-		},
-		{
-			"name": "Login user",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"username\": \"thanhtung\",\n\t\"userpass\": \"123\"\n}"
-				},
-				"url": {
-					"raw": "localhost:3000/api/users/login",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"users",
-						"login"
 					]
-				}
-			},
-			"response": [
+				},
 				{
 					"name": "Login user",
-					"originalRequest": {
+					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"disabled": false
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -1837,59 +148,1968 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Length",
-							"value": "259",
-							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 23 Nov 2018 14:30:11 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"103-i/rWbS08pdFXNVeEMqm+i3+nEHc\"",
-							"name": "ETag",
-							"description": "An identifier for a specific version of a resource, often a message digest"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express",
-							"name": "X-Powered-By",
-							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+							"name": "Login user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"thanhtung\",\n\t\"userpass\": \"123\"\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/api/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 14:30:11 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-i/rWbS08pdFXNVeEMqm+i3+nEHc\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "{\"success\":true,\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImRpc3BsYXluYW1lIjoiVGhhbmggVHVuZyIsInVzZXJuYW1lIjoidGhhbmh0dW5nIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE1NDI5ODM0MTEsImV4cCI6MTU0MzU4ODIxMX0.xoZbuedfAyPjXEoUrgqZD9mp4iVANxNnHEtk7LgUnt4\"}"
 						}
-					],
-					"cookie": [
-						{
-							"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
-							"httpOnly": true,
-							"domain": "localhost",
-							"path": "/",
-							"secure": false,
-							"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
-							"key": "connect.sid"
+					]
+				}
+			]
+		},
+		{
+			"name": "StudentAPI",
+			"item": [
+				{
+					"name": "Get List Of Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/students/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"students",
+								""
+							]
 						}
-					],
-					"body": "{\"success\":true,\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImRpc3BsYXluYW1lIjoiVGhhbmggVHVuZyIsInVzZXJuYW1lIjoidGhhbmh0dW5nIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE1NDI5ODM0MTEsImV4cCI6MTU0MzU4ODIxMX0.xoZbuedfAyPjXEoUrgqZD9mp4iVANxNnHEtk7LgUnt4\"}"
+					},
+					"response": [
+						{
+							"name": "Get List Of Students",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/students/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"students",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "436",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:27:00 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b4-EgV5FYj6fqO/ka34GHUDMnIYQno\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "[{\"studentId\":1,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]},{\"studentId\":3,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]},{\"studentId\":4,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[]}]"
+						}
+					]
+				},
+				{
+					"name": "Get List Of Students By Skills",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"listOfSkills\": [\"nodejs\", \"java\"]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/students/search",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"students",
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List Of Students By Skills",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"listOfSkills\": [\"nodejs\", \"java\"]\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/api/students/search",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"students",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "348",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:22:22 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15c-uKmtSshYkTcLLSYxNc8eJAFbbTA\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "[{\"studentId\":1,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]},{\"studentId\":3,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]}]"
+						}
+					]
+				},
+				{
+					"name": "Get Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/students/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"students",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Student",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/students/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"students",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "189",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:27:10 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bd-F8oSD03zSB9t4akCjDElJFj1pfU\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "{\"studentId\":1,\"studentDob\":null,\"studentMajor\":\"CS\",\"studentCollege\":\"IU\",\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]}"
+						}
+					]
+				},
+				{
+					"name": "Update Student Info",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImRpc3BsYXluYW1lIjoiVGhhbmggVHVuZyIsInVzZXJuYW1lIjoidGhhbmh0dW5nIiwiZW1haWwiOm51bGwsInBob25lTnVtYmVyIjpudWxsLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTU0MzA1NjExNCwiZXhwIjoxNTQzNjYwOTE0fQ.UQ49RmNvzxjzZvwSkEVL7enazcUR7WeRsANdjFLM-G0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"thanhtung@gmail.com\",\n\t\"phoneNumber\": \"0374056987\",\n\t\"studentMajor\": \"Computer Science\",\n\t\"studentCollege\": \"HCMIU\",\n\t\"studentDesc\": \"My name is Tung\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/students/1/info",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"students",
+								"1",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Skill API",
+			"item": [
+				{
+					"name": "Get List Of Skills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/skills",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"skills"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List Of Skills",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/skills",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"skills"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "239",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:06:09 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ef-85aaOff2aJyW6WGTdCWrrd/87Eg\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"},{\"skillId\":4,\"skillName\":\"nodejs\"},{\"skillId\":5,\"skillName\":\"mysql\"},{\"skillId\":6,\"skillName\":\".NET\"},{\"skillId\":7,\"skillName\":\"J2EE\"}]"
+						}
+					]
+				},
+				{
+					"name": "Create Skill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"skillName\": \"J2EE\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/skills/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"skills",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Skill",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"skillName\": \"J2EE\"\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/api/skills/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"skills",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:22:11 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-SrU5TD1Kf+UKqhwp27z4YYeFaP0\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "{\"skillName\":\"J2EE\",\"skillId\":8}"
+						},
+						{
+							"name": "Create Skill",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"skillName\": \"J2EE\"\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/api/skills/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"skills",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:22:11 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-SrU5TD1Kf+UKqhwp27z4YYeFaP0\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "{\"skillName\":\"J2EE\",\"skillId\":8}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Recruiter API",
+			"item": [
+				{
+					"name": "Get List Of Recruiters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/recruiters",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recruiters"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List Of Recruiters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/recruiters",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recruiters"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:06:23 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-KzPQgDM6HJaE+l5tXx0mBsUO5KE\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "[{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"}]"
+						}
+					]
+				},
+				{
+					"name": "Get Recruiter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Get Recruiter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/recruiters/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recruiters",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "509",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:06:33 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1fd-G+4J9i5c742B59BQ/OJ+LXBIq0s\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\",\"jobs\":[{\"jobId\":1,\"recruiterId\":2,\"jobTitle\":\"3 fullstack developer, 1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":1},{\"jobId\":2,\"recruiterId\":2,\"jobTitle\":\"1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":0},{\"jobId\":3,\"recruiterId\":2,\"jobTitle\":\"test\",\"jobDesc\":\"blablabla\",\"location\":\"VN\",\"isValidated\":0},{\"jobId\":4,\"recruiterId\":2,\"jobTitle\":\"3 frontend dev\",\"jobDesc\":\"blablabla\",\"location\":\"Hanoi, VN\",\"isValidated\":0}]}"
+						}
+					]
+				},
+				{
+					"name": "Get Recruiter Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/recruiters/2/info",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recruiters",
+								"2",
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Recruiter Info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/recruiters/2/info",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recruiters",
+										"2",
+										"info"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:06:52 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-fHvMA+GfHJq1U4EXT9i85MnbXLk\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"}"
+						}
+					]
+				},
+				{
+					"name": "Get Recruiter Jobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/recruiters/2/jobs",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recruiters",
+								"2",
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Recruiter Jobs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/recruiters/2/jobs",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recruiters",
+										"2",
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "459",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:07:00 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1cb-PbXyzmtHcwJz2IwO9hBRjpEce9E\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "[{\"jobId\":1,\"recruiterId\":2,\"jobTitle\":\"3 fullstack developer, 1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":1},{\"jobId\":2,\"recruiterId\":2,\"jobTitle\":\"1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":0},{\"jobId\":3,\"recruiterId\":2,\"jobTitle\":\"test\",\"jobDesc\":\"blablabla\",\"location\":\"VN\",\"isValidated\":0},{\"jobId\":4,\"recruiterId\":2,\"jobTitle\":\"3 frontend dev\",\"jobDesc\":\"blablabla\",\"location\":\"Hanoi, VN\",\"isValidated\":0}]"
+						}
+					]
+				},
+				{
+					"name": "Create Job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/recruiters/2/info",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recruiters",
+								"2",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recruiter Create Job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImRpc3BsYXluYW1lIjoiVGhhbmggVHVuZyIsInVzZXJuYW1lIjoidGhhbmh0dW5nIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE1NDI5ODM5NjUsImV4cCI6MTU0MzU4ODc2NX0.rU_jVZgeFTKerGb34hezkaEL1N0YmNAK51Fa4j38G74"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"jobTitle\": \"3 Tester and 1 MySql Engineer\",\n\t\"jobDesc\": \"blablabla\",\n\t\"location\": \"HCMC, VN\",\n\t\"listOfSkillIds\": [{ \"skillId\": 1}, { \"skillId\": 3}, { \"skillId\": 4 }],\n\t\"listOfCategoryIds\": [ {\"categoryId\": 2}, { \"categoryId\": 3}]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/recruiters/jobs",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recruiters",
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Recruiter Create Job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImRpc3BsYXluYW1lIjoiVGhhbmggVHVuZyIsInVzZXJuYW1lIjoidGhhbmh0dW5nIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE1NDI5ODM5NjUsImV4cCI6MTU0MzU4ODc2NX0.rU_jVZgeFTKerGb34hezkaEL1N0YmNAK51Fa4j38G74",
+										"disabled": false
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"jobTitle\": \"3 Tester and 1 MySql Engineer\",\n\t\"jobDesc\": \"blablabla\",\n\t\"location\": \"HCMC, VN\",\n\t\"listOfSkillIds\": [{ \"skillId\": 1}, { \"skillId\": 3}, { \"skillId\": 4 }],\n\t\"listOfCategoryIds\": [ {\"categoryId\": 2}, { \"categoryId\": 3}]\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/api/recruiters/jobs",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recruiters",
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "288",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 16:31:15 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"120-BYzsMWkT7dYrlZvCp3LTFWUitAY\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "{\"jobId\":4,\"recruiterId\":1,\"jobTitle\":\"3 Tester and 1 MySql Engineer\",\"jobDesc\":\"blablabla\",\"location\":\"HCMC, VN\",\"isValidated\":0,\"jobSkills\":[{\"jobId\":4,\"skillId\":1},{\"jobId\":4,\"skillId\":3},{\"jobId\":4,\"skillId\":4}],\"jobCategories\":[{\"jobId\":4,\"categoryId\":2},{\"jobId\":4,\"categoryId\":3}]}"
+						}
+					]
+				},
+				{
+					"name": "Update Recruiter Info",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImRpc3BsYXluYW1lIjoiVGhhbmggVHVuZyIsInVzZXJuYW1lIjoidGhhbmh0dW5nIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE1NDMwNDg0ODksImV4cCI6MTU0MzY1MzI4OX0.NX6qVuG6G6qulBUsXnatX5gOTV0d2l6J78ZVkQadfVI"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"recruiterAddress\": \"69 ThuDuc HCM\",\n\t\"company\": \"PiedPiper\",\n\t\"recruiterDesc\": \"My name is Hello\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/recruiters/1/info",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recruiters",
+								"1",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job API",
+			"item": [
+				{
+					"name": "Get List Of Jobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/jobs",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List Of Jobs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/jobs",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1288",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:07:54 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"508-lZXoEjdC3EsEBm3JQ5r144m52BI\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "[{\"jobId\":1,\"recruiterId\":2,\"jobTitle\":\"3 fullstack developer, 1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":1,\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}],\"recruiters\":{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"},\"categories\":[{\"categoryId\":1,\"categoryName\":\"fullstack developer\"},{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":3,\"categoryName\":\"backend\"}]},{\"jobId\":2,\"recruiterId\":2,\"jobTitle\":\"1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":0,\"skills\":[{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}],\"recruiters\":{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"},\"categories\":[{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":4,\"categoryName\":\"frontend\"},{\"categoryId\":5,\"categoryName\":\"BA\"}]},{\"jobId\":3,\"recruiterId\":2,\"jobTitle\":\"test\",\"jobDesc\":\"blablabla\",\"location\":\"VN\",\"isValidated\":0,\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":5,\"skillName\":\"mysql\"}],\"recruiters\":{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"},\"categories\":[]},{\"jobId\":4,\"recruiterId\":2,\"jobTitle\":\"3 frontend dev\",\"jobDesc\":\"blablabla\",\"location\":\"Hanoi, VN\",\"isValidated\":0,\"skills\":[],\"recruiters\":{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"},\"categories\":[]}]"
+						}
+					]
+				},
+				{
+					"name": "Get List Of Jobs By Keywords",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"listOfKeywords\": [\"frontend\", \"BA\", \"java\", \"MySQL\"]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/jobs/search",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"jobs",
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List Of Jobs By Keywords",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"listOfKeywords\": [\"frontend\", \"BA\", \"java\", \"MySQL\"]\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/api/jobs/search",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"jobs",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "919",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:03:49 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"397-F3FvBWPVv21wWe6fQhJecsnXlcc\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "[{\"jobId\":2,\"recruiterId\":2,\"jobTitle\":\"1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":0,\"categories\":[{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":4,\"categoryName\":\"frontend\"},{\"categoryId\":5,\"categoryName\":\"BA\"}],\"skills\":[{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]},{\"jobId\":3,\"recruiterId\":2,\"jobTitle\":\"test\",\"jobDesc\":\"blablabla\",\"location\":\"VN\",\"isValidated\":0,\"categories\":[],\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":5,\"skillName\":\"mysql\"}]},{\"jobId\":1,\"recruiterId\":2,\"jobTitle\":\"3 fullstack developer, 1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":1,\"categories\":[{\"categoryId\":1,\"categoryName\":\"fullstack developer\"},{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":3,\"categoryName\":\"backend\"}],\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}]}]"
+						}
+					]
+				},
+				{
+					"name": "Get Job",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/jobs/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"jobs",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Job",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/jobs/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"jobs",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "453",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:05:18 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c5-FDdjm/CRLhLURw+eNVf5XtVY1po\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "{\"jobId\":1,\"recruiterId\":2,\"jobTitle\":\"3 fullstack developer, 1 tester\",\"jobDesc\":\"blablabla\",\"location\":\"HCM, VN\",\"isValidated\":1,\"skills\":[{\"skillId\":1,\"skillName\":\"Java\"},{\"skillId\":2,\"skillName\":\"NodeJs\"},{\"skillId\":3,\"skillName\":\"Design\"}],\"recruiters\":{\"recruiterId\":2,\"address\":\"69/2 Thu Duc\"},\"categories\":[{\"categoryId\":1,\"categoryName\":\"fullstack developer\"},{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":3,\"categoryName\":\"backend\"}]}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Category API",
+			"item": [
+				{
+					"name": "Get List Of Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List Of Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:16:13 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"da-9l54MZUarljMlEjv0FvV79ZnhPw\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "[{\"categoryId\":1,\"categoryName\":\"fullstack developer\"},{\"categoryId\":2,\"categoryName\":\"tester\"},{\"categoryId\":3,\"categoryName\":\"backend\"},{\"categoryId\":4,\"categoryName\":\"frontend\"},{\"categoryId\":5,\"categoryName\":\"BA\"}]"
+						}
+					]
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"categoryName\": \"QA\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"categoryName\": \"QA\"\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/api/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:21:37 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-fkCahdgXpViyOt5U9NQO4RJZ3CQ\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "{\"categoryId\":{\"categoryName\":\"QA\",\"categoryId\":6}}"
+						},
+						{
+							"name": "Create Category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"categoryName\": \"QA\"\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/api/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:21:37 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-fkCahdgXpViyOt5U9NQO4RJZ3CQ\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "{\"categoryId\":{\"categoryName\":\"QA\",\"categoryId\":6}}"
+						}
+					]
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Get Category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/api/categories/3",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Nov 2018 08:25:52 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-ejIuKzL0tZRXNeW4EhHMYMjRaQg\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 10:14:07 GMT+0700 (+07)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "s%3Aa_GcIx5F_YN4AqiW-SLEgwtXUv9KGS-O.yzFoNuS3LE8qr59LHjvFMKEN4d83TV6612%2BkLPma2Xo",
+									"key": "connect.sid"
+								}
+							],
+							"body": "[{\"categoryId\":3,\"categoryName\":\"backend\"}]"
+						}
+					]
 				}
 			]
 		}

@@ -11,9 +11,13 @@ exports.up = async (knex) => {
       .onDelete('CASCADE');
 
     table
-      .string('address')
+      .string('recruiter_address')
       .notNullable();
-  })
+
+    table.string('company');
+
+    table.text('recruiter_desc');
+  });
 };
 
 exports.down = async (knex) => {

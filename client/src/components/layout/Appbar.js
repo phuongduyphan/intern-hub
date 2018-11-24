@@ -66,14 +66,11 @@ const AppBarComponent = (props) => {
   const { 
     classes, 
     data, 
-   
     signButton, 
     loginButton, 
     internHubButton, 
     logoutButton
   } = props;
-
-
 
 
   const guestRender = (
@@ -87,7 +84,7 @@ const AppBarComponent = (props) => {
 
   const authRender = (
     <div className={classes.row}>
-      <Tooltip title={data.userName}>
+      <Tooltip title={data.user.displayname}>
         <Avatar src={defaultAvatar} className={classes.avatar} />
       </Tooltip>
       <Tooltip title="Log Out">

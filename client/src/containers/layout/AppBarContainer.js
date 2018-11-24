@@ -11,6 +11,7 @@ class AppBarContainer extends Component {
     super(props);
     this.state = {
       isAuthenticated: false,
+      user: {},
       anchorEl: null,
       searchInput: [],
     };
@@ -25,6 +26,10 @@ class AppBarContainer extends Component {
 
     if(nextProps.errors) {
       this.setState({errors: nextProps.errors});
+    }
+
+    if(nextProps.auth.user) {
+      this.setState({ user: nextProps.auth.user });
     }
   }
 
