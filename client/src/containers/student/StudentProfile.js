@@ -17,7 +17,7 @@ class StudentProfileContainer extends Component {
       college: '',
       studentDesc: '',
       major: '',
-      skill: '',
+      skill: [],
       errors: {},
     };
   }
@@ -27,6 +27,21 @@ class StudentProfileContainer extends Component {
 
     }
   }
+
+  immutableDelete (arr, index) {
+    return arr.slice(0,index).concat(arr.slice(index+1))
+  }
+
+  handleAddSkill = (chip) => {
+    this.setState({ skills: [...this.state.skills, chip]});
+  }
+
+  handleDeleteSkill = (chip, index) => {
+    this.setState({
+      skills: this.immutableDelete(this.state.skills, index)
+    });
+  }
+
 
   onChangeText = (e) => {
     e.preventDefault();
@@ -47,7 +62,7 @@ class StudentProfileContainer extends Component {
     };
 
     console.log('studentP',studentProfile);
-    
+
 
     this.props.updateStudentProfile(userId, studentProfile);
   };
@@ -61,6 +76,8 @@ class StudentProfileContainer extends Component {
           data={this.state}
           onChangeText = {this.onChangeText}
           saveChangeButton={this.saveChangeButton}
+          handleAddSkill = {this.handleAddSkill}
+          handleDeleteSkill = {this.handleDeleteSkill}
       />
       </div>
     );

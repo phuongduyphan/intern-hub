@@ -46,7 +46,7 @@ export const updateRecruiterProfile = (userId, recruiterProfile) => (dispach) =>
         payload: err,
       });
     });
-    
+  }
 export const postJob = (jobData) => (dispatch) => {
   axios
     .post('localhost:5000/api/recruiters/jobs', jobData)
