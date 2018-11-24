@@ -25,12 +25,6 @@ class AppBarContainer extends Component {
 
   componentWillReceiveProps(nextProps) {
 
-    if(nextProps.auth.user.role === 'student') {
-      this.props.history.push('/stu-profile');
-    }
-    if(nextProps.auth.user.role === 'recruiter') {
-      this.props.history.push('/recr-profile');
-    }
 
     if(nextProps.errors) {
       this.setState({errors: nextProps.errors});
@@ -40,8 +34,6 @@ class AppBarContainer extends Component {
       this.setState({ user: nextProps.auth.user });
     }
   }
-
-
 
   signButton = (e) => {
     e.preventDefault();

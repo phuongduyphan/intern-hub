@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import StudentProfile from '../../components/student/StudentProfile';
 import { withRouter } from 'react-router-dom';
 import {updateStudentProfile} from '../../redux/actions/putDataAction';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 class StudentProfileContainer extends Component {
