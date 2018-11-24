@@ -12,7 +12,7 @@ import Place from '@material-ui/icons/Place';
 import Money from '@material-ui/icons/AttachMoney';
 import Heart from '@material-ui/icons/FavoriteBorder';
 import DateRange from '@material-ui/icons/DateRange';
-
+import avatar from '../../asset/avatar/company2.jpeg';
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -58,7 +58,7 @@ const Job = (props) => {
       <Grid container spacing={16}>
         <Grid item xs={2} >
           <ButtonBase className={classes.image}>
-            <img className={classes.img} alt="complex" src={job.logo} />
+            <img className={classes.img} alt="complex" src={avatar} />
           </ButtonBase>
         </Grid>
         <Grid item xs={10}  container>

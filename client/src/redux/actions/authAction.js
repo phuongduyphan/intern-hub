@@ -10,7 +10,7 @@ export const registerUser = (userData) => (dispach) => {
       dispach({
         type: CREATE_ACCOUNT_SUCCESS,
         payload: {
-          isRegisterSuccess: true,
+         
         },
       });
     })

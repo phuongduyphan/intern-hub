@@ -9,7 +9,7 @@ const styles = theme => ({
 })
 
 const JobList = (props) => {
-  const { classes } = props;
+  const { classes, avatar } = props;
 
   return (
     <div className={classes.root}>
