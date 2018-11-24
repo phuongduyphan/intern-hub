@@ -65,13 +65,13 @@ class StudentProfileContainer extends Component {
 
     console.log('studentP',studentProfile);
 
-
     this.props.updateStudentProfile(userId, studentProfile);
+    this.props.history.push('/jobs');
   };
 
 
   render() {
-    
+
     return (
       <div>
         <StudentProfile

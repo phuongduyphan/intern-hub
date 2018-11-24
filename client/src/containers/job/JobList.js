@@ -7,11 +7,11 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import ChipInput from 'material-ui-chip-input';
 import SearchInput from '../../components/addJob/SearchInput'
+import LinearProgress from '@material-ui/core/LinearProgress';
 import { getJobList, getJobListWithKeyword } from '../../redux/actions/getDataAction';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import LinearProgress from '@material-ui/core/LinearProgress';
 
 
 
@@ -26,17 +26,12 @@ class JobListContainer extends Component {
   }
 
   componentDidMount() {
-    console.log('mount');
     this.props.getJobList();
   }
 
   handleAddChip = chip => {
-    console.log('add');
-    console.log(chip);
     this.setState({ searchInput: [...this.state.searchInput, chip] });
-    console.log(this.state);
   }
-
 
   immutableDelete (arr, index){
       return arr.slice(0,index).concat(arr.slice(index+1))
@@ -60,11 +55,11 @@ class JobListContainer extends Component {
 
   render() {
     return (
-      <div className={' myJobList'} >
+      <div className={{}} >
       {
         !this.props.isJobLoading ?
           <LinearProgress /> :
-          <div>
+          <div className={' myJobList'} >
             <h1>All Jobs</h1>
             <SearchInput
               onSearchButton = {this.onSearchButton}

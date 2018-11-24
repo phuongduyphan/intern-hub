@@ -1,4 +1,9 @@
-import { GET_STUDENT_LIST, GET_JOB_LIST, GET_JOB_LIST_WITH_KEYWORD , GET_SKILL_LIST, GET_CATEGORY_LIST} from '../actions/type';
+import { GET_STUDENT_LIST,
+         GET_JOB_LIST,
+         GET_JOB_LIST_WITH_KEYWORD ,
+         GET_SKILL_LIST,
+         GET_CATEGORY_LIST,
+         GET_STUDENT_LIST_WITH_KEYWORD } from '../actions/type';
 
 
 const initialState = {
@@ -8,6 +13,7 @@ const initialState = {
   skillList: [],
   isSearching: false,
   isJobLoading: false,
+  isStudentLoading: false
   // listJob: {
   //   data: [],
   // }
@@ -16,6 +22,12 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case GET_STUDENT_LIST:
+      return {
+        ...state,
+        studentList: action.payload.studentList,
+        isStudentLoading: true
+      }
+    case GET_STUDENT_LIST_WITH_KEYWORD:
       return {
         ...state,
         studentList: action.payload.studentList,
