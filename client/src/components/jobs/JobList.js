@@ -127,8 +127,8 @@ const JobList = (props) => {
 
   return (
     <div className={classes.root +' myJobList'}>
-      {list.map((job) => (
-        <Job job={job} />
+      {props.jobList.map((job) => (
+        <Job key={job.jobId} job={job} />
       ))}
     </div>
   )

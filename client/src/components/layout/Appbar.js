@@ -114,6 +114,43 @@ const AppBarComponent = (props) => {
     </>
   )
 
+  
+  const RecruitAppButtonReponsive=(
+    <>
+      <li>
+      <button className="appButtonRes" href="/students" >Student</button>
+
+      </li>
+      <li>
+        <a href="/" >
+          Post jobs
+      </a>
+      </li>
+    </>
+  )
+
+  const StudentAppButtonResponsive =(
+    <li>
+      <a href="/jobs" >
+        All Jobs
+      </a>
+    </li>
+    
+  )
+  const GuestRes=(
+    <>
+    <li>
+      <a href="/login" >
+        Log In
+      </a>
+    </li>
+    <li>
+      <a href="/register" >
+        Register
+      </a>
+    </li>
+    </>
+  )
   console.log(data.user.role);
 
   return (
@@ -142,18 +179,8 @@ const AppBarComponent = (props) => {
                     <span />
                     <span />
                     <ul className="menu">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="/">About</a>
-                        </li>
-                        <li>
-                            <a href="/">Info</a>
-                        </li>
-                        <li>
-                            <a href="/">Contact</a>
-                        </li>
+                    {(user.role==="recruiter")?  RecruitAppButtonReponsive :StudentAppButtonResponsive  }
+                    {!isAuthenticated ? GuestRes : "" }
                     </ul>
                 </div>
           </MediaQuery>

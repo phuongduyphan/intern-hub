@@ -4,6 +4,8 @@ const knexConfig = require('../../knexfile');
 
 const environment = process.env.NODE_ENV || 'development';
 
+console.log(knexConfig[environment]);
+
 const knex = Knex(Object.assign(knexConfig[environment], knexSnakeCaseMappers()));
 
 // knex.on('query', (queryData) => {

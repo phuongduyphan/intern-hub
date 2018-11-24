@@ -9,7 +9,10 @@ const { knex } = require('../../config/mysql/mysql-config');
 class StudentService {
   static async getListOfStudents() {
     try {
-      const listOfStudents = await Student.query().eager('[skills]');
+      const listOfStudents = await Student.query().eager('[users, skills]')
+        .modifyEager('users', (builder) => {
+          builder.select('displayname', 'email', 'phoneNumber');
+        });
       return listOfStudents;
     } catch (err) {
       throw err;

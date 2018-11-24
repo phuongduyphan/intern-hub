@@ -8,6 +8,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button' ;
+import ChipInput from 'material-ui-chip-input'
 
 
 
@@ -21,13 +22,13 @@ const styles = theme => ({
     justifyContent: 'center',
     marginTop: theme.spacing.unit * 4 ,
     marginLeft: theme.spacing.unit * 4 ,
-    marginRight: theme.spacing.unit * 4 
+    marginRight: theme.spacing.unit * 4
   },
   seconTypo: {
     display: 'flex',
     justifyContent: 'flex-end',
     marginRight: theme.spacing.unit * 1 ,
-    marginBottom: theme.spacing.unit * 5 
+    marginBottom: theme.spacing.unit * 5
   },
   textRow: {
     display: 'flex',
@@ -53,11 +54,11 @@ const styles = theme => ({
 });
 
 const StudentProfile = (props) => {
-  const { classes, onChangeText, data, signButton, saveChangeButton } = props;
+  const { classes, onChangeText, data, signButton, saveChangeButton, handleAddSkill, handleDeleteSkill} = props;
   return (
     <React.Fragment >
-      <div className={classes.root + ' myStudentProfile'}>
-        <Grid container className={classes.grid} justify='center' alignItems='center'> 
+      <div className={classes.root+ ' myStudentProfile'}>
+        <Grid container className={classes.grid} justify='center' alignItems='center'>
           <Paper className={classes.paper}>
             <Typography className={classes.typo} variant='display1' color='primary'> Update Student Profile </Typography>
             <Typography className={classes.seconTypo} variant='caption' color='textSecondary' align='right'> * Please update your info to get your future intern ! </Typography>
@@ -82,8 +83,8 @@ const StudentProfile = (props) => {
                     />
               </FormControl>
             </div>
-           
-            
+
+
 
             <FormControl className={classes.textField}>
                 <InputLabel>College</InputLabel>
@@ -114,15 +115,15 @@ const StudentProfile = (props) => {
                     onChange={onChangeText}
                   />
             </FormControl>
-          
+
             <FormControl className={classes.textField}>
-                <InputLabel>Your Skill </InputLabel>
-                  <Input
-                    autoFocus
-                    name='skill'
-                    value={data.skill}
-                    onChange={onChangeText}
-                  />
+              <ChipInput
+                label="Skills"
+                placeholder="Mongo, Jav, ..."
+                value={data.categories}
+                onAdd={(chip) => handleAddSkill(chip)}
+                onDelete={(chip, index) => handleDeleteSkill(chip, index)}
+              />
             </FormControl>
             <Button onClick={saveChangeButton} className={classes.button} variant='contained' color='primary'> Save Change </Button>
           </Paper>
@@ -137,4 +138,3 @@ StudentProfile.propTypes = {
 };
 
 export default withStyles(styles)(StudentProfile);
-
