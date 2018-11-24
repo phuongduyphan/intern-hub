@@ -67,7 +67,7 @@ const Students = (props) => {
  
   return (
     <Grid container direction='row' alignContent='center' justify='center'>
-      <Paper className={classes.root}>
+      <Paper className={classes.root }>
         <Grid container spacing={16}>
           <Grid item >
             <Avatar src={student.avatar} className={classes.image} />

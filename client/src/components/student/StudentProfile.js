@@ -56,7 +56,7 @@ const StudentProfile = (props) => {
   const { classes, onChangeText, data, signButton, saveChangeButton } = props;
   return (
     <React.Fragment >
-      <div className={classes.root}>
+      <div className={classes.root + ' myStudentProfile'}>
         <Grid container className={classes.grid} justify='center' alignItems='center'> 
           <Paper className={classes.paper}>
             <Typography className={classes.typo} variant='display1' color='primary'> Update Student Profile </Typography>

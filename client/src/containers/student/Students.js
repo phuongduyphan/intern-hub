@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import Student from '../../components/student/Students';
 import { withRouter } from 'react-router-dom';
 import defaultAvatar from '../../asset/avatar/default.jpg';
+import SearchInput from '../../components/addJob/SearchInput';
 
 
 class StudentsContainer extends Component {
@@ -13,6 +14,26 @@ class StudentsContainer extends Component {
     this.state = {
       student: [{
         name: 'Thanh Tung',
+        avatar: defaultAvatar,
+        phone: '01666725437',
+        email: 'tungtoitiu@gmail.com',
+        college: 'International University',
+        major: 'Information Technology',
+        skill: ['NodeJs', 'ReactJs'],
+        errors: {},
+      },
+      {
+        name: 'Thanh Tung XL',
+        avatar: defaultAvatar,
+        phone: '01666725437',
+        email: 'tungtoitiu@gmail.com',
+        college: 'International University',
+        major: 'Information Technology',
+        skill: ['NodeJs', 'ReactJs'],
+        errors: {},
+      },
+      {
+        name: 'Thanh Tung XL',
         avatar: defaultAvatar,
         phone: '01666725437',
         email: 'tungtoitiu@gmail.com',
@@ -43,10 +64,12 @@ class StudentsContainer extends Component {
 
   render() {
     const studentList = this.state.student;
-   
+   console.log(studentList);
     
     return (
-      <div>
+      <div className="myStudents">
+        <h1>All Students</h1>
+        <SearchInput />
          {  
           studentList.map((student) => (
             <Student student={student} />

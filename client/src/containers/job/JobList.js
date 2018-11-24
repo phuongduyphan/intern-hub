@@ -36,6 +36,27 @@ class JobList extends Component {
           type: 'parttime',
           duration: '1 months'
         },
+        {
+          id: 0,
+          logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
+          title: 'Software Engineering',
+          description: 'Do things',
+          company: 'Microsoft',
+          place: 'District 1',
+          salary: '5.000.000 VND',
+          type: 'fulltime',
+          duration: '3 months'
+        }, 
+        {
+          id: 0,
+          logo: 'https://index.tnwcdn.com/images/9794fd32b7b694d7720d2e655049051b78604f09.jpg',
+          title: 'Software Engineering',
+          description: 'Do things',
+          company: 'Microsoft',
+          place: 'District 1',
+          salary: '5.000.000 VND',
+          type: 'fulltime'
+        },
       ],
     }
   }

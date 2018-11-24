@@ -53,6 +53,7 @@ class App extends Component {
               <Route exact path="/students" component={StudentsContainer} />
               <Route exact path="/add-job" component={JobFormContainer} />
             </div>
+            <Footer />
             </div>
           </MuiThemeProvider>
         </Router>
