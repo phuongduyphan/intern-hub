@@ -3,7 +3,18 @@
     top: 75px;
     left: 50%;
     transform: translate(-50%,0);
+    width: 50%;
     >h1{
         text-align: center; 
+    }
+    margin-bottom: 75px;
+    .studentItem{
+        div{
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            width: 100%;
+        }
+       
     }
 }
