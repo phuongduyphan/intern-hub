@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AppBarContainer from './containers/layout/AppBarContainer';
 import Landing from './components/main/Landing';
@@ -25,7 +26,6 @@ class App extends Component {
               <Route exact path="/login" component={ Login } />
               <Route exact path="/jobs" component= { JobList } />
             </div>
-            <Footer />
           </div>
         </Router>
       </Provider>
