@@ -42,6 +42,7 @@ class StudentsContainer extends Component {
           studentList.map((student) => (
             <Student avatar={defaultAvatar} student={student} />
          ))}
+         
       </div>
     );
 
