@@ -53,7 +53,8 @@ exports.studentId_info_put = async (req, res) => {
         studentDesc,
       },
     };
-
+    console.log('user', user);
+    
     await StudentService.updateStudentInfo(user);
     res.sendStatus(200);
   } catch (err) {

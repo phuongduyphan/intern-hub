@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import StudentProfile from '../../components/student/StudentProfile';
 import { withRouter } from 'react-router-dom';
+import {updateStudentProfile} from '../../redux/actions/putDataAction';
 
 class StudentProfileContainer extends Component {
 
@@ -14,6 +15,7 @@ class StudentProfileContainer extends Component {
       email: '',
       phone: '',
       college: '',
+      studentDesc: '',
       major: '',
       skill: '',
       errors: {},
@@ -33,7 +35,22 @@ class StudentProfileContainer extends Component {
 
   saveChangeButton = (e) => {
     e.preventDefault();
-  }
+
+    const userId = this.props.auth.user.userId;
+
+    const studentProfile = {
+      email: this.state.email,
+      phoneNumber: this.state.phone,
+      studentMajor: this.state.major,
+      studentCollege: this.state.college,
+      studentDesc: this.state.studentDesc,
+    };
+
+    console.log('studentP',studentProfile);
+    
+
+    this.props.updateStudentProfile(userId, studentProfile);
+  };
 
 
   render() {
@@ -60,4 +77,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 })
 
-export default connect(mapStateToProps)(withRouter(StudentProfileContainer));
+export default connect(mapStateToProps, {updateStudentProfile})(withRouter(StudentProfileContainer));
