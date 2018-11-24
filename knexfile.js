@@ -32,7 +32,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -50,7 +50,6 @@ module.exports = {
       host: 'us-cdbr-iron-east-01.cleardb.net',
       user: 'b4324ad6d3722a',
       password: '3a99c577',
-      database: 'heroku_25a49024c6ff672',
     },
     pool: {
       min: 2,
