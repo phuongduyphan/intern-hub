@@ -40,6 +40,7 @@ exports.studentId_info_put = async (req, res) => {
       studentMajor,
       studentCollege,
       studentDesc,
+      listOfSkillIds,
     } = req.body;
 
     const user = {
@@ -51,6 +52,7 @@ exports.studentId_info_put = async (req, res) => {
         studentMajor,
         studentCollege,
         studentDesc,
+        studentSkills: listOfSkillIds,
       },
     };
     console.log('user', user);

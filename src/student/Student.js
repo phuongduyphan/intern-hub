@@ -12,6 +12,7 @@ class Student extends Model {
   static get relationMappings() {
     const { User } = require('../user/User');
     const { Skill } = require('../skill/Skill');
+    const { StudentSkill } = require('../studentSkill/StudentSkill');
 
     return {
       users: {
@@ -32,6 +33,14 @@ class Student extends Model {
             to: 'studentSkill.skillId',
           },
           to: 'skills.skillId',
+        },
+      },
+      studentSkills: {
+        relation: Model.HasManyRelation,
+        modelClass: StudentSkill,
+        join: {
+          from: 'students.studentId',
+          to: 'studentSkill.studentId',
         },
       },
     };

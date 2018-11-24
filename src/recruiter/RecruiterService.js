@@ -44,7 +44,6 @@ class RecruiterService {
           .query(trx)
           .upsertGraphAndFetch(user);
       });
-      console.log(recvUser);
       return recvUser;
     } catch (err) {
       throw err;
