@@ -24,7 +24,9 @@ class AppBarContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
+    if(nextProps.auth.user) {
+      this.setState({user: nextProps.auth.user});
+    }
 
     if(nextProps.errors) {
       this.setState({errors: nextProps.errors});
@@ -65,7 +67,6 @@ class AppBarContainer extends Component {
   render() {
     const isAuthenticated = this.props.auth.isAuthenticated;
     const user = this.state.user;
-    console.log (user);
     return (
       <div>
         <AppBar

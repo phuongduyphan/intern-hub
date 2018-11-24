@@ -18,7 +18,7 @@ class LoginContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-  
+    
     if(nextProps.errors) {
       this.setState({errors: nextProps.errors});
     }
@@ -59,12 +59,13 @@ class LoginContainer extends Component {
 
 
   render() {
-      
-    if(this.props.auth.user.role === 'student') {
-      this.props.history.push('/stu-profile');
-    } 
-    if(this.props.auth.user.role === 'recruiter') {
-      this.props.history.push('/recr-profile');
+    if(this.props.auth.user) {
+      if(this.props.auth.user.role === 'student') {
+        this.props.history.push('/stu-profile');
+      }
+      if(this.props.auth.user.role === 'recruiter') {
+        this.props.history.push('/recr-profile');
+      }
     }
     
     console.log(this.state);

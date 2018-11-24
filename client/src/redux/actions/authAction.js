@@ -3,11 +3,11 @@ import axios from 'axios';
 import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 // Register
-export const registerUser = (userData) => (dispach) => {
+export const registerUser = (userData) => (dispatch) => {
   axios
     .post('https://rocky-crag-37789.herokuapp.com/api/users/register', userData)
     .then(res => {
-      dispach({
+      dispatch({
         type: CREATE_ACCOUNT_SUCCESS,
         payload: {
          
@@ -21,7 +21,7 @@ export const registerUser = (userData) => (dispach) => {
 
 
 // Login
-export const loginUser = (userData) => (dispach) => {
+export const loginUser = (userData) => (dispatch) => {
   axios.post('https://rocky-crag-37789.herokuapp.com/api/users/login', userData)
   .then(res => {
     // save to local storage
@@ -32,7 +32,7 @@ export const loginUser = (userData) => (dispach) => {
     console.log('decode', decoded);
 
     // set current user
-    dispach(setCurrentUser(decoded));
+    dispatch(setCurrentUser(decoded));
   })
   .catch(err => {
     console.log(err);
@@ -48,10 +48,10 @@ export const setCurrentUser = (decoded) => {
 }
 
 // user log out
-export const logOutUser = () => (dispach) => {
+export const logOutUser = () => (dispatch) => {
   localStorage.removeItem('jwtToken');
   // remove auth header for future req
   setAuthToken(false);
   // set current to empty object => is authenticate = false
-  dispach(setCurrentUser({}));
+  dispatch(setCurrentUser({}));
 }
