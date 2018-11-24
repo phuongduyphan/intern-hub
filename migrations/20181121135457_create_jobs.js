@@ -19,6 +19,10 @@ exports.up = async (knex) => {
       .text('job_desc', 'longtext')
       .notNullable();
 
+    table.string('job_salary');
+
+    table.string('job_duration');
+
     table
       .string('location')
       .notNullable();

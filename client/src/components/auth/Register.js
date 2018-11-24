@@ -92,6 +92,7 @@ const Register = (props) => {
                 <InputLabel>Password</InputLabel>
                   <Input
                     name='password'
+                    type='password'
                     value={props.data.password}
                     onChange={onChangeText}
                   />
@@ -100,6 +101,7 @@ const Register = (props) => {
                 <InputLabel>Confirm Password</InputLabel>
                   <Input
                     name='password2'
+                    type='password'
                     value={props.data.password2}
                     onChange={onChangeText}
                   />

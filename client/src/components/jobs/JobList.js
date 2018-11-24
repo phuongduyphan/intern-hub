@@ -10,12 +10,10 @@ const styles = theme => ({
 
 const JobList = (props) => {
   const { classes } = props;
-  const list = []
 
   return (
-    <div className={classes.root +' myJobList'}>
-         <h1>All Jobs</h1>
-        <SearchInput />
+    <div className={classes.root}>
+         
       {props.jobList.map((job) => (
         <Job key={job.jobId} job={job} />
       ))}

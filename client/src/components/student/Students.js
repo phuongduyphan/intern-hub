@@ -50,6 +50,9 @@ const styles = theme => ({
     marginTop: theme.spacing.unit / 2,
     marginRight: theme.spacing.unit / 2,
   },
+  modal:{
+    zIndex: "10000"
+  }
 });
 
 class Students extends Component {

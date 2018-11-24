@@ -66,3 +66,26 @@ exports.user_login_post = async (req, res) => {
     throw err;
   }
 };
+
+exports.user_status_get = async (req, res) => {
+  try {
+    const { userId } = req.user;
+    const user = { userId };
+    const recvUser = await UserService.getUpdatedStatus(user);
+    res.send({ updatedStatus: recvUser.updatedStatus });
+  } catch (err) {
+    throw err;
+  }
+};
+
+exports.user_status_put = async (req, res) => {
+  try {
+    const { userId } = req.user;
+    const { updatedStatus } = req.body;
+    const user = { userId, updatedStatus };
+    const recvUser = await UserService.updateUpdatedStatus(user);
+    res.send({ updatedStatus: recvUser.updatedStatus });
+  } catch (err) {
+    throw err;
+  }
+};

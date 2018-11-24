@@ -10,6 +10,8 @@ exports.seed = async function (knex, Promise) {
     job_desc: `• Working in product development team about Blockchain
     • Research, join code and support team members
     • Gather and address technical requirements. `,
+    job_salary: '2,000,000 VND',
+    job_duration: '3 months',
     location: 'HCMC, VN',
   });
 
@@ -21,6 +23,8 @@ exports.seed = async function (knex, Promise) {
     • Researching new technology, testing methods to share knowledge with other team members and apply to incoming projects
     • Getting requirements and proposing techniques, strategies to achieve the requirements
     • Sharing knowledge and conducting training in order to increase skills for other members`,
+    job_salary: '5,000,000 VND',
+    job_duration: '6 months',
     location: 'Hanoi, VN',
   });
 
@@ -32,6 +36,8 @@ exports.seed = async function (knex, Promise) {
     • Development of Sport data systems
     • Software Development
     • Database Administration`,
+    job_salary: '500$',
+    job_duration: '1 years',
     location: 'Da Nang, VN',
   });
 
@@ -45,6 +51,8 @@ exports.seed = async function (knex, Promise) {
     • Maintain a high-quality robust codebase
     • Manage and contribute code to large scale projects from inception to completion
     • Inspire engineers to explore and learn the latest technologies in the industry`,
+    job_salary: '2,000,000 VND',
+    job_duration: '1 months',
     location: 'Nha Trang, VN',
   });
 };
