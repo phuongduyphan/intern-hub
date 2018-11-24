@@ -13,6 +13,8 @@ class Job extends Model {
     const { Recruiter } = require('../recruiter/Recruiter');
     const { Category } = require('../category/Category');
     const { Skill } = require('../skill/Skill');
+    const { JobSkill } = require('../jobSkill/JobSkill');
+    const { JobCategory } = require('../jobCategory/JobCategory');
 
     return {
       recruiters: {
@@ -45,6 +47,22 @@ class Job extends Model {
             to: 'jobSkill.skillId',
           },
           to: 'skills.skillId',
+        },
+      },
+      jobSkills: {
+        relation: Model.HasManyRelation,
+        modelClass: JobSkill,
+        join: {
+          from: 'jobs.jobId',
+          to: 'jobSkill.jobId',
+        },
+      },
+      jobCategories: {
+        relation: Model.HasManyRelation,
+        modelClass: JobCategory,
+        join: {
+          from: 'jobs.jobId',
+          to: 'jobCategory.jobId',
         },
       },
     };
