@@ -21,6 +21,10 @@ exports.up = async (knex) => {
     table.string('phone_number');
 
     table
+      .boolean('updated_status')
+      .defaultTo(0);
+
+    table
       .enu('role', ['admin', 'student', 'recruiter'])
       .notNullable();
   });
