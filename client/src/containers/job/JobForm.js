@@ -4,7 +4,8 @@ import {connect} from 'react-redux';
 import JForm from '../../components/addJob/JobForm';
 import { withRouter } from 'react-router-dom';
 import defaultAvatar from '../../asset/avatar/default.jpg';
-
+import axios from 'axios';
+import { postJob } from '../../redux/actions/postDataAction';
 
 class JobForm extends Component {
 
@@ -15,11 +16,133 @@ class JobForm extends Component {
       description: '',
       location: '',
       skills: [],
-      categories: []
+      categories: [],
+      listOfSkills: [],
+      listOfCategories: []
     };
   }
 
   componentDidMount() {
+    // this.setState({ listOfSkills: [1,2,3]});
+    const seedSkills = [
+      {
+        "skillId": 1,
+        "skillName": "Java"
+      },
+      {
+        "skillId": 2,
+        "skillName": "NodeJs"
+      },
+      {
+        "skillId": 3,
+        "skillName": "Design"
+      },
+      {
+        "skillId": 4,
+        "skillName": "nodejs"
+      },
+      {
+        "skillId": 5,
+        "skillName": "mysql"
+      },
+      {
+        "skillId": 6,
+        "skillName": ".NET"
+      },
+      {
+        "skillId": 7,
+        "skillName": "J2EE"
+      }
+    ];
+    const seedCategories = [
+      {
+        "categoryId": 1,
+        "categoryName": "fullstack developer"
+      },
+      {
+        "categoryId": 2,
+        "categoryName": "tester"
+      },
+      {
+        "categoryId": 3,
+        "categoryName": "backend"
+      },
+      {
+        "categoryId": 4,
+        "categoryName": "frontend"
+      },
+      {
+        "categoryId": 5,
+        "categoryName": "BA"
+      }
+    ];
+    this.setState({ listOfSkills: seedSkills });
+    this.setState({ listOfCategories: seedCategories })
+
+    axios.get('localhost:5000/api/skills')
+      .then(res => {
+        const seed = [
+          {
+            "skillId": 1,
+            "skillName": "Java"
+          },
+          {
+            "skillId": 2,
+            "skillName": "NodeJs"
+          },
+          {
+            "skillId": 3,
+            "skillName": "Design"
+          },
+          {
+            "skillId": 4,
+            "skillName": "nodejs"
+          },
+          {
+            "skillId": 5,
+            "skillName": "mysql"
+          },
+          {
+            "skillId": 6,
+            "skillName": ".NET"
+          },
+          {
+            "skillId": 7,
+            "skillName": "J2EE"
+          }
+        ]
+        console.log(res);
+        this.setState({ listOfSkills: res });
+        // this.setState({ listOfSkills: res })
+      })
+
+    axios.get('localhost:5000/api/categories')
+      .then(res => {
+        this.setState({ listOfCategories: res});
+      })
+  }
+
+  onSubmitButton = (e) => {
+    e.preventDefault();
+    const data = this.state;
+    let listOfSkillIds = data.skills.map(skill => ({
+      skillId: data.listOfSkills.find(s => s.skillName === skill).skillId
+    }))
+    let listOfCategoryIds = data.categories.map(category => ({
+      categoryId: data.listOfCategories.find(s => s.categoryName === category).categoryId
+    }))
+
+    const job = {
+    	jobTitle: data.title,
+    	jobDesc: data.description,
+    	location: data.location,
+    	listOfSkillIds,
+    	listOfCategoryIds
+    }
+
+    console.log(job);
+    this.props.postJob(job);
+
   }
 
   onChangeText = (e) => {
@@ -52,10 +175,6 @@ class JobForm extends Component {
   }
 
 
-  postButton = (e) => {
-    e.preventDefault();
-  }
-
 
   render() {
     const studentList = this.state.student;
@@ -70,7 +189,7 @@ class JobForm extends Component {
           handleDeleteSkill = {this.handleDeleteSkill}
           handleAddCategory = {this.handleAddCategory}
           handleDeleteCategory = {this.handleDeleteCategory}
-          postButton = {this.postButton}
+          onSubmitButton = {this.onSubmitButton}
         />
       </div>
     );
@@ -87,4 +206,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 })
 
-export default connect(mapStateToProps)(withRouter(JobForm));
+export default connect(mapStateToProps, { postJob })(withRouter(JobForm));

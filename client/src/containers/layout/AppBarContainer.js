@@ -17,11 +17,19 @@ class AppBarContainer extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidMount() {
+    if(this.props.auth.isAuthenticated === false) {
+      this.props.history.push('/');
+    }
+  }
 
-    if(nextProps.auth.isAuthenticated) {
-      this.setState({isAuthenticated: true});
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps.auth.user.role);
+    if(nextProps.auth.user.role === 'student') {
       this.props.history.push('/stu-profile');
+    }
+    if(nextProps.auth.user.role === 'recruiter') {
+      this.props.history.push('/recr-profile');
     }
 
     if(nextProps.errors) {
@@ -35,9 +43,7 @@ class AppBarContainer extends Component {
 
 
   componentDidMount() {
-    // if(!this.props.isAuthenticated) {
-    //   this.props.history.push('/login');
-    // }
+
   }
 
   signButton = (e) => {
@@ -52,7 +58,6 @@ class AppBarContainer extends Component {
 
   logoutButton = e => {
     e.preventDefault();
-    this.setState({ isAuthenticated: false });
     this.props.logOutUser();
     this.props.history.push('/');
   }
@@ -82,11 +87,11 @@ class AppBarContainer extends Component {
   }
 
   render() {
-    console.log(this.state.searchInput);
-
+    const isAuthenticated = this.props.auth.isAuthenticated;
     return (
       <div>
         <AppBar
+          isAuthenticated={isAuthenticated}
           data={this.state}
           handleLogOut={this.handleLogOut}
           internHubButton={this.internHubButton}

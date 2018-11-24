@@ -69,7 +69,8 @@ const AppBarComponent = (props) => {
     internHubButton, 
     handleAddChip,
     handleDeleteChip ,
-    logoutButton
+    logoutButton,
+    isAuthenticated
   } = props;
 
 
@@ -117,7 +118,7 @@ const AppBarComponent = (props) => {
           />
           <div className={classes.grow}></div>
           
-          {data.isAuthenticated ? authRender : guestRender }
+          {isAuthenticated ? authRender : guestRender }
         </Toolbar>
       </AppBar>
     </React.Fragment>
