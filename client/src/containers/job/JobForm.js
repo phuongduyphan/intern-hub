@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import JForm from '../../components/addJob/JobForm';
 import { withRouter } from 'react-router-dom';
-import defaultAvatar from '../../asset/avatar/default.jpg';
-import axios from 'axios';
 import { postJob } from '../../redux/actions/postDataAction';
 import JobApi from '../../api/JobApi';
 

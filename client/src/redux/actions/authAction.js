@@ -1,4 +1,4 @@
-import { GET_ERRORS, CREATE_ACCOUNT_SUCCESS, SET_CURRENT_USER } from "./type";
+import { CREATE_ACCOUNT_SUCCESS, SET_CURRENT_USER } from "./type";
 import axios from 'axios';
 import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';

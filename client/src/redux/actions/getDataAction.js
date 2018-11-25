@@ -1,7 +1,6 @@
 import { GET_STUDENT_LIST,
           GET_JOB_LIST,
           GET_JOB_LIST_WITH_KEYWORD,
-          GET_ERRORS,
           GET_STUDENT_LIST_WITH_KEYWORD} from "./type";
 import JobApi from '../../api/JobApi'
 import axios from 'axios'

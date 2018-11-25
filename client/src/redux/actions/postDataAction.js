@@ -1,6 +1,5 @@
-import { POST_JOB_SUCCEED, GET_ERRORS } from './type';
+import { POST_JOB_SUCCEED } from './type';
 import JobApi from '../../api/JobApi'
-import axios from 'axios';
 
 // export const postJob = (jobData) => (dispatch) => {
 //   axios

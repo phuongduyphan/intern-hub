@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import Job from '../../components/jobs/Job';
 import JobList from '../../components/jobs/JobList';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
-import InputBase from '@material-ui/core/InputBase';
-import ChipInput from 'material-ui-chip-input';
 import SearchInput from '../../components/addJob/SearchInput'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { getJobList, getJobListWithKeyword } from '../../redux/actions/getDataAction';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import axios from 'axios';
 
 
 

@@ -1,4 +1,4 @@
-const { POST_JOB_SUCCEED } from '../actions/type';
+import { POST_JOB_SUCCEED } from '../actions/type';
 
 const initialState = {
   jobCreated: false,

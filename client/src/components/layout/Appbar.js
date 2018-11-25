@@ -1,6 +1,5 @@
 import AppBar from '@material-ui/core/AppBar';
 import React from 'react'
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -9,15 +8,10 @@ import IconButton from '@material-ui/core/IconButton';
 import LogOutIcon from '@material-ui/icons/PowerSettingsNewSharp';
 
 import defaultAvatar from '../../asset/avatar/default.jpg';
-import { fade } from '@material-ui/core/styles/colorManipulator';
 import Button from '@material-ui/core/Button';
-import SearchIcon from '@material-ui/icons/Search';
-import InputBase from '@material-ui/core/InputBase';
-import ChipInput from 'material-ui-chip-input';
 import MediaQuery from 'react-responsive';
 
 
-import MenuToggle from './MenuToggle';
 import AppButton from './AppButton';
 
 
@@ -190,10 +184,6 @@ const AppBarComponent = (props) => {
     </React.Fragment>
   );
 }
-
-AppBar.propTypes = {
-
-};
 
 
 
