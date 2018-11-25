@@ -105,7 +105,7 @@ const AppBarComponent = (props) => {
   const RecruitAppButton =(
     <>
     <AppButton buttonLabel="Students" link="/students" />
-    <AppButton buttonLabel="Post Jobs" link="/jobs" />
+    <AppButton buttonLabel="Jobs" link="/jobs" />
     </>
   )
   const StudentAppButton =(
@@ -123,7 +123,7 @@ const AppBarComponent = (props) => {
       </li>
       <li>
         <a href="/" >
-          Post jobs
+          Jobs
       </a>
       </li>
     </>
