@@ -36,7 +36,11 @@ class StudentService {
         listOfStudentIds.push(element.studentId);
       });
 
-      const listOfInorderedStudents = await Student.query().eager('[skills]').whereIn('studentId', listOfStudentIds);
+      const listOfInorderedStudents = await Student.query().eager('[skills, users]')
+        .whereIn('studentId', listOfStudentIds)
+        .modifyEager('users', (builder) => {
+          builder.select('displayname', 'email', 'phoneNumber');
+        });
       const listOfStudents = _.sortBy(listOfInorderedStudents, (item) => {
         return listOfStudentIds.indexOf(item.studentId);
       });

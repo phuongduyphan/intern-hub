@@ -49,7 +49,11 @@ class JobService {
         listOfJobIds.push(element.jobId);
       });
 
-      const listOfInorderedJobs = await Job.query().eager('[categories, skills]').whereIn('jobId', listOfJobIds);
+      const listOfInorderedJobs = await Job.query().eager('[categories, skills, recruiters.users]')
+        .whereIn('jobId', listOfJobIds)
+        .modifyEager('recruiters.users', (builder) => {
+          builder.select('displayname', 'email', 'phoneNumber');
+        });
 
       const listOfJobs = _.sortBy(listOfInorderedJobs, (item) => {
         return listOfJobIds.indexOf(item.jobId);
@@ -77,7 +81,11 @@ class JobService {
         listOfJobIds.push(element.jobId);
       });
 
-      const listOfInorderedJobs = await Job.query().eager('[categories, skills]').whereIn('jobId', listOfJobIds);
+      const listOfInorderedJobs = await Job.query().eager('[categories, skills, recruiters.users]')
+        .whereIn('jobId', listOfJobIds)
+        .modifyEager('recruiters.users', (builder) => {
+          builder.select('displayname', 'email', 'phoneNumber');
+        });
 
       const listOfJobs = _.sortBy(listOfInorderedJobs, (item) => {
         return listOfJobIds.indexOf(item.jobId);
