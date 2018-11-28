@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, './client/build')));
 
 // BodyParser Middleware
 app.use(bodyParser.json());
@@ -50,7 +50,7 @@ app.use('/api/recruiters', recruitersApiRouter);
 app.use('/api/students', studentsApiRouter);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
 // catch 404 and forward to error handler

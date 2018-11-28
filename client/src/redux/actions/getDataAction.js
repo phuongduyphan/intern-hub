@@ -23,7 +23,7 @@ export const getStudentList = () => async (dispach) => {
 export const getStudentListWithKeyword = (keyword) => async (dispatch) => {
   try {
     console.log('get keyword', keyword);
-    const {data} = await axios.post('https://rocky-crag-37789.herokuapp.com/api/students/search', {
+    const {data} = await axios.post('https://intern-hub.herokuapp.com/api/students/search', {
       listOfSkills: keyword,
     })
     console.log(data);
@@ -57,7 +57,7 @@ export const getJobList = () => async (dispach) => {
 export const getJobListWithKeyword = (keyword) => async (dispatch) => {
   try {
     console.log('get keyword', keyword);
-    const {data} = await axios.post('https://rocky-crag-37789.herokuapp.com/api/jobs/search', {
+    const {data} = await axios.post('https://intern-hub.herokuapp.com/api/jobs/search', {
       listOfKeywords: keyword,
     })
     // const {data} = await JobApi.getJobListWithKeyword(keyword);
