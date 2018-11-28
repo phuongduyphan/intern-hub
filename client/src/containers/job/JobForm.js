@@ -92,7 +92,6 @@ class JobForm extends Component {
 
 
   render() {
-    const studentList = this.state.student;
 
 
     return (

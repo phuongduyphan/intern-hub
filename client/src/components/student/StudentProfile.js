@@ -55,9 +55,6 @@ const styles = theme => ({
 const StudentProfile = (props) => {
   const { classes, onChangeText, data, saveChangeButton, handleAddSkill, handleDeleteSkill} = props;
 
-  let content;
-  
- 
 
 
   return (

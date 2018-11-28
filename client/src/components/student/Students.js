@@ -157,7 +157,7 @@ class Students extends Component {
     </MediaQuery>
     <MediaQuery maxDeviceWidth={1000}>
         <div class="card" >
-          <img class="card-img-top" src={avatar} />
+          <img alt='a' class="card-img-top" src={avatar} />
           <div class="card-body">
             <h4 class="card-title">{student.users.displayname}</h4>
             <p class="card-text">{renderSkill}</p>

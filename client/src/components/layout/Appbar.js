@@ -67,8 +67,6 @@ const AppBarComponent = (props) => {
     signButton,
     loginButton,
     internHubButton,
-    handleAddChip,
-    handleDeleteChip ,
     logoutButton,
     isAuthenticated
   } = props;

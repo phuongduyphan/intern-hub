@@ -1,4 +1,4 @@
-import {  ON_REGISTER_SUCCESS, ON_PUT_STUDENT_SUCCESS, ON_PUT_RECRUITER_SUCCESS, POST_JOB_SUCCEED } from "../actions/type";
+import {  ON_PUT_STUDENT_SUCCESS, ON_PUT_RECRUITER_SUCCESS, POST_JOB_SUCCEED } from "../actions/type";
 
 const initialState = {
    registerSuccess: false,

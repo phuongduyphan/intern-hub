@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import JobList from '../../components/jobs/JobList';
-import PropTypes from 'prop-types';
 import SearchInput from '../../components/addJob/SearchInput'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { getJobList, getJobListWithKeyword } from '../../redux/actions/getDataAction';

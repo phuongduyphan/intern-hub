@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import SearchIcon from '@material-ui/icons/Search';
-import InputBase from '@material-ui/core/InputBase';
 import ChipInput from 'material-ui-chip-input';
-import Button from '@material-ui/core/Button';
 
 import { withStyles } from '@material-ui/core/styles';
 

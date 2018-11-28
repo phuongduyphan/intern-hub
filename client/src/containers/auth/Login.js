@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import LoginComponent from '../../components/auth/Login';
 import {loginUser} from '../../redux/actions/authAction';
-import store from '../../redux/store';
-import {CREATE_ACCOUNT_SUCCESS} from '../../redux/actions/type';
 
 class LoginContainer extends Component {
   

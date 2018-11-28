@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import RegisterComponent from '../../components/auth/Register';
 import { registerUser } from '../../redux/actions/authAction';
