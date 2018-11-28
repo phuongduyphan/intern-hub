@@ -1,2 +1,2 @@
 # intern-hub
-[https://intern-hub.herokuapp.com/]
+https://intern-hub.herokuapp.com/
